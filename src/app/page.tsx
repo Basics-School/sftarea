@@ -1,7 +1,5 @@
 import SearchForm from "@/components/forms/search-form";
-import { SelectNeighbours } from "@/components/layouts/selec-neigbour";
 import VideoBanner from "@/components/layouts/video-banner";
-import { Input } from "@/components/ui/input";
 import {
     Select,
     SelectContent,
