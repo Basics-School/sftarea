@@ -1,3 +1,4 @@
+import SearchForm from "@/components/forms/search-form";
 import { SelectNeighbours } from "@/components/layouts/selec-neigbour";
 import { Input } from "@/components/ui/input";
 import {
@@ -9,11 +10,11 @@ import {
     SelectTrigger,
     SelectValue,
 } from "@/components/ui/select"
-import { MicIcon, Search, SearchIcon, Settings, Settings2 } from "lucide-react";
+import { ArrowRight, MicIcon, Search, SearchIcon, Settings, Settings2 } from "lucide-react";
 export default function Home() {
     return (
         <main className="relative">
-            <section className="flex w-full flex-col h-[35vh] bg-[url('/hero.png')] bg-cover  " >
+            <section className="flex relative w-full flex-col h-[35vh] bg-[url('/hero.png')] bg-cover  " >
                 <div className="flex-col justify-center bg-gradient-to-b flex from-black via-transparent  to-transparent h-full">
                     <div className="max-w-screen-xl w-full mx-auto   ">
                         <div className=" space-y-4 text-background max-w-screen-sm   w-full p-4  md:px-10 ">
@@ -26,53 +27,65 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
+            <SearchForm />
             </section>
-            <div className="  bg-white max-w-screen-xl rounded-2xl flex flex-col shadow-md overflow-hidden mx-auto relative -top-16  min-h-40 ">
-                <ul className="lg:flex w-full  font-bold hidden ">
-                    <button className="bg-white w-full py-3 text-xl focus:text-white  focus:bg-purple-600">Buy</button>
-                    <button className="bg-white w-full py-3 text-xl focus:text-white focus:bg-purple-600">Rent</button>
-                    <button className="bg-white w-full py-3 text-xl focus:text-white focus:bg-purple-600">Commercial</button>
-                    <button className="bg-white w-full py-3 text-xl focus:text-white focus:bg-purple-600">Plots / Land</button>
-                    <button className="bg-white w-full py-3 text-xl focus:text-white focus:bg-purple-600">New Launch</button>
-                    <button className="bg-white w-full py-3 text-xl focus:text-white focus:bg-purple-600">New Projects</button>
-                    <button className="bg-white w-full py-3 text-xl focus:text-white focus:bg-purple-600">PG / CO-Living</button>
-                </ul>
-                <form className="flex-1 gap-6 flex flex-col lg:flex-row items-center  p-6">
-                    <div className="flex gap-6 w-full">
-                        <Select>
-                            <SelectTrigger className="md:w-[240px] w-1/2 flex-1 ">
-                                <SelectValue placeholder="Property Type" />
-                            </SelectTrigger>
-                            <SelectContent>
-                                <SelectGroup>
-                                    <SelectLabel>Property Type</SelectLabel>
-                                    <SelectItem value="apartments">Apartments</SelectItem>
-                                    <SelectItem value="bungalow">Bungalow</SelectItem>
-                                    <SelectItem value="homestay">HomeStay</SelectItem>
-                                    <SelectItem value="office">Office</SelectItem>
-                                </SelectGroup>
-                            </SelectContent>
-                        </Select>
-                        <SelectNeighbours />
-                    </div>
-                    <div className="flex px-2 border rounded-md items-center w-full">
-                        <SearchIcon />
-                        <Input placeholder="Search &quot;Farm house in punjab below 1 cr&quot;" className="outline-none focus-visible:ring-0  w-80  focus-visible:ring-ring border-none focus-within:outline-none ring-0" />
-                    </div>
-                    <div className="flex gap-6 w-full">
-                        <button className=" bg-purple-600/10 text-purple-600 p-2 rounded-md hover:text-white hover:bg-purple-600">
-                            <MicIcon className="" />
-                        </button>
-                        <button className=" bg-purple-600/10 text-purple-600 p-2 rounded-md hover:text-white hover:bg-purple-600">
-                            <Settings2 className="" />
-                        </button>
-                        <button className=" bg-purple-600 text-nowrap  p-2 rounded-md font-bold flex gap-4 flex-1 justify-around text-white hover:bg-purple-600">
-                            <span>Search Now</span>
-                            <Search />
-                        </button>
-                    </div>
-                </form>
-            </div>
+            <section className="mt-40 ">
+                <PropertyCards />
+            </section>
         </main >
     );
 }
+
+
+const cardsData = [
+    {
+        title: "Post Your Property Ads for Free",
+        description: "Sell/Rent out your property & Get unlimited responses",
+        actionText: "List Your Property",
+        actionLink: "#",
+        bgColor: "bg-blue-600"
+    },
+    {
+        title: "Find Your Dream Property",
+        description: "Get the list of properties matching to your requirement",
+        actionText: "Post Your Requirement",
+        actionLink: "#",
+        bgColor: "bg-pink-500"
+    },
+    {
+        title: "6334+ Top Property Dealers",
+        description: "Connect with genuine property dealers in your city",
+        actionText: "Explore Now",
+        actionLink: "#",
+        bgColor: "bg-yellow-400"
+    },
+    {
+        title: "16750+ Verified Property for Sale",
+        description: "Search for the best commercial or residential deal",
+        actionText: "Explore Now",
+        actionLink: "#",
+        bgColor: "bg-teal-500"
+    }
+];
+
+const PropertyCards = () => {
+    return (
+        <div className="grid grid-cols-1 md:grid-cols-2 justify-between lg:grid-cols-4 gap-6 p-6">
+            {cardsData.map((card, index) => (
+                <div
+                    key={index}
+                    className={`p-6 rounded-lg shadow-lg flex justify-between flex-col text-white ${card.bgColor}`}
+                >
+                    <h3 className="text-lg font-semibold mb-2">{card.title}</h3>
+                    <p className="mb-4">{card.description}</p>
+                    <a
+                        href={card.actionLink}
+                        className="inline-flex bg-white text-blue-600 font-bold py-2 px-4 rounded-lg max-w-min whitespace-nowrap hover:bg-gray-200 transition"
+                    >
+                        {card.actionText} <ArrowRight />
+                    </a>
+                </div>
+            ))}
+        </div>
+    );
+};

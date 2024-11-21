@@ -6,7 +6,7 @@ import { MenuIcon } from 'lucide-react';
 import { MainNav } from './nav';
 const Header = () => {
     return (
-        <header className='h-20 text-white bg-purple-600 gap-4 justify-between flex items-center px-4'>
+        <header className='h-20 text-white bg-brand gap-4 justify-between flex items-center px-4'>
             <div className='text-2xl font-extrabold'>
                 SFTAREA
             </div>
