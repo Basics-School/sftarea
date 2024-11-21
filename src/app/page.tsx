@@ -1,5 +1,6 @@
 import SearchForm from "@/components/forms/search-form";
 import { SelectNeighbours } from "@/components/layouts/selec-neigbour";
+import VideoBanner from "@/components/layouts/video-banner";
 import { Input } from "@/components/ui/input";
 import {
     Select,
@@ -27,11 +28,12 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
-            <SearchForm />
+                <SearchForm />
             </section>
             <section className="mt-40 ">
                 <PropertyCards />
             </section>
+            <VideoBanner />
         </main >
     );
 }
