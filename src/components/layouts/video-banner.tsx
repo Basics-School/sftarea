@@ -2,7 +2,7 @@ import React from 'react'
 
 const VideoBanner = () => {
     return (
-        <section className='mt-10 overflow-hidden w-full  relative h-[50vh] wf'>
+        <section className='py-10 overflow-hidden w-full  relative h-[50vh] wf'>
             <div className=' '>
             <video className='transform  absolute -z-10   w-full object-cover' poster='/trailer-frame.png' muted playsInline loop autoPlay preload="none">
                 <source src="/video.mp4" type="video/mp4" />
@@ -21,6 +21,7 @@ const VideoBanner = () => {
                         Nest Euphoria
                     </button>
                     <div className="text-xl font-semibold px-4 space-y-4">
+
 <h3 >3 BHK Flat at Sholinganalur, Chennai</h3>
 <h1 className="text-2xl font-bold">Starting From $79.9 Lac </h1>
 <p>Marketed By Nest Buuilder</p>

@@ -1,14 +1,7 @@
 import SearchForm from "@/components/forms/search-form";
+import FiindIdealHome from "@/components/layouts/fiind-ideal-home";
 import VideoBanner from "@/components/layouts/video-banner";
-import {
-    Select,
-    SelectContent,
-    SelectGroup,
-    SelectItem,
-    SelectLabel,
-    SelectTrigger,
-    SelectValue,
-} from "@/components/ui/select"
+
 import { ArrowRight, MicIcon, Search, SearchIcon, Settings, Settings2 } from "lucide-react";
 export default function Home() {
     return (
@@ -32,6 +25,7 @@ export default function Home() {
                 <PropertyCards />
             </section>
             <VideoBanner />
+            <FiindIdealHome/>
         </main >
     );
 }
