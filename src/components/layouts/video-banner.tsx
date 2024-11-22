@@ -2,7 +2,7 @@ import React from 'react'
 
 const VideoBanner = () => {
     return (
-        <section className='py-10 overflow-hidden w-full  relative h-[50vh] wf'>
+        <section className=' overflow-hidden w-full  relative h-[50vh] wf'>
             <div className=' '>
                 <video className='transform  absolute -z-10   w-full object-cover' poster='/trailer-frame.png' muted playsInline loop autoPlay preload="none">
                     <source src="/video.mp4" type="video/mp4" />
@@ -15,7 +15,7 @@ const VideoBanner = () => {
                     Your browser does not support the video tag.
                 </video>
             </div>
-            <div className="relative flex w-full text-white justify-between items-end h-full pb-10 backdrop-blur-sm ">
+            <div className="relative flex w-full text-white justify-between py-10 items-end h-full  backdrop-blur-sm ">
                 <div className=" flex flex-col" >
                     <button className=" bg-yellow-500 text-4xl text-black rounded-r-xl py-3 font-bold px-6">
                         Nest Euphoria
