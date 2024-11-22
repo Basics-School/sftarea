@@ -65,7 +65,7 @@ const cardsData = [
 
 const PropertyCards = () => {
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2  justify-between  lg:grid-cols-4 gap-6 p-6">
+        <div className="grid grid-cols-1 md:grid-cols-2  relative -z-10 justify-between  lg:grid-cols-4 gap-6 p-6">
             {cardsData.map((card, index) => (
                 <Link href={card.actionLink}
                     key={index}
