@@ -32,7 +32,7 @@ const FiindIdealHome = () => {
 
     return (
         <section className="w-full space-y-4 border border-x-0 px-4 py-2 sm:px-4 sm:py-10 overflow-hidden">
-            <h1 className="mx-auto w-full py-2 font-sans text-2xl sm:max-w-[640px] lg:max-w-screen-xl">
+            <h1 className="mx-auto w-full py-2 font-bold  text-2xl md:text-4xl text-center sm:max-w-[640px] lg:max-w-screen-xl">
                 Find Your Ideal Home Anywhere
             </h1>
             <div className="relative">
@@ -98,7 +98,7 @@ export default FiindIdealHome;
 
 const Card = () => {
     return (
-        <div className="bg-[url('/interior.jpg')] group  text-white font-bold  bg-cover h-52 overflow-clip aspect-video rounded-xl ">
+        <div className="bg-[url('/interior.jpg')] group  text-white font-bold  bg-cover h-52 overflow-clip aspect-[13/9] rounded-xl ">
             <div className="h-full flex-col justify-end flex bg-gradient-to-t from-black p-4">
                 <h1>23797</h1>
                 <p>Owner Properties</p>
