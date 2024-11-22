@@ -39,7 +39,7 @@ export function MainNav({ items }: MainNavProps) {
                         .map((item) =>
                             item?.items ? (
                                 <NavigationMenuItem className="bg-transparent  data-[hover]:bg-transparent" key={item.title}>
-                                    <NavigationMenuTrigger  className="hover:bg-transparent hover:text-background focus:bg-transparent focus:text-white  bg-transparent text-white h-auto data-[active]:bg-transparent data-[state=open]:bg-transparent">
+                                    <NavigationMenuTrigger  className="hover:bg-transparent text-xl hover:text-background focus:bg-transparent focus:text-white  bg-transparent text-white h-auto data-[active]:bg-transparent data-[state=open]:bg-transparent">
                                         {item.title}
                                     </NavigationMenuTrigger>
                                     <NavigationMenuContent className="" >
