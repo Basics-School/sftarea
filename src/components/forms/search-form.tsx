@@ -89,7 +89,7 @@ export default function SearchForm() {
   ];
 
   return (
-    <div className="bg-white max-w-screen-xl rounded-2xl z-10 flex flex-col shadow-md overflow-hidden mx-auto absolute translate-x-1/2 right-1/2 justify-between top-3/4 min-h-40">
+    <div className="bg-white max-w-screen-xl rounded-2xl z-0 flex flex-col shadow-md overflow-hidden mx-auto absolute translate-x-1/2 right-1/2 justify-between top-3/4 min-h-40">
       <ul className="lg:flex w-full font-bold hidden">
         {["Buy", "Rent", "Commercial", "Plots / Land", "New Launch", "New Projects", "PG / CO-Living"].map((item) => (
           <button key={item} className="bg-white w-full py-3 text-xl focus:text-white focus:bg-brand">

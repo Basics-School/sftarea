@@ -16,9 +16,9 @@ import {
 // Helper function to transform items
 const transformItems = (items: Record<string, Record<string, any[]>>) => {
     return Object.entries(items).map(([key, value]) => ({
-        title: key.charAt(0).toUpperCase() + key.slice(1),
+        title: key.charAt(0).toUpperCase() + key.slice(1).replace(/([A-Z])/g, ' $1'),
         sections: Object.entries(value as Record<string, any[]>).map(([sectionKey, sectionItems]) => ({
-            title: sectionKey.charAt(0).toUpperCase() + sectionKey.slice(1),
+            title: sectionKey.charAt(0).toUpperCase() + sectionKey.slice(1).replace(/([A-Z])/g, ' $1'),
             items: Array.isArray(sectionItems) ? sectionItems : []
         }))
     }))
@@ -37,11 +37,11 @@ export function MainNav({ items }: MainNavProps) {
                 <NavigationMenuList className="flex w-full justify-center">
                     {navItems.map((item) => (
                         <NavigationMenuItem key={item.title}>
-                            <NavigationMenuTrigger className="hover:bg-transparent text-xl hover:text-background focus:bg-transparent focus:text-white bg-transparent text-white h-auto">
+                            <NavigationMenuTrigger className="hover:bg-transparent text-xl [active]:bg-transparent data-[state=open]:bg-transparent hover:text-background focus:bg-transparent focus:text-white bg-transparent text-white h-auto">
                                 {item.title}
                             </NavigationMenuTrigger>
-                            <NavigationMenuContent>
-                                <div className="grid grid-cols-2 gap-3 p-4 w-[600px]">
+                            <NavigationMenuContent className="flex w-full   max-w-screen-lg">
+                                <div className="grid grid-cols-5 gap-3 p-4 z-10  w-[900px]  ">
                                     {item.sections.map((section) => (
                                         <div key={section.title} className="space-y-2">
                                             <h3 className="font-medium">{section.title}</h3>

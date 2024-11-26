@@ -1,6 +1,11 @@
 import SearchForm from "@/components/forms/search-form";
+import TeamMembers from "@/components/layouts/agents";
+import Banner from "@/components/layouts/banner";
 import CityFinder from "@/components/layouts/cities";
 import FiindIdealHome from "@/components/layouts/fiind-ideal-home";
+import Footer from "@/components/layouts/footer";
+import PremiumProjects from "@/components/layouts/projects";
+import TestimonialCarousel from "@/components/layouts/testimonial";
 import VideoBanner from "@/components/layouts/video-banner";
 
 import { ArrowRight, MicIcon, Search, SearchIcon, Settings, Settings2 } from "lucide-react";
@@ -29,6 +34,15 @@ export default function Home() {
             <VideoBanner />
             <FiindIdealHome />
             <CityFinder />
+            <Banner img="/1.png" />
+            <PremiumProjects />
+            <Banner img="/2.png" />
+
+            <TeamMembers />
+            <TestimonialCarousel />
+            <Banner img="/3.png" />
+
+            <Footer />
         </main >
     );
 }
@@ -67,7 +81,7 @@ const cardsData = [
 
 const PropertyCards = () => {
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2  relative -z-0 justify-between  lg:grid-cols-4 gap-6 p-6">
+        <div className="grid grid-cols-1 md:grid-cols-2  relative -z-10 justify-between  lg:grid-cols-4 gap-6 p-6">
             {cardsData.map((card, index) => (
                 <Link href={card.actionLink}
                     key={index}
