@@ -1,4 +1,5 @@
 import SearchForm from "@/components/forms/search-form";
+import CityFinder from "@/components/layouts/cities";
 import FiindIdealHome from "@/components/layouts/fiind-ideal-home";
 import VideoBanner from "@/components/layouts/video-banner";
 
@@ -22,11 +23,12 @@ export default function Home() {
                 </div>
                 <SearchForm />
             </section>
-            <section className="mt-40 flex items-center flex-col ">
+            <section className="py-7 mt-20  flex items-center flex-col max-w-screen-xl mx-auto ">
                 <PropertyCards />
             </section>
             <VideoBanner />
             <FiindIdealHome />
+            <CityFinder />
         </main >
     );
 }
@@ -38,28 +40,28 @@ const cardsData = [
         description: "Sell/Rent out your property & Get unlimited responses",
         actionText: "List Your Property",
         actionLink: "/list",
-        bgColor: "bg-blue-600"
+        bgColor: "bg-[#672d93]"
     },
     {
         title: "Find Your Dream Property",
         description: "Get the list of properties matching to your requirement",
         actionText: "Post Your Requirement",
         actionLink: "/list",
-        bgColor: "bg-pink-500"
+        bgColor: "bg-[#f47e14]"
     },
     {
         title: "6334+ Top Property Dealers",
         description: "Connect with genuine property dealers in your city",
         actionText: "Explore Now",
         actionLink: "/list",
-        bgColor: "bg-yellow-400"
+        bgColor: "bg-[#1355b6]"
     },
     {
         title: "16750+ Verified Property for Sale",
         description: "Search for the best commercial or residential deal",
         actionText: "Explore Now",
         actionLink: "/list",
-        bgColor: "bg-teal-500"
+        bgColor: "bg-[#f3087e]"
     }
 ];
 
@@ -69,7 +71,7 @@ const PropertyCards = () => {
             {cardsData.map((card, index) => (
                 <Link href={card.actionLink}
                     key={index}
-                    className={`p-6 rounded shadow-lg max-w-sm flex relative min-h-60 group hover:outline outline-black outline-1 hover:shadow-md cursor-pointer transition-all justify-between flex-col text-white ${card.bgColor}`}
+                    className={`p-6 rounded  max-w-sm flex relative min-h-60 group hover:outline outline-black outline-1 hover:shadow-lg hover:scale-105 cursor-pointer transition-all justify-between flex-col text-white ${card.bgColor}`}
                 >
                     <div>
                         <h3 className="text-lg font-semibold mb-2">{card.title}</h3>
