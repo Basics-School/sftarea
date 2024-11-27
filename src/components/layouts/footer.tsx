@@ -8,10 +8,10 @@ import Image from "next/image"
     "Bhopal", "Visakhapatnam", "Amaravati (AP)", "Patna", "Vadodara"
   ]
 export default function Footer() {
- 
+
 
   return (
-    <footer className="bg-gray-900 text-gray-200 py-12">
+    <footer className="bg-gray-900 text-gray-200 py-12 mt-10">
       <div className="container mx-auto px-4">
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">

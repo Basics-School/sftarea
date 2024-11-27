@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button"
 
 export default function Banner({ img }: { img: string }) {
     return (
-        <div className="relative h-[400px] w-full overflow-hidden">
+        <div className="relative h-[400px] w-full mx-auto rounded-lg max-w-screen-xl overflow-hidden">
             {/* Background Image */}
             <Image
                 src={img}

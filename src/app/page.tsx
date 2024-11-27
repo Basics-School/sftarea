@@ -5,6 +5,7 @@ import CityFinder from "@/components/layouts/cities";
 import FiindIdealHome from "@/components/layouts/fiind-ideal-home";
 import Footer from "@/components/layouts/footer";
 import PremiumProjects from "@/components/layouts/projects";
+import PropertyListings from "@/components/layouts/properties";
 import TestimonialCarousel from "@/components/layouts/testimonial";
 import VideoBanner from "@/components/layouts/video-banner";
 
@@ -35,6 +36,7 @@ export default function Home() {
             <FiindIdealHome />
             <CityFinder />
             <Banner img="/1.png" />
+            <PropertyListings/>
             <PremiumProjects />
             <Banner img="/2.png" />
 
