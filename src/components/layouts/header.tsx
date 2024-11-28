@@ -19,15 +19,15 @@ const Header = () => {
                     <Link href={"/"} >Advertise</Link >
                     <Link href={"/"} >Download App</Link >
                 </ul>
-                <Button className='bg-background hover:bg-muted font-bold text-black'>
+                <Link href={"/list"} className={cn(buttonVariants({ variant: 'default' }), 'bg-background hover:bg-muted font-bold text-black')}>
                     <span>List your property</span>
                     <span className='text-xs bg-yellow-400 rounded py-px px-2'>Free</span>
-                </Button>
+                </Link>
                 <Link className={cn(buttonVariants({ variant: 'default' }), "bg-background hover:bg-muted text-black")} href="/login">
                     Login / Signup
                 </Link>
 
-            <HeaderMenuSheet />
+                <HeaderMenuSheet />
             </nav>
 
             {/* <button className='bg-background px-2 py-1.5 lg:hidden rounded-md'>
