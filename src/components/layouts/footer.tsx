@@ -4,15 +4,15 @@ import Image from "next/image"
  const cities = [
     "Hyderabad", "Bengaluru", "Delhi", "Mumbai", "Chennai",
     "Kolkata", "Pune", "Ahmedabad", "Surat", "Jaipur",
-    "Lucknow", "Kanpur", "Nagpur", "Indore", "Thane",
-    "Bhopal", "Visakhapatnam", "Amaravati (AP)", "Patna", "Vadodara"
+    // "Lucknow", "Kanpur", "Nagpur", "Indore", "Thane",
+    // "Bhopal", "Visakhapatnam", "Amaravati (AP)", "Patna", "Vadodara"
   ]
 export default function Footer() {
 
 
   return (
-    <footer className="bg-gray-900 text-gray-200 py-12 mt-10">
-      <div className="container mx-auto px-4">
+    <footer className="bg-gray-900 text-gray-200 py-12 mt-10 ">
+      <div className="container max-w-screen-xl mx-auto px-4">
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           {/* Flats for Sale */}

@@ -1,10 +1,6 @@
 import type { Metadata } from "next";
 
 import "./globals.css";
-import Header from "@/components/layouts/header";
-import { MainNav } from "@/components/layouts/nav";
-import { siteConfig } from "@/config/site";
-import items from "@/components/layouts/items";
 
 
 
@@ -21,8 +17,6 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body className="antialiased" >
-                <Header />
-                <MainNav items={items}/>
                 {children}
             </body>
         </html>
