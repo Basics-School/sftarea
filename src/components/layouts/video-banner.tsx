@@ -2,7 +2,7 @@ import React from 'react'
 
 const VideoBanner = () => {
     return (
-        <section className=' overflow-hidden w-full max-w-screen-xl  rounded-lg mx-auto  relative h-[40vh] wf'>
+        <section className=' overflow-hidden w-full max-w-screen-xl  rounded-lg mx-auto  relative h-[250px]] wf'>
             <div className=' '>
                 <video className='transform  absolute -z-10   w-full object-cover' poster='/trailer-frame.png' muted playsInline loop autoPlay preload="none">
                     <source src="/video.mp4" type="video/mp4" />
