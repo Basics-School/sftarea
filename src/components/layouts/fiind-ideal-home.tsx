@@ -32,9 +32,9 @@ const FiindIdealHome = () => {
 
     return (
         <section className="w-full space-y-4  border-x-0 px-4 py-2 sm:px-4 sm:py-10 overflow-hidden">
-            <h1 className="mx-auto w-full py-2 font-bold  text-2xl md:text-4xl text-center sm:max-w-[640px] lg:max-w-screen-xl">
+            {/* <h1 className="mx-auto w-full py-2 font-bold  text-2xl md:text-4xl text-center sm:max-w-[640px] lg:max-w-screen-xl">
                 Find Your Ideal Home Anywhere
-            </h1>
+            </h1> */}
             <div className="relative">
                 {/* <button
                     className={cn(

@@ -95,11 +95,11 @@ const PropertyCards = () => {
             {cardsData.map((card, index) => (
                 <Link href={card.actionLink}
                     key={index}
-                    className={`p-6 rounded  max-w-sm flex relative min-h-60 group hover:outline outline-black outline-1 hover:shadow-lg hover:scale-105 cursor-pointer transition-all justify-between flex-col text-white ${card.bgColor}`}
+                    className={`p-4 rounded  max-w-sm flex aspect-[296/184] h-full relative  group hover:outline outline-black outline-1 hover:shadow-lg hover:scale-105 cursor-pointer transition-all justify-between flex-col text-white ${card.bgColor}`}
                 >
                     <div>
                         <h3 className="text-lg font-semibold mb-2">{card.title}</h3>
-                        <p className="mb-4">{card.description}</p>
+                        <p className="mb-4 text-sm">{card.description}</p>
                     </div>
                     <div
                         // href={card.actionLink}
