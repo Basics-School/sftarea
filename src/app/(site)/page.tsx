@@ -3,18 +3,24 @@ import TeamMembers from "@/components/layouts/agents";
 import Banner from "@/components/layouts/banner";
 import CityFinder from "@/components/layouts/cities";
 import FiindIdealHome from "@/components/layouts/fiind-ideal-home";
-import Footer from "@/components/layouts/footer";
 import PremiumProjects from "@/components/layouts/projects";
 import PropertyListings from "@/components/layouts/properties";
 import RealEstatePlatform from "@/components/layouts/real-estate-platform";
 import TestimonialCarousel from "@/components/layouts/testimonial";
 import VideoBanner from "@/components/layouts/video-banner";
+import { Montserrat } from 'next/font/google'
 
 import { ArrowRight, MicIcon, Search, SearchIcon, Settings, Settings2 } from "lucide-react";
 import Link from "next/link";
+import { cn } from "@/lib/utils";
+
+
+const montserrat = Montserrat({ subsets: ['latin'] })
+
+
 export default function Home() {
     return (
-        <main className="relative">
+        <main className={cn("relative", montserrat.className)}>
             <section className="flex relative w-full flex-col h-[50vh] bg-[url('/hero.png')] bg-cover  " >
                 <div className="flex-col justify-center bg-gradient-to-b flex from-black via-transparent  to-transparent h-full">
                     <div className="max-w-screen-xl w-full mx-auto   ">
@@ -38,8 +44,8 @@ export default function Home() {
             {/* <CityFinder /> */}
             {/* <Banner img="/1.png" /> */}
             <PropertyListings id="buy" title="Buy Poperties" />
-            <PropertyListings id="rent" title="Rent Properties"  />
-            <PropertyListings id ="sell" title="Sell Propertis" />
+            <PropertyListings id="rent" title="Rent Properties" />
+            <PropertyListings id="sell" title="Sell Propertis" />
             <PremiumProjects />
             <Banner img="/2.png" />
             {/* <TeamMembers /> */}
@@ -54,32 +60,32 @@ export default function Home() {
 
 const cardsData = [
     {
-        title: "Post Your Property Ads for Free",
-        description: "Sell/Rent out your property & Get unlimited responses",
-        actionText: "List Your Property",
+        title: "Post Your Property for Free",
+        description: "Sell or rent your property and connect with serious buyers.",
+        actionText: "List Now",
         actionLink: "/list",
-        bgColor: "bg-[#672d93]"
+        bgColor: "bg-[#672d93]" // Royal Purple
     },
     {
-        title: "Find Your Dream Property",
-        description: "Get the list of properties matching to your requirement",
-        actionText: "Post Your Requirement",
+        title: "Discover Properties That Fit Your Needs",
+        description: "Explore trusted listings tailored to your preferences.",
+        actionText: "Search Now",
         actionLink: "/list",
-        bgColor: "bg-[#f47e14]"
+        bgColor: "bg-[#f47e14]" // Bright Orange
     },
     {
-        title: "6334+ Top Property Dealers",
-        description: "Connect with genuine property dealers in your city",
-        actionText: "Explore Now",
+        title: "Work with Verified Real Estate Experts",
+        description: "Partner with experienced agents for seamless transactions.",
+        actionText: "Explore Agents",
         actionLink: "/list",
-        bgColor: "bg-[#1355b6]"
+        bgColor: "bg-[#1355b6]" // Professional Blue
     },
     {
-        title: "16750+ Verified Property for Sale",
-        description: "Search for the best commercial or residential deal",
-        actionText: "Explore Now",
+        title: "Explore Verified Properties",
+        description: "Search through genuine residential and commercial listings with ease.",
+        actionText: "Explore Listings",
         actionLink: "/list",
-        bgColor: "bg-[#f3087e]"
+        bgColor: "bg-[#f3087e]" // Vivid Pink
     }
 ];
 
