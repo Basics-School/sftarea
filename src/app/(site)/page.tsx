@@ -43,9 +43,9 @@ export default function Home() {
             <FiindIdealHome />
             {/* <CityFinder /> */}
             {/* <Banner img="/1.png" /> */}
-            <PropertyListings id="buy" title="Buy Poperties" />
-            <PropertyListings id="rent" title="Rent Properties" />
-            <PropertyListings id="sell" title="Sell Propertis" />
+            <PropertyListings descriptions="Explore featured homes, villas, plots, and high-rises tailored to you." id="buy" title="Find Your Perfect Property" />
+            <PropertyListings descriptions="Explore featured homes, villas, plots, and high-rises tailored to you." id="rent" title="Rent Properties" />
+            <PropertyListings descriptions="Explore featured homes, villas, plots, and high-rises tailored to you." id="sell" title="Sell Propertis" />
             <PremiumProjects />
             <Banner img="/2.png" />
             {/* <TeamMembers /> */}
