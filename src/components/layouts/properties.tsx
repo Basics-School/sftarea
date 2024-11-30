@@ -39,6 +39,7 @@ const properties: Property[] = [
         },
         image: "/placeholder.svg"
     },
+
     {
         type: "VILLA",
         name: "Luxury Hillside Villa",
@@ -118,10 +119,12 @@ const properties: Property[] = [
 
 export default function PropertyListings({ id, title, descriptions }: { id: string, title: string, descriptions: string }) {
     const [activeTab, setActiveTab] = useState("all")
+    const [showAll, setShowAll] = useState(false);
     const filteredProperties = properties.filter(property => {
         if (activeTab === "all") return true;
         return property.type.toLowerCase() === activeTab.toLowerCase();
     });
+    const displayedProperties = showAll ? filteredProperties : filteredProperties.slice(0, 6);
 
     return (
         <div id={id} className="container mx-auto max-w-screen-xl px-4 py-8">
@@ -142,74 +145,6 @@ export default function PropertyListings({ id, title, descriptions }: { id: stri
                     </TabsList>
 
                     <TabsContent value={activeTab} className="mt-6 space-y-6">
-                        <div className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 gap-6">
-                            {filteredProperties.slice(0, 3).map((property, index) => (
-                                <Card key={index} className="overflow-hidden">
-                                    <div className="relative">
-                                        <Image
-                                            src={property.image}
-                                            alt={property.name}
-                                            width={400}
-                                            height={300}
-                                            className="w-full h-[200px] object-cover"
-                                        />
-                                        <div className="absolute top-4 left-4 flex gap-2">
-                                            <span className="bg-emerald-500 text-white text-xs px-2 py-1 rounded">FEATURED</span>
-                                            <span className="bg-blue-500 text-white text-xs px-2 py-1 rounded">FOR SALE</span>
-                                        </div>
-                                        <div className="absolute top-4 right-4 flex gap-2">
-                                            <Button size="icon" variant="secondary">
-                                                <Share2 className="h-4 w-4" />
-                                            </Button>
-                                            <Button size="icon" variant="secondary">
-                                                <Heart className="h-4 w-4" />
-                                            </Button>
-                                            <Button size="icon" variant="secondary">
-                                                <Eye className="h-4 w-4" />
-                                            </Button>
-                                        </div>
-                                        <span className="absolute bottom-4 left-4 bg-white text-xs px-2 py-1 rounded">
-                                            {property.type}
-                                        </span>
-                                    </div>
-
-                                    <div className="p-4 space-y-4">
-                                        <div>
-                                            <h3 className="font-bold">{property.name}</h3>
-                                            <p className="text-sm text-muted-foreground">{property.location}</p>
-                                        </div>
-
-                                        <div className="flex justify-between text-sm">
-                                            <div className="flex gap-4">
-                                                <span>🛏️ {property.beds}</span>
-                                                <span>🚿 {property.baths}</span>
-                                                <span>📏 {property.sqft} SqFT</span>
-                                            </div>
-                                        </div>
-
-                                        <div className="flex items-center justify-between pt-2 border-t">
-                                            <div className="flex items-center gap-2">
-                                                <Image
-                                                    src={property.agent.image}
-                                                    alt={property.agent.name}
-                                                    width={32}
-                                                    height={32}
-                                                    className="rounded-full"
-                                                />
-                                                <span className="text-sm font-medium">{property.agent.name}</span>
-                                            </div>
-                                            <div className="text-right">
-                                                <span className="text-lg font-bold">${property.price.toLocaleString()}</span>
-                                                <span className="text-sm text-muted-foreground">/{property.priceType}</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </Card>
-                            ))}
-                        </div>
-
-                        <Banner img="/1.png" />
-
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                             {filteredProperties.slice(3).map((property, index) => (
                                 <Card key={index} className="overflow-hidden">
@@ -275,12 +210,82 @@ export default function PropertyListings({ id, title, descriptions }: { id: stri
                                 </Card>
                             ))}
                         </div>
+                        <Banner img="/1.png" />
+                        <div className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            {displayedProperties.slice(3,7).map((property, index) => (
+                                <Card key={index} className="overflow-hidden">
+                                    <div className="relative">
+                                        <Image
+                                            src={property.image}
+                                            alt={property.name}
+                                            width={400}
+                                            height={300}
+                                            className="w-full h-[200px] object-cover"
+                                        />
+                                        <div className="absolute top-4 left-4 flex gap-2">
+                                            <span className="bg-emerald-500 text-white text-xs px-2 py-1 rounded">FEATURED</span>
+                                            <span className="bg-blue-500 text-white text-xs px-2 py-1 rounded">FOR SALE</span>
+                                        </div>
+                                        <div className="absolute top-4 right-4 flex gap-2">
+                                            <Button size="icon" variant="secondary">
+                                                <Share2 className="h-4 w-4" />
+                                            </Button>
+                                            <Button size="icon" variant="secondary">
+                                                <Heart className="h-4 w-4" />
+                                            </Button>
+                                            <Button size="icon" variant="secondary">
+                                                <Eye className="h-4 w-4" />
+                                            </Button>
+                                        </div>
+                                        <span className="absolute bottom-4 left-4 bg-white text-xs px-2 py-1 rounded">
+                                            {property.type}
+                                        </span>
+                                    </div>
+
+                                    <div className="p-4 space-y-4">
+                                        <div>
+                                            <h3 className="font-bold">{property.name}</h3>
+                                            <p className="text-sm text-muted-foreground">{property.location}</p>
+                                        </div>
+
+                                        <div className="flex justify-between text-sm">
+                                            <div className="flex gap-4">
+                                                <span>🛏️ {property.beds}</span>
+                                                <span>🚿 {property.baths}</span>
+                                                <span>📏 {property.sqft} SqFT</span>
+                                            </div>
+                                        </div>
+
+                                        <div className="flex items-center justify-between pt-2 border-t">
+                                            <div className="flex items-center gap-2">
+                                                <Image
+                                                    src={property.agent.image}
+                                                    alt={property.agent.name}
+                                                    width={32}
+                                                    height={32}
+                                                    className="rounded-full"
+                                                />
+                                                <span className="text-sm font-medium">{property.agent.name}</span>
+                                            </div>
+                                            <div className="text-right">
+                                                <span className="text-lg font-bold">${property.price.toLocaleString()}</span>
+                                                <span className="text-sm text-muted-foreground">/{property.priceType}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </Card>
+                            ))}
+                        </div>
+
+
+
+
                     </TabsContent>
                 </Tabs>
 
                 <div className="text-center">
-                    <Button className="bg-brand hover:bg-brand text-white">
-                        View All Properties
+                    <Button className="bg-brand hover:bg-brand text-white" onClick={() => setShowAll(!showAll)}>
+                        {showAll ? "Show Less Properties" : "View All Properties"}
                     </Button>
                 </div>
             </div>
