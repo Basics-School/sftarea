@@ -3,7 +3,7 @@ import Header from "@/components/layouts/header";
 import { MainNav } from "@/components/layouts/nav";
 import { siteConfig } from "@/config/site";
 import items from "@/components/layouts/items";
-import Footer from '@/components/layouts/footer';
+import { SiteFooter } from '@/components/layouts/footer';
 
 const SiteLayout = ({
     children,
@@ -15,7 +15,7 @@ const SiteLayout = ({
             <Header />
             <MainNav items={items} />
             {children}
-            <Footer />
+            <SiteFooter />
 
         </>
     )

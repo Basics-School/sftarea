@@ -136,7 +136,7 @@ export default function PropertyListings({ id, title, descriptions, tabs, taglin
 
     return (
         <div id={id} className="container mx-auto max-w-screen-xl px-4 py-4">
-            <div className="space-y-6">
+            <div className="space-y-4">
                 <div className="text-center space-y-4">
                     <h2 className="text-3xl text-brand font-bold">{title}</h2>
                     <p>{descriptions}</p>
@@ -150,7 +150,7 @@ export default function PropertyListings({ id, title, descriptions, tabs, taglin
                         ))}
                     </TabsList>
 
-                    <TabsContent value={activeTab} className="mt-6 space-y-6">
+                    <TabsContent value={activeTab} className="mt-4 space-y-6">
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                             {filteredProperties.slice(3).map((property, index) => (
                                 <Card key={index} className="overflow-hidden">

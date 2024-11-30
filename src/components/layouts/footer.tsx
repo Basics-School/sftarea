@@ -1,165 +1,198 @@
 import Link from "next/link"
-import { Building2, MapPin, Mail, Clock, Phone } from 'lucide-react'
-import Image from "next/image"
- const cities = [
-    "Hyderabad", "Bengaluru", "Delhi", "Mumbai", "Chennai",
-    "Kolkata", "Pune", "Ahmedabad", "Surat", "Jaipur",
-    // "Lucknow", "Kanpur", "Nagpur", "Indore", "Thane",
-    // "Bhopal", "Visakhapatnam", "Amaravati (AP)", "Patna", "Vadodara"
-  ]
-export default function Footer() {
+import { Facebook, Instagram, Linkedin, Youtube, FileText } from 'lucide-react'
+import { Button } from "@/components/ui/button"
+import { Separator } from "@/components/ui/separator"
 
-
+export function SiteFooter() {
   return (
-    <footer className="bg-gray-900 text-gray-200 py-12 mt-10 ">
-      <div className="container max-w-screen-xl mx-auto px-4">
-        {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
-          {/* Flats for Sale */}
-          <div>
-            <h3 className="font-semibold text-lg mb-4">Flats for Sale</h3>
-            <ul className="space-y-2">
-              {cities.map((city, index) => (
-                <li key={`sale-${index}`}>
-                  <Link href={`/flats-for-sale-in-${city.toLowerCase()}`} className="text-sm hover:text-white">
-                    {`${index + 1}. Flats for Sale in ${city}`}
-                  </Link>
-                </li>
+    <footer className="w-full  max-w-screen-xl mx-auto bg-muted/40">
+      {/* Keywords Section */}
+      <div className="container px-4 py-8 md:px-6">
+        <div className="grid grid-cols-2 gap-8">
+          <div className="space-y-4">
+            <h2 className="text-lg font-semibold">Flats for Sale</h2>
+            <div className="flex flex-wrap gap-2">
+              {["Hyderabad", "Bengaluru", "Delhi", "Mumbai", "Chennai", "Kolkata", "Pune", "Ahmedabad", "Surat", "Jaipur"].map((city) => (
+                <Link key={city} href={`/flats-in-${city.toLowerCase()}`} className="text-sm text-muted-foreground hover:text-primary hover:underline">
+                  Flats in {city} |
+                </Link>
               ))}
-            </ul>
+            </div>
           </div>
 
-          {/* Real Estate */}
-          <div>
-            <h3 className="font-semibold text-lg mb-4">Real Estate</h3>
-            <ul className="space-y-2">
-              {cities.map((city, index) => (
-                <li key={`estate-${index}`}>
-                  <Link href={`/real-estate-in-${city.toLowerCase()}`} className="text-sm hover:text-white">
-                    {`${index + 1}. Real Estate in ${city}`}
-                  </Link>
-                </li>
+          <div className="space-y-4">
+            <h2 className="text-lg font-semibold">Real Estate</h2>
+            <div className="flex flex-wrap gap-2">
+              {["Hyderabad", "Bengaluru", "Delhi", "Mumbai", "Chennai", "Kolkata", "Pune", "Ahmedabad", "Surat", "Jaipur"].map((city) => (
+                <Link key={city} href={`/real-estate-in-${city.toLowerCase()}`} className="text-sm text-muted-foreground hover:text-primary hover:underline">
+                  Real Estate in {city}
+                </Link>
               ))}
-            </ul>
+            </div>
           </div>
 
-          {/* New Projects */}
-          <div>
-            <h3 className="font-semibold text-lg mb-4">New Projects</h3>
-            <ul className="space-y-2">
-              {cities.map((city, index) => (
-                <li key={`projects-${index}`}>
-                  <Link href={`/new-projects-in-${city.toLowerCase()}`} className="text-sm hover:text-white">
-                    {`${index + 1}. New Projects in ${city}`}
-                  </Link>
-                </li>
+          <div className="space-y-4">
+            <h2 className="text-lg font-semibold">New Projects</h2>
+            <div className="flex flex-wrap gap-2">
+              {["Hyderabad", "Bengaluru", "Delhi", "Mumbai", "Chennai", "Kolkata", "Pune", "Ahmedabad", "Surat", "Jaipur"].map((city) => (
+                <Link key={city} href={`/projects-in-${city.toLowerCase()}`} className="text-sm text-muted-foreground hover:text-primary hover:underline">
+                  Projects in {city}
+                </Link>
               ))}
-            </ul>
+            </div>
           </div>
 
-          {/* Rental Property */}
-          <div>
-            <h3 className="font-semibold text-lg mb-4">Rental Property</h3>
-            <ul className="space-y-2">
-              {cities.map((city, index) => (
-                <li key={`rental-${index}`}>
-                  <Link href={`/rental-property-in-${city.toLowerCase()}`} className="text-sm hover:text-white">
-                    {`${index + 1}. Rental Property in ${city}`}
-                  </Link>
-                </li>
+          <div className="space-y-4">
+            <h2 className="text-lg font-semibold">Rental Property</h2>
+            <div className="flex flex-wrap gap-2">
+              {["Hyderabad", "Bengaluru", "Delhi", "Mumbai", "Chennai", "Kolkata", "Pune", "Ahmedabad", "Surat", "Jaipur"].map((city) => (
+                <Link key={city} href={`/rental-in-${city.toLowerCase()}`} className="text-sm text-muted-foreground hover:text-primary hover:underline">
+                  Rental in {city}
+                </Link>
               ))}
-            </ul>
+            </div>
+          </div>
+
+          <div className="space-y-4">
+            <h2 className="text-lg font-semibold">Properties in India</h2>
+            <div className="flex flex-wrap gap-2">
+              {[
+                { city: "New Delhi", link: "delhi" },
+                { city: "Mumbai", link: "mumbai" },
+                { city: "Chennai", link: "chennai" },
+                { city: "Pune", link: "pune" },
+                { city: "Noida", link: "noida" },
+                { city: "Gurgaon", link: "gurgaon" },
+                { city: "Bangalore", link: "bangalore" },
+                { city: "Ahmedabad", link: "ahmedabad" }
+              ].map(({ city, link }) => (
+                <Link key={city} href={`/property-in-${link}`} className="text-sm text-muted-foreground hover:text-primary hover:underline">
+                  Property in {city}
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          <div className="space-y-4">
+            <h2 className="text-lg font-semibold">New Projects in India</h2>
+            <div className="flex flex-wrap gap-2">
+              {[
+                { city: "New Delhi", link: "delhi" },
+                { city: "Mumbai", link: "mumbai" },
+                { city: "Chennai", link: "chennai" },
+                { city: "Pune", link: "pune" },
+                { city: "Noida", link: "noida" },
+                { city: "Gurgaon", link: "gurgaon" },
+                { city: "Bangalore", link: "bangalore" },
+                { city: "Ahmedabad", link: "ahmedabad" }
+              ].map(({ city, link }) => (
+                <Link key={city} href={`/new-projects-in-${link}`} className="text-sm text-muted-foreground hover:text-primary hover:underline">
+                  New Projects in {city}
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <Separator />
+
+      {/* Main Footer Section */}
+      <div className="container max-w-screen-xl  text-background bg-slate-800 mx-auto px-4 py-6 md:py-12 md:px-6">
+        <div className="grid gap-8 lg:grid-cols-5">
+          <div className="lg:col-span-2">
+            <Link href="/" className="flex items-center space-x-2">
+              <div className="h-8 w-8 rounded-lg bg-primary" />
+              <span className="font-bold">SFTAREA</span>
+            </Link>
+            <p className="mt-4 text-sm text-muted">
+              Showcasing India&apos;s real estate in cities, seamlessly connecting buyers, sellers, renters and agents through our user-friendly platform.
+            </p>
+            <p className="mt-4 text-sm">
+              PLOT NO.7/A, Aditya Arcade, Suraksha
+            </p>
+          </div>
+          <div>
+            <h3 className="text-lg font-semibold">About SFTAREA</h3>
+            <nav className="mt-4 flex flex-col space-y-2">
+              <Link className="text-sm hover:underline" href="#">Mobile App</Link>
+              <Link className="text-sm hover:underline" href="#">About Us</Link>
+              <Link className="text-sm hover:underline" href="#">Our Solutions</Link>
+              <Link className="text-sm hover:underline" href="#">How it Works</Link>
+            </nav>
+          </div>
+          <div>
+            <h3 className="text-lg font-semibold">Property Search</h3>
+            <nav className="mt-4 flex flex-col space-y-2">
+              <Link className="text-sm hover:underline" href="#">Search Homes for Sale</Link>
+              <Link className="text-sm hover:underline" href="#">Search Homes for Rent</Link>
+              <Link className="text-sm hover:underline" href="#">Search Commercial Prop.</Link>
+              <Link className="text-sm hover:underline" href="#">Search PG / Co-living</Link>
+            </nav>
+          </div>
+          <div>
+            <h3 className="text-lg font-semibold">Resources & Guide</h3>
+            <nav className="mt-4 flex flex-col space-y-2">
+              <Link className="text-sm hover:underline" href="#">Guides & FAQs</Link>
+              <Link className="text-sm hover:underline" href="#">First Time Buyers</Link>
+              <Link className="text-sm hover:underline" href="#">RERA Essentials</Link>
+              <Link className="text-sm hover:underline" href="#">Real Estate Hub</Link>
+            </nav>
           </div>
         </div>
 
-        {/* Contact Information */}
-        <div className="border-t border-gray-700 pt-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="space-y-4">
-              <Image
-                src="/placeholder.svg"
-                alt="SFTAREA Logo"
-                width={150}
-                height={50}
-                className="mb-4"
+        <div className="mt-8 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+          <div className="flex space-x-6">
+            <Link href="#" className="text-muted hover:text-primary">
+              <Linkedin className="h-5 w-5" />
+              <span className="sr-only">LinkedIn</span>
+            </Link>
+            <Link href="#" className="text-muted hover:text-primary">
+              <Facebook className="h-5 w-5" />
+              <span className="sr-only">Facebook</span>
+            </Link>
+            <Link href="#" className="text-muted hover:text-primary">
+              <Instagram className="h-5 w-5" />
+              <span className="sr-only">Instagram</span>
+            </Link>
+            <Link href="#" className="text-muted hover:text-primary">
+              <Youtube className="h-5 w-5" />
+              <span className="sr-only">YouTube</span>
+            </Link>
+            <Link href="#" className="text-muted hover:text-primary">
+              <FileText className="h-5 w-5" />
+              <span className="sr-only">Blog</span>
+            </Link>
+          </div>
+          <div className="flex space-x-4">
+            <Link href="#">
+              <img
+                src="/google-play.png"
+                alt="Get it on Google Play"
+                className="h-10"
               />
-              <div className="flex items-center gap-2">
-                <MapPin className="h-4 w-4" />
-                <span className="text-sm">PLOT NO.71, Aditya Arcade, Sundarayya Colony, Zirrakadpally, Hyderabad 500066</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Phone className="h-4 w-4" />
-                <span className="text-sm">+1800 41 99099</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Mail className="h-4 w-4" />
-                <span className="text-sm">sftnproperty@gmail.com</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Clock className="h-4 w-4" />
-                <span className="text-sm">9:30 AM to 6:30 PM (Mon-Sun)</span>
-              </div>
-            </div>
-
-            {/* Download Apps */}
-            <div>
-              <h3 className="font-semibold text-lg mb-4">Download Our App</h3>
-              <div className="flex flex-col gap-4">
-                <Link href="#" className="w-40">
-                  <Image
-                    src="/placeholder.svg"
-                    alt="Download on Play Store"
-                    width={160}
-                    height={48}
-                  />
-                </Link>
-                <Link href="#" className="w-40">
-                  <Image
-                    src="/placeholder.svg"
-                    alt="Download on App Store"
-                    width={160}
-                    height={48}
-                  />
-                </Link>
-              </div>
-            </div>
-
-            {/* Quick Links */}
-            <div>
-              <h3 className="font-semibold text-lg mb-4">Quick Links</h3>
-              <ul className="space-y-2">
-                <li><Link href="#" className="text-sm hover:text-white">About Us</Link></li>
-                <li><Link href="#" className="text-sm hover:text-white">Contact Us</Link></li>
-                <li><Link href="#" className="text-sm hover:text-white">Privacy Policy</Link></li>
-                <li><Link href="#" className="text-sm hover:text-white">Terms & Conditions</Link></li>
-              </ul>
-            </div>
-
-            {/* Social Links */}
-            <div>
-              <h3 className="font-semibold text-lg mb-4">Follow Us</h3>
-              <div className="flex gap-4">
-                <Link href="#" className="hover:text-white">
-                  <span className="sr-only">Facebook</span>
-                  <Building2 className="h-6 w-6" />
-                </Link>
-                <Link href="#" className="hover:text-white">
-                  <span className="sr-only">Twitter</span>
-                  <Building2 className="h-6 w-6" />
-                </Link>
-                <Link href="#" className="hover:text-white">
-                  <span className="sr-only">Instagram</span>
-                  <Building2 className="h-6 w-6" />
-                </Link>
-              </div>
-            </div>
+            </Link>
+            <Link href="#">
+              <img
+                src="/app-store.png"
+                alt="Download on the App Store"
+                className="h-10"
+              />
+            </Link>
           </div>
         </div>
 
-        {/* Copyright */}
-        <div className="border-t border-gray-700 mt-8 pt-8 text-center">
-          <p className="text-sm">
-            &copy; {new Date().getFullYear()} SFTAREA. All rights reserved.
+        <Separator className="my-8" />
+
+        <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+          <div className="flex flex-wrap gap-4 text-sm text-muted">
+            <Link href="#" className="hover:underline">Privacy Policy</Link>
+            <Link href="#" className="hover:underline">Terms & Conditions</Link>
+            <Link href="#" className="hover:underline">Safety & Security</Link>
+            <Link href="#" className="hover:underline">Sitemap</Link>
+          </div>
+          <p className="text-sm text-muted">
+            © 2024 SFTAREA. All rights reserved.
           </p>
         </div>
       </div>
