@@ -134,6 +134,7 @@ export default function PropertyListings({ id, title, descriptions }: { id: stri
 
                 <Tabs defaultValue="all" className="w-full " onValueChange={setActiveTab}>
                     <TabsList className="flex justify-center bg-transparent">
+                        <TabsTrigger value="all">All</TabsTrigger>
                         <TabsTrigger value="apartment">Apartments & Flats</TabsTrigger>
                         <TabsTrigger value="villa">Homes & Villas</TabsTrigger>
                         <TabsTrigger value="land">Land & Plots</TabsTrigger>
