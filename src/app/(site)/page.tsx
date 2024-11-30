@@ -6,6 +6,7 @@ import FiindIdealHome from "@/components/layouts/fiind-ideal-home";
 import Footer from "@/components/layouts/footer";
 import PremiumProjects from "@/components/layouts/projects";
 import PropertyListings from "@/components/layouts/properties";
+import RealEstatePlatform from "@/components/layouts/real-estate-platform";
 import TestimonialCarousel from "@/components/layouts/testimonial";
 import VideoBanner from "@/components/layouts/video-banner";
 
@@ -14,7 +15,7 @@ import Link from "next/link";
 export default function Home() {
     return (
         <main className="relative">
-            <section className="flex relative w-full flex-col h-[35vh] bg-[url('/hero.png')] bg-cover  " >
+            <section className="flex relative w-full flex-col h-[55vh] bg-[url('/hero.png')] bg-cover  " >
                 <div className="flex-col justify-center bg-gradient-to-b flex from-black via-transparent  to-transparent h-full">
                     <div className="max-w-screen-xl w-full mx-auto   ">
                         <div className=" space-y-4 text-background max-w-screen-sm   w-full p-4  md:px-10 ">
@@ -34,13 +35,15 @@ export default function Home() {
             </section>
             <VideoBanner />
             <FiindIdealHome />
-            <CityFinder />
-            <Banner img="/1.png" />
-            <PropertyListings/>
+            {/* <CityFinder /> */}
+            {/* <Banner img="/1.png" /> */}
+            <PropertyListings id="buy" title="Buy Poperties" />
+            <PropertyListings id="rent" title="Rent Properties"  />
+            <PropertyListings id ="sell" title="Sell Propertis" />
             <PremiumProjects />
             <Banner img="/2.png" />
-
-            <TeamMembers />
+            {/* <TeamMembers /> */}
+            <RealEstatePlatform />
             <TestimonialCarousel />
             <Banner img="/3.png" />
 
@@ -82,7 +85,7 @@ const cardsData = [
 
 const PropertyCards = () => {
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2  relative -z-10 justify-between  lg:grid-cols-4 gap-6 p-6">
+        <div className="grid grid-cols-1 md:grid-cols-2  relative -z-10 justify-between  lg:grid-cols-4 gap-6 py-6 ">
             {cardsData.map((card, index) => (
                 <Link href={card.actionLink}
                     key={index}
