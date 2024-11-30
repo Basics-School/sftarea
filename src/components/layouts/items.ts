@@ -199,7 +199,7 @@ const items = {
     ],
   },
 
-  loansAndMortgages: {
+  loansHub: {
     loanTypes: [
       { text: "Home Loans", href: "#" },
       { text: "Refinancing Options", href: "#" },

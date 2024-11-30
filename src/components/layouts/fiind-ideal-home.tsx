@@ -36,7 +36,7 @@ const FiindIdealHome = () => {
                 Find Your Ideal Home Anywhere
             </h1>
             <div className="relative">
-                <button
+                {/* <button
                     className={cn(
                         "group absolute right-0 top-0 z-10 flex h-full w-1/12 items-center justify-end  from-transparent via-background to-background sm:justify-start md:justify-center lg:-mr-6 lg:w-4/12",
                         scrollXProgress.get() < 0.9 ? "flex" : "hidden",
@@ -46,8 +46,8 @@ const FiindIdealHome = () => {
                         onClick={handleScrollRight}
                         className="size-8 cursor-pointer rounded-full bg-muted p-1 shadow-md transition-all duration-200 group-hover:shadow-xl dark:text-white sm:size-10 sm:p-2"
                     />
-                </button>
-                <button
+                </button> */}
+                {/* <button
                     className={cn(
                         "group absolute left-0 top-0 z-10 h-full w-1/12 items-center justify-start  from-background via-background to-transparent sm:justify-end md:justify-center lg:-ml-6 lg:w-4/12",
                         scrollXProgress.get() > 0.1 ? "flex" : "hidden",
@@ -57,7 +57,7 @@ const FiindIdealHome = () => {
                         onClick={handleScrollLeft}
                         className="float-end size-8 cursor-pointer rounded-full bg-muted p-1 shadow-md transition-all duration-200 group-hover:shadow-xl dark:text-white sm:size-10 sm:p-2"
                     />
-                </button>
+                </button> */}
                 <div
                     className={cn(
                         "relative z-0 h-full w-full items-center justify-between text-xl font-light en:font-monasans dark:text-black"
@@ -65,17 +65,17 @@ const FiindIdealHome = () => {
                 >
                     <ul
                         ref={carouselRef}
-                        className="mx-auto scroll-smooth flex h-full w-full gap-6 overflow-x-scroll py-6 text-base scrollbar-none lg:max-w-screen-xl"
+                        className="mx-auto scroll-smooth flex h-full w-full gap-6  justify-evenly py-6 text-base scrollbar-none lg:max-w-screen-xl"
                     >
                         <Card />
                         <Card />
                         <Card />
                         <Card />
+                        {/* <Card />
                         <Card />
                         <Card />
                         <Card />
-                        <Card />
-                        <Card />
+                        <Card /> */}
                         {/* <CategoryCard />
                         <CategoryCard />
                         <CategoryCard />
@@ -98,7 +98,7 @@ export default FiindIdealHome;
 
 const Card = () => {
     return (
-        <div className="bg-[url('/interior.jpg')] group  text-white font-bold  bg-cover h-52 overflow-clip aspect-[13/9] rounded-xl ">
+        <div className="bg-[url('/interior.jpg')] group  text-white font-bold  bg-cover h-[184px] overflow-clip aspect-[296/184] rounded-md ">
             <div className="h-full flex-col justify-end flex bg-gradient-to-t from-black p-4">
                 <h1>23797</h1>
                 <p>Owner Properties</p>

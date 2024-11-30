@@ -95,7 +95,7 @@ export const seconderyConfig = {
         },
         {
             id: generateId(),
-            name: "Loans & Mortgages",
+            name: "Loan Hub",
             description: "Loans and mortgage options for your needs.",
             image: "/images/categories/loans-mortgage-one.webp",
             subcategories: [

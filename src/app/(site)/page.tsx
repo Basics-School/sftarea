@@ -15,7 +15,7 @@ import Link from "next/link";
 export default function Home() {
     return (
         <main className="relative">
-            <section className="flex relative w-full flex-col h-[55vh] bg-[url('/hero.png')] bg-cover  " >
+            <section className="flex relative w-full flex-col h-[50vh] bg-[url('/hero.png')] bg-cover  " >
                 <div className="flex-col justify-center bg-gradient-to-b flex from-black via-transparent  to-transparent h-full">
                     <div className="max-w-screen-xl w-full mx-auto   ">
                         <div className=" space-y-4 text-background max-w-screen-sm   w-full p-4  md:px-10 ">
@@ -30,7 +30,7 @@ export default function Home() {
                 </div>
                 <SearchForm />
             </section>
-            <section className="py-7 mt-20  flex items-center flex-col max-w-screen-xl mx-auto ">
+            <section className="py-7 mt-10  flex items-center flex-col max-w-screen-xl mx-auto ">
                 <PropertyCards />
             </section>
             <VideoBanner />
