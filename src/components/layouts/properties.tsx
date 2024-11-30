@@ -117,8 +117,16 @@ const properties: Property[] = [
     }
 ]
 
-export default function PropertyListings({ id, title, descriptions }: { id: string, title: string, descriptions: string }) {
-    const [activeTab, setActiveTab] = useState("all")
+interface PropertyListingsProps {
+    id: string;
+    title: string;
+    descriptions?: string;
+    tabs: { value: string, label: string }[];
+    tagline?: string;
+}
+
+export default function PropertyListings({ id, title, descriptions, tabs, tagline }: PropertyListingsProps) {
+    const [activeTab, setActiveTab] = useState("all");
     const [showAll, setShowAll] = useState(false);
     const filteredProperties = properties.filter(property => {
         if (activeTab === "all") return true;
@@ -127,21 +135,19 @@ export default function PropertyListings({ id, title, descriptions }: { id: stri
     const displayedProperties = showAll ? filteredProperties : filteredProperties.slice(0, 6);
 
     return (
-        <div id={id} className="container mx-auto max-w-screen-xl px-4 py-8">
+        <div id={id} className="container mx-auto max-w-screen-xl px-4 py-4">
             <div className="space-y-6">
                 <div className="text-center space-y-4">
-                    <h2 className="text-3xl text-brand font-bold">{title} </h2>
+                    <h2 className="text-3xl text-brand font-bold">{title}</h2>
                     <p>{descriptions}</p>
-                    {/* <h3 className="text-3xl font-bold">Recommended For You</h3> */}
+                    {tagline && <p className="text-lg">{tagline}</p>}
                 </div>
 
-                <Tabs defaultValue="all" className="w-full " onValueChange={setActiveTab}>
+                <Tabs defaultValue="all" className="w-full" onValueChange={setActiveTab}>
                     <TabsList className="flex justify-center bg-transparent">
-                        <TabsTrigger value="all">All</TabsTrigger>
-                        <TabsTrigger value="apartment">Apartments & Flats</TabsTrigger>
-                        <TabsTrigger value="villa">Homes & Villas</TabsTrigger>
-                        <TabsTrigger value="land">Land & Plots</TabsTrigger>
-                        <TabsTrigger value="highrise">High-Rises</TabsTrigger>
+                        {tabs.map(tab => (
+                            <TabsTrigger key={tab.value} value={tab.value}>{tab.label}</TabsTrigger>
+                        ))}
                     </TabsList>
 
                     <TabsContent value={activeTab} className="mt-6 space-y-6">
@@ -276,10 +282,6 @@ export default function PropertyListings({ id, title, descriptions }: { id: stri
                                 </Card>
                             ))}
                         </div>
-
-
-
-
                     </TabsContent>
                 </Tabs>
 
@@ -290,5 +292,5 @@ export default function PropertyListings({ id, title, descriptions }: { id: stri
                 </div>
             </div>
         </div>
-    )
+    );
 }

@@ -43,9 +43,57 @@ export default function Home() {
             <FiindIdealHome />
             {/* <CityFinder /> */}
             {/* <Banner img="/1.png" /> */}
-            <PropertyListings descriptions="Explore featured homes, villas, plots, and high-rises tailored to you." id="buy" title="Find Your Perfect Property" />
-            <PropertyListings descriptions="Explore featured homes, villas, plots, and high-rises tailored to you." id="rent" title="Rent Properties" />
-            <PropertyListings descriptions="Explore featured homes, villas, plots, and high-rises tailored to you." id="sell" title="Sell Propertis" />
+            <PropertyListings
+                id="buy"
+                title="Find Your Perfect Property"
+                // descriptions="Explore featured homes, villas, plots, and high-rises tailored to you."
+                tabs={[
+                    { value: "all", label: "All" },
+                    { value: "apartment", label: "Apartments & Flats" },
+                    { value: "villa", label: "Homes & Villas" },
+                    { value: "land", label: "Land & Plots" },
+                    { value: "highrise", label: "High-Rises" }
+                ]}
+            />
+            <PropertyListings
+                id="rent"
+                title="Explore Your Perfect Rental"
+                // descriptions="Flexible spaces for living and working, tailored to your needs."
+                tabs={[
+                    { value: "all", label: "All" },
+
+                    { value: "residential", label: "Residential" },
+                    { value: "commercial", label: "Commercial" },
+                    { value: "shortterm", label: "Short-Term" },
+                    { value: "affordable", label: "Affordable" }
+                ]}
+            />
+            <PropertyListings
+                id="sell"
+                title="Discover Commercial Spaces"
+                // descriptions="Explore offices, retail spaces, and warehouses designed for your growth."
+                tabs={[
+                    { value: "all", label: "All" },
+
+                    { value: "buyspaces", label: "Buy Spaces" },
+                    { value: "leasespaces", label: "Lease Spaces" },
+                    { value: "industrialzones", label: "Industrial Zones" },
+                    { value: "newdevelopments", label: "New Developments" }
+                ]}
+            />
+            <PropertyListings
+                id="projects"
+                title="Unlock Signature Projects"
+                // descriptions="Explore curated developments redefining real estate excellence."
+                tabs={[
+                    { value: "all", label: "All" },
+
+                    { value: "topdemand", label: "Top Demand" },
+                    { value: "prelaunch", label: "Pre-Launch" },
+                    { value: "ongoingprojects", label: "Ongoing Projects" },
+                    { value: "pricedrop", label: "Price Drop" }
+                ]}
+            />
             <PremiumProjects />
             <Banner img="/2.png" />
             {/* <TeamMembers /> */}
