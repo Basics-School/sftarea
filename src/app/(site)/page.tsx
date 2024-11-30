@@ -103,7 +103,7 @@ const PropertyCards = () => {
                     </div>
                     <div
                         // href={card.actionLink}
-                        className="inline-flex bg-white text-blue-600 font-bold py-2 px-4 rounded gap-2 group-hover:gap-4 transition-all max-w-min whitespace-nowrap hover:bg-gray-200 grouphover:outline outline-black outline-1 "
+                        className="inline-flex bg-white text-blue-600 font-bold py-1 px-4 rounded gap-2 group-hover:gap-4 transition-all max-w-min whitespace-nowrap text-sm items-center hover:bg-gray-200 grouphover:outline outline-black outline-1 "
                     >
                         {card.actionText} <ArrowRight />
                     </div>
