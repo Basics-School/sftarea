@@ -129,10 +129,17 @@ export function SiteFooter() {
 
                 <div className="flex flex-col gap-4 md:flex-row md:items-center font-semibold md:justify-between">
                     <div className="flex flex-wrap gap-4 text-sm text-muted">
-                        <Link href="#" className="hover:underline">Privacy Policy</Link>
-                        <Link href="#" className="hover:underline">Terms & Conditions</Link>
-                        <Link href="#" className="hover:underline">Safety & Security</Link>
-                        <Link href="#" className="hover:underline">Sitemap</Link>
+                        <Link href="#" className="hover:underline">Privacy |</Link>
+                        <Link href="#" className="hover:underline">Terms |</Link>
+                        <Link href="#" className="hover:underline">Security |</Link>
+                        <Link href="#" className="hover:underline">Support |</Link>
+                        <Link href="#" className="hover:underline">Sitemap |</Link>
+                        <Link href="#" className="hover:underline">Cookies |</Link>
+                        <Link href="#" className="hover:underline">Legal |</Link>
+                        <Link href="#" className="hover:underline">Unsubscribe |</Link>
+                        <Link href="#" className="hover:underline">Reviews |</Link>
+                        <Link href="#" className="hover:underline">Media |</Link>
+                        <Link href="#" className="hover:underline">Contact</Link>
                     </div>
                     <p className="text-sm text-muted">
                         © 2024 SFTAREA. All rights reserved.
