@@ -100,7 +100,7 @@ export default function Home() {
             {/* <TeamMembers /> */}
             <RealEstatePlatform />
             <RealEstateKnowledge />
-            <Banner img="/3.png" />
+            {/* <Banner img="/3.png" /> */}
 
         </main >
     );
