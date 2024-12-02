@@ -120,13 +120,30 @@ export function SiteFooter() {
                     </div>
                 </div>
 
-                <div className="mt-8 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+                <div className="mt-2 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
                     <SocialMedia />
                     <DownloadButtons />
                 </div>
 
                 <Separator className="my-4" />
 
+
+                <div className="flex flex-col gap-4 md:flex-row md:items-center font-semibold md:justify-between">
+                    <div className="flex flex-wrap gap-4 text-sm text-muted">
+                        <Link href="#" className="hover:underline">Privacy |</Link>
+                        <Link href="#" className="hover:underline">Terms |</Link>
+                        <Link href="#" className="hover:underline">Security |</Link>
+                        <Link href="#" className="hover:underline">Support |</Link>
+                        <Link href="#" className="hover:underline">Sitemap |</Link>
+                        <Link href="#" className="hover:underline">Cookies |</Link>
+                        <Link href="#" className="hover:underline">Legal |</Link>
+                        <Link href="#" className="hover:underline">Unsubscribe |</Link>
+                        <Link href="#" className="hover:underline">Reviews |</Link>
+                        <Link href="#" className="hover:underline">Media |</Link>
+                        <Link href="#" className="hover:underline">Contact</Link>
+                    </div>
+
+                </div>
                 <div className="w-full bg-zinc-900 text-white py-3">
                     <div className="container mx-auto px-4">
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -164,24 +181,9 @@ export function SiteFooter() {
                         </div>
                     </div>
                 </div>
-                <div className="flex flex-col gap-4 md:flex-row md:items-center font-semibold md:justify-between">
-                    <div className="flex flex-wrap gap-4 text-sm text-muted">
-                        <Link href="#" className="hover:underline">Privacy |</Link>
-                        <Link href="#" className="hover:underline">Terms |</Link>
-                        <Link href="#" className="hover:underline">Security |</Link>
-                        <Link href="#" className="hover:underline">Support |</Link>
-                        <Link href="#" className="hover:underline">Sitemap |</Link>
-                        <Link href="#" className="hover:underline">Cookies |</Link>
-                        <Link href="#" className="hover:underline">Legal |</Link>
-                        <Link href="#" className="hover:underline">Unsubscribe |</Link>
-                        <Link href="#" className="hover:underline">Reviews |</Link>
-                        <Link href="#" className="hover:underline">Media |</Link>
-                        <Link href="#" className="hover:underline">Contact</Link>
-                    </div>
-                    <p className="text-sm text-muted">
-                        © 2024 SFTAREA. All rights reserved.
-                    </p>
-                </div>
+                <p className="text-sm text-muted">
+                    © 2024 SFTAREA. All rights reserved.
+                </p>
             </div>
         </footer>
     )
