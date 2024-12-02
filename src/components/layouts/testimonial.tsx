@@ -22,33 +22,60 @@ interface Testimonial {
 }
 
 const testimonials: Testimonial[] = [
-  {
-    rating: 5,
-    text: "Thanks to the expertise and guidance of this real estate team, I am now the proud owner of my dream home. They listened to my preferences, answered all my questions, and made the entire home buying process a positive experience.",
-    author: {
-      name: "Daniel Miller",
-      role: "Happy New Homeowner",
-      image: "/placeholder.svg",
+    {
+        rating: 5,
+        text: "Finding my dream home in Hyderabad was so easy with your site. Great options and hassle-free service!",
+        author: {
+            name: "Ramesh Varma",
+            role: "Hyderabad, Telangana",
+            image: "/placeholder.svg",
+        },
     },
-  },
-  {
-    rating: 5,
-    text: "From the initial consultation to closing day, the real estate team went above and beyond to ensure I found the perfect home. Their dedication and professionalism made the entire process seamless. Thank you!",
-    author: {
-      name: "Jennifer Lee",
-      role: "Happy Home Seeker",
-      image: "/placeholder.svg",
+    {
+        rating: 5,
+        text: "I posted my property for rent, and it got booked within a week. Thank you for making it so simple!",
+        author: {
+            name: "Lakshmi Devi",
+            role: "Vijayawada, Andhra Pradesh",
+            image: "/placeholder.svg",
+        },
     },
-  },
-  {
-    rating: 5,
-    text: "I am impressed by the expertise and commitment demonstrated by this real estate team. Their insights into market trends helped me make informed investment decisions, and I couldn't be happier with the results.",
-    author: {
-      name: "Robert Evans",
-      role: "Property Investor",
-      image: "/placeholder.svg",
+    {
+        rating: 5,
+        text: "Your site gave me so many great investment ideas. I'm confident I made the right choice.",
+        author: {
+            name: "Arun Kumar",
+            role: "Chennai, Tamil Nadu",
+            image: "/placeholder.svg",
+        },
     },
-  },
+    {
+        rating: 5,
+        text: "I found the perfect home for my family in Bangalore. Everything was clear and easy to understand.",
+        author: {
+            name: "Kavitha Reddy",
+            role: "Bangalore, Karnataka",
+            image: "/placeholder.svg",
+        },
+    },
+    {
+        rating: 5,
+        text: "Searching for commercial property in Mumbai was effortless with your site. Great job!",
+        author: {
+            name: "Suresh Nair",
+            role: "Mumbai, Maharashtra",
+            image: "/placeholder.svg",
+        },
+    },
+    {
+        rating: 5,
+        text: "Your NRI guide helped me buy a property in India without any confusion. Thank you!",
+        author: {
+            name: "Anitha Rao",
+            role: "Hyderabad, Telangana",
+            image: "/placeholder.svg",
+        },
+    }
 ]
 
 function StarRating({ rating }: { rating: number }) {
@@ -70,14 +97,14 @@ export default function TestimonialCarousel() {
   return (
     <section className="py-12 px-4 md:px-6">
       <div className="max-w-7xl mx-auto">
-        <div className="mb-10">
+        {/* <div className="mb-10">
           <p className="text-red-500 font-medium mb-2">TOP PROPERTIES</p>
           <h2 className="text-4xl font-bold mb-4">What's People Say's</h2>
           <p className="text-gray-600">
             Our seasoned team excels in real estate with years of successful market navigation, offering
             informed decisions and optimal results.
           </p>
-        </div>
+        </div> */}
 
         <Carousel
           opts={{
@@ -86,10 +113,10 @@ export default function TestimonialCarousel() {
           }}
           className="w-full"
         >
-          <CarouselContent className="-ml-2 md:-ml-4">
+          <CarouselContent className="-ml-2 md:-ml-4 ">
             {testimonials.map((testimonial, index) => (
-              <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
-                <Card className="p-6">
+              <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3 h-full">
+                <Card className="p-6 h-full">
                   <CardContent className="space-y-4 p-0">
                     <StarRating rating={testimonial.rating} />
                     <p className="text-gray-700">{testimonial.text}</p>

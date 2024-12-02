@@ -4,6 +4,7 @@ import { NeighborhoodsSection } from "@/components/layouts/neighborhoods-section
 import { AgenciesSection } from "@/components/layouts/agencies-section"
 import { AgentsSection } from "@/components/layouts/agents-section"
 import { AppDownloadSection } from "@/components/layouts/app-download-section"
+import HomeServices from "./home-services"
 
 export default function RealEstatePlatform() {
     return (
@@ -11,8 +12,9 @@ export default function RealEstatePlatform() {
             <CitiesSection />
             <FeaturesSection />
             <NeighborhoodsSection />
-            <AgenciesSection />
+            <HomeServices />
             <AgentsSection />
+            <AgenciesSection />
             <AppDownloadSection />
         </div>
     )

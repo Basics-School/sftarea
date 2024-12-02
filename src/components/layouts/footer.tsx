@@ -13,7 +13,7 @@ export function SiteFooter() {
                 <div className="grid grid-cols-2 gap-8">
                     <div className="space-y-4">
                         <h2 className="text-sm font-semibold">Flats for Sale</h2>
-                        <div className="flex flex-wrap gap-2">
+                        <div className="flex flex-wrap gap-2 font-semibold ">
                             {["Hyderabad", "Bengaluru", "Delhi", "Mumbai", "Chennai", "Kolkata", "Pune", "Ahmedabad", "Surat", "Jaipur"].map((city) => (
                                 <Link key={city} href={`/flats-in-${city.toLowerCase()}`} className="text-sm text-muted-foreground hover:text-primary hover:underline">
                                     Flats in {city} |
@@ -24,7 +24,7 @@ export function SiteFooter() {
 
                     <div className="space-y-4">
                         <h2 className="text-sm font-semibold">Real Estate</h2>
-                        <div className="flex flex-wrap gap-2">
+                        <div className="flex flex-wrap gap-2 font-semibold">
                             {["Hyderabad", "Bengaluru", "Delhi", "Mumbai", "Chennai", "Kolkata", "Pune", "Ahmedabad", "Surat", "Jaipur"].map((city) => (
                                 <Link key={city} href={`/real-estate-in-${city.toLowerCase()}`} className="text-sm text-muted-foreground hover:text-primary hover:underline">
                                     Real Estate in {city} |
@@ -35,7 +35,7 @@ export function SiteFooter() {
 
                     <div className="space-y-4">
                         <h2 className="text-sm font-semibold">New Projects</h2>
-                        <div className="flex flex-wrap gap-2">
+                        <div className="flex flex-wrap gap-2 font-semibold">
                             {["Hyderabad", "Bengaluru", "Delhi", "Mumbai", "Chennai", "Kolkata", "Pune", "Ahmedabad", "Surat", "Jaipur"].map((city) => (
                                 <Link key={city} href={`/projects-in-${city.toLowerCase()}`} className="text-sm text-muted-foreground hover:text-primary hover:underline">
                                     Projects in {city} |
@@ -46,7 +46,7 @@ export function SiteFooter() {
 
                     <div className="space-y-4">
                         <h2 className="text-sm font-semibold">Rental Property</h2>
-                        <div className="flex flex-wrap gap-2">
+                        <div className="flex flex-wrap gap-2 font-semibold">
                             {["Hyderabad", "Bengaluru", "Delhi", "Mumbai", "Chennai", "Kolkata", "Pune", "Ahmedabad", "Surat", "Jaipur"].map((city) => (
                                 <Link key={city} href={`/rental-in-${city.toLowerCase()}`} className="text-sm text-muted-foreground hover:text-primary hover:underline">
                                     Rental in {city} |
@@ -76,7 +76,7 @@ export function SiteFooter() {
                     </div>
                     <div className="">
                         <h3 className="text-sm font-semibold">About SFTAREA</h3>
-                        <nav className="mt-4 flex flex-col space-y-2">
+                        <nav className="mt-4 flex flex-col space-y-2 font-bold">
                             <Link className="text-sm hover:underline" href="#">About Us</Link>
                             <Link className="text-sm hover:underline" href="#">How it Works</Link>
                             <Link className="text-sm hover:underline" href="#">Real Estate Market</Link>
@@ -87,7 +87,7 @@ export function SiteFooter() {
                     </div>
                     <div className="">
                         <h3 className="text-sm font-semibold">Property Search</h3>
-                        <nav className="mt-4 flex flex-col space-y-2">
+                        <nav className="mt-4 flex flex-col space-y-2 font-bold">
                             <Link className="text-sm hover:underline" href="#">Search Homes for Sale</Link>
                             <Link className="text-sm hover:underline" href="#">Search Homes for Rent</Link>
                             <Link className="text-sm hover:underline" href="#">Search Commercial Properties</Link>
@@ -98,7 +98,7 @@ export function SiteFooter() {
                     </div>
                     <div className="">
                         <h3 className="text-sm font-semibold">Services</h3>
-                        <nav className="mt-4 flex flex-col space-y-2">
+                        <nav className="mt-4 flex flex-col space-y-2 font-bold">
                             <Link className="text-sm hover:underline" href="#">Reman Services</Link>
                             <Link className="text-sm hover:underline" href="#">Loans & Mortgages</Link>
                             <Link className="text-sm hover:underline" href="#">Interior Designers</Link>
@@ -109,7 +109,7 @@ export function SiteFooter() {
                     </div>
                     <div className="">
                         <h3 className="text-sm font-semibold">Resources & Guide</h3>
-                        <nav className="mt-4 flex flex-col space-y-2">
+                        <nav className="mt-4 flex flex-col space-y-2 font-bold">
                             <Link className="text-sm hover:underline" href="#">Guides & FAQs</Link>
                             <Link className="text-sm hover:underline" href="#">First Time Buyers</Link>
                             <Link className="text-sm hover:underline" href="#">RERA Essentials</Link>
@@ -127,7 +127,7 @@ export function SiteFooter() {
 
                 <Separator className="my-4" />
 
-                <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+                <div className="flex flex-col gap-4 md:flex-row md:items-center font-semibold md:justify-between">
                     <div className="flex flex-wrap gap-4 text-sm text-muted">
                         <Link href="#" className="hover:underline">Privacy Policy</Link>
                         <Link href="#" className="hover:underline">Terms & Conditions</Link>

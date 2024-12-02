@@ -13,6 +13,7 @@ import { Montserrat } from 'next/font/google'
 import { ArrowRight, MicIcon, Search, SearchIcon, Settings, Settings2 } from "lucide-react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+import RealEstateKnowledge from "@/components/layouts/real-estate-knowledge";
 
 
 const montserrat = Montserrat({ subsets: ['latin'] })
@@ -98,7 +99,7 @@ export default function Home() {
             <Banner img="/2.png" />
             {/* <TeamMembers /> */}
             <RealEstatePlatform />
-            <TestimonialCarousel />
+            <RealEstateKnowledge />
             <Banner img="/3.png" />
 
         </main >
