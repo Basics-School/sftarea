@@ -33,9 +33,7 @@ function TwitterIcon(props: React.SVGProps<SVGSVGElement>) {
     )
 }
 
-interface IconProps extends React.SVGProps<SVGSVGElement> {}
-
-function LinkedInIcon(props: IconProps) {
+function LinkedInIcon(props: React.SVGProps<SVGSVGElement>) {
         return (
                 <svg
                         width="20"
