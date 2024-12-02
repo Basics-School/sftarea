@@ -19,9 +19,9 @@ export default function RealEstateKnowledge() {
 
             </header>
 
-            <div className="flex items-center">
+            <div className="flex items-center gap-8">
                 <div
-                    className="relative m-2 flex-1 h-60 bg-cover bg-center"
+                    className="relative  flex-1 h-60 bg-cover bg-center"
                     style={{ backgroundImage: "url('/placeholder.svg')" }}
                     aria-label="Real Estate 1"
                 >
@@ -31,7 +31,7 @@ export default function RealEstateKnowledge() {
                     </div>
                 </div>
                 <div
-                    className="relative m-2 h-60 aspect-square bg-cover bg-center"
+                    className="relative  h-60 aspect-square bg-cover bg-center"
                     style={{ backgroundImage: "url('/placeholder.svg')" }}
                     aria-label="Real Estate 2"
                 >
@@ -41,7 +41,7 @@ export default function RealEstateKnowledge() {
                     </div>
                 </div>
                 <div
-                    className="relative m-2 h-60 aspect-square bg-cover bg-center"
+                    className="relative  h-60 aspect-square bg-cover bg-center"
                     style={{ backgroundImage: "url('/placeholder.svg')" }}
                     aria-label="Real Estate 3"
                 >
@@ -55,9 +55,9 @@ export default function RealEstateKnowledge() {
             <TestimonialCarousel />
 
 
-            <div className="flex items-center">
+            <div className="flex items-center gap-8">
                 <div
-                    className="relative m-2 flex-1 h-60 bg-cover bg-center"
+                    className="relative  flex-1 h-60 bg-cover bg-center"
                     style={{ backgroundImage: "url('/placeholder.svg')" }}
                     aria-label="Real Estate 1"
                 >
@@ -67,7 +67,7 @@ export default function RealEstateKnowledge() {
                     </div>
                 </div>
                 <div
-                    className="relative m-2 h-60 aspect-square bg-cover bg-center"
+                    className="relative  h-60 aspect-square bg-cover bg-center"
                     style={{ backgroundImage: "url('/placeholder.svg')" }}
                     aria-label="Real Estate 2"
                 >
@@ -77,7 +77,7 @@ export default function RealEstateKnowledge() {
                     </div>
                 </div>
                 <div
-                    className="relative m-2 h-60 aspect-square bg-cover bg-center"
+                    className="relative  h-60 aspect-square bg-cover bg-center"
                     style={{ backgroundImage: "url('/placeholder.svg')" }}
                     aria-label="Real Estate 3"
                 >
