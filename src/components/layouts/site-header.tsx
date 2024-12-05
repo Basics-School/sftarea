@@ -385,7 +385,7 @@ export function SiteHeader() {
     const [activeInsightsCategory, setActiveInsightsCategory] = useState<keyof typeof insightsMenuData>('Market Insights')
     const [activeSellCategory, setActiveSellCategory] = useState<keyof typeof sellMenuData>('Property Listings')
 
-    const triggerClasses = cn(scrolled && "bg-transparent data-[state=open]:bg-transparent text-white hover:text-white hover:bg-transparent data-[active]:bg-transparent")
+    const triggerClasses = cn("text-md", "bg-transparent data-[state=open]:bg-transparent text-white hover:text-white hover:bg-transparent data-[active]:bg-transparent ",)
 
     useEffect(() => {
         const handleScroll = () => {
@@ -397,11 +397,474 @@ export function SiteHeader() {
     }, [])
 
     return (
-        <header className={`sticky top-0 z-50 w-full border-b transition-all duration-300 ease-in-out ${scrolled ? 'bg-brand' : 'bg-background'}`}>
+        <header className={`sticky top-0 z-50 w-full  transition-all duration-300 ease-in-out ${scrolled ? 'bg-brand' : 'bg-transparent'}`}>
             {scrolled && (
-                <div className="absolute left-0 right-0 px-4 flex justify-between items-center h-full">
+                <div className="absolute bg-brand left-0 right-0 px-4 flex justify-between items-center h-20">
                     <div id="logo" className="text-2xl font-extrabold text-white">
                         SFTAREA
+                    </div>
+                    <div className="container mx-auto flex h-16 items-center justify-center">
+                        <NavigationMenu className={`flex items-center bg-transparent justify-center transition-colors duration-300  ease-in-out`}>
+                            <NavigationMenuList className="bg-transparent">
+                                <NavigationMenuItem className="">
+                                    <NavigationMenuTrigger className={triggerClasses}>Buy</NavigationMenuTrigger>
+                                    <NavigationMenuContent>
+                                        <div className="grid w-max grid-cols-[200px_1fr] gap-3 p-4">
+                                            {/* Categories */}
+                                            <div className="space-y-1 border-r pr-4">
+                                                {Object.keys(navigationData.buy.categories).map((category) => (
+                                                    <button
+                                                        key={category}
+                                                        className={`w-full rounded-md px-3 py-2 text-left text-sm hover:bg-accent ${activeBuyCategory === category ? "bg-accent" : ""
+                                                            }`}
+                                                        onMouseEnter={() => setActiveBuyCategory(category as keyof typeof buyMenuData)}
+                                                    >
+                                                        {category}
+                                                    </button>
+                                                ))}
+                                            </div>
+
+                                            {/* Content Grid */}
+                                            <div className="grid grid-cols-4 gap-6 p-4">
+                                                {/* Property Types */}
+                                                <div>
+                                                    <h3 className="mb-3 text-sm font-medium">Property Types</h3>
+                                                    <div className="space-y-2">
+                                                        {navigationData.buy.categories[activeBuyCategory].map((type) => (
+                                                            <NavigationMenuLink asChild key={type}>
+                                                                <Link
+                                                                    href="#"
+                                                                    className="block text-sm text-muted-foreground hover:text-primary"
+                                                                >
+                                                                    {type}
+                                                                </Link>
+                                                            </NavigationMenuLink>
+                                                        ))}
+                                                    </div>
+                                                </div>
+
+                                                {/* Explore Localities */}
+                                                <div>
+                                                    <h3 className="mb-3 text-sm font-medium">Explore Localities</h3>
+                                                    <div className="space-y-2">
+                                                        {navigationData.buy.localities.map((locality) => (
+                                                            <NavigationMenuLink asChild key={locality}>
+                                                                <Link
+                                                                    href="#"
+                                                                    className="block text-sm text-muted-foreground hover:text-primary"
+                                                                >
+                                                                    {locality}
+                                                                </Link>
+                                                            </NavigationMenuLink>
+                                                        ))}
+                                                    </div>
+                                                </div>
+
+                                                {/* Budget Properties */}
+                                                <div>
+                                                    <h3 className="mb-3 text-sm font-medium">Budget Properties</h3>
+                                                    <div className="space-y-2">
+                                                        {navigationData.buy.budgetRanges.map((range) => (
+                                                            <NavigationMenuLink asChild key={range}>
+                                                                <Link
+                                                                    href="#"
+                                                                    className="block text-sm text-muted-foreground hover:text-primary"
+                                                                >
+                                                                    {range}
+                                                                </Link>
+                                                            </NavigationMenuLink>
+                                                        ))}
+                                                    </div>
+                                                </div>
+
+                                                {/* Homes by BHK */}
+                                                <div>
+                                                    <h3 className="mb-3 text-sm font-medium">Homes by BHK</h3>
+                                                    <div className="space-y-2">
+                                                        {navigationData.buy.bhkTypes.map((type) => (
+                                                            <NavigationMenuLink asChild key={type}>
+                                                                <Link
+                                                                    href="#"
+                                                                    className="block text-sm text-muted-foreground hover:text-primary"
+                                                                >
+                                                                    {type}
+                                                                </Link>
+                                                            </NavigationMenuLink>
+                                                        ))}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </NavigationMenuContent>
+                                </NavigationMenuItem>
+                                <NavigationMenuItem>
+                                    <NavigationMenuTrigger className={triggerClasses}>Rent</NavigationMenuTrigger>
+                                    <NavigationMenuContent>
+                                        <div className="grid  w-max grid-cols-[200px_1fr] gap-3 p-4">
+                                            {/* Categories */}
+                                            <div className="space-y-1 border-r pr-4">
+                                                {Object.keys(navigationData.rent.categories).map((category) => (
+                                                    <button
+                                                        key={category}
+                                                        className={`w-full rounded-md px-3 py-2 text-left text-sm hover:bg-accent ${activeRentCategory === category ? "bg-accent" : ""
+                                                            }`}
+                                                        onMouseEnter={() => setActiveRentCategory(category)}
+                                                    >
+                                                        {category}
+                                                    </button>
+                                                ))}
+                                            </div>
+
+                                            {/* Content Grid */}
+                                            <div className="grid grid-cols-3 gap-6 p-4">
+                                                {/* Rental Categories */}
+                                                <div>
+                                                    <h3 className="mb-3 text-sm font-medium">Rental Categories</h3>
+                                                    <div className="space-y-2">
+                                                        {navigationData?.rent.categories[activeRentCategory].map((type) => (
+                                                            <NavigationMenuLink asChild key={type}>
+                                                                <Link
+                                                                    href="#"
+                                                                    className="block text-sm text-muted-foreground hover:text-primary"
+                                                                >
+                                                                    {type}
+                                                                </Link>
+                                                            </NavigationMenuLink>
+                                                        ))}
+                                                    </div>
+                                                </div>
+
+                                                {/* Rent Ranges */}
+                                                <div>
+                                                    <h3 className="mb-3 text-sm font-medium">Rent Ranges</h3>
+                                                    <div className="space-y-2">
+                                                        {navigationData.rent.rentRanges.map((range) => (
+                                                            <NavigationMenuLink asChild key={range}>
+                                                                <Link
+                                                                    href="#"
+                                                                    className="block text-sm text-muted-foreground hover:text-primary"
+                                                                >
+                                                                    {range}
+                                                                </Link>
+                                                            </NavigationMenuLink>
+                                                        ))}
+                                                    </div>
+                                                </div>
+
+                                                {/* Property By BHK */}
+                                                <div>
+                                                    <h3 className="mb-3 text-sm font-medium">Property By BHK</h3>
+                                                    <div className="space-y-2">
+                                                        {navigationData.rent.bhkTypes.map((type) => (
+                                                            <NavigationMenuLink asChild key={type}>
+                                                                <Link
+                                                                    href="#"
+                                                                    className="block text-sm text-muted-foreground hover:text-primary"
+                                                                >
+                                                                    {type}
+                                                                </Link>
+                                                            </NavigationMenuLink>
+                                                        ))}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </NavigationMenuContent>
+                                </NavigationMenuItem>
+                                <NavigationMenuItem>
+                                    <NavigationMenuTrigger className={triggerClasses}>Sell</NavigationMenuTrigger>
+                                    <NavigationMenuContent>
+                                        <div className="grid w-max grid-cols-[200px_1fr] gap-3 p-4">
+                                            {/* Categories */}
+                                            <div className="space-y-1 border-r pr-4">
+                                                {Object.keys(navigationData.sell.categories).map((category) => (
+                                                    <button
+                                                        key={category}
+                                                        className={`w-full rounded-md px-3 py-2 text-left text-sm hover:bg-accent ${activeSellCategory === category ? "bg-accent" : ""
+                                                            }`}
+                                                        onMouseEnter={() => setActiveSellCategory(category as keyof typeof sellMenuData)}
+                                                    >
+                                                        {category}
+                                                    </button>
+                                                ))}
+                                            </div>
+
+                                            {/* Content Grid */}
+                                            <div className="grid grid-cols-2 gap-6 p-4">
+                                                <div>
+                                                    <h3 className="mb-3 text-sm font-medium">{activeSellCategory}</h3>
+                                                    <div className="space-y-2">
+                                                        {navigationData.sell.categories[activeSellCategory].map((item) => (
+                                                            <NavigationMenuLink asChild key={item}>
+                                                                <Link
+                                                                    href="#"
+                                                                    className="block text-sm text-muted-foreground hover:text-primary"
+                                                                >
+                                                                    {item}
+                                                                </Link>
+                                                            </NavigationMenuLink>
+                                                        ))}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </NavigationMenuContent>
+                                </NavigationMenuItem>
+                                <NavigationMenuItem>
+                                    <NavigationMenuTrigger className={triggerClasses}>Commercial</NavigationMenuTrigger>
+                                    <NavigationMenuContent>
+                                        <div className="grid w-max grid-cols-[200px_1fr] gap-3 p-4">
+                                            {/* Categories */}
+                                            <div className="space-y-1 border-r pr-4">
+                                                {Object.keys(navigationData.commercial.categories).map((category) => (
+                                                    <button
+                                                        key={category}
+                                                        className={`w-full rounded-md px-3 py-2 text-left text-sm hover:bg-accent ${activeCommercialCategory === category ? "bg-accent" : ""
+                                                            }`}
+                                                        onMouseEnter={() => setActiveCommercialCategory(category as keyof typeof commercialMenuData)}
+                                                    >
+                                                        {category}
+                                                    </button>
+                                                ))}
+                                            </div>
+
+                                            {/* Content Grid */}
+                                            <div className="grid grid-cols-3 gap-6 p-4">
+                                                {/* Property Types */}
+                                                <div>
+                                                    <h3 className="mb-3 text-sm font-medium">Property Types</h3>
+                                                    <div className="space-y-2">
+                                                        {navigationData.commercial.categories[activeCommercialCategory].map((type) => (
+                                                            <NavigationMenuLink asChild key={type}>
+                                                                <Link
+                                                                    href="#"
+                                                                    className="block text-sm text-muted-foreground hover:text-primary"
+                                                                >
+                                                                    {type}
+                                                                </Link>
+                                                            </NavigationMenuLink>
+                                                        ))}
+                                                    </div>
+                                                </div>
+
+                                                {/* Explore Localities */}
+                                                <div>
+                                                    <h3 className="mb-3 text-sm font-medium">Explore Localities</h3>
+                                                    <div className="space-y-2">
+                                                        {navigationData.commercial.localities.map((locality) => (
+                                                            <NavigationMenuLink asChild key={locality}>
+                                                                <Link
+                                                                    href="#"
+                                                                    className="block text-sm text-muted-foreground hover:text-primary"
+                                                                >
+                                                                    {locality}
+                                                                </Link>
+                                                            </NavigationMenuLink>
+                                                        ))}
+                                                    </div>
+                                                </div>
+
+                                                {/* Budget Ranges */}
+                                                <div>
+                                                    <h3 className="mb-3 text-sm font-medium">Budget Ranges</h3>
+                                                    <div className="space-y-2">
+                                                        {navigationData.commercial.budgetRanges.map((range) => (
+                                                            <NavigationMenuLink asChild key={range}>
+                                                                <Link
+                                                                    href="#"
+                                                                    className="block text-sm text-muted-foreground hover:text-primary"
+                                                                >
+                                                                    {range}
+                                                                </Link>
+                                                            </NavigationMenuLink>
+                                                        ))}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </NavigationMenuContent>
+                                </NavigationMenuItem>
+                                <NavigationMenuItem>
+                                    <NavigationMenuTrigger className={triggerClasses}>Projects</NavigationMenuTrigger>
+                                    <NavigationMenuContent>
+                                        <div className="p-4 w-[800px]">
+                                            <h2 className="text-lg font-semibold mb-4">Explore Projects</h2>
+                                            <div className="grid grid-cols-[200px_1fr] gap-3">
+                                                {/* Categories */}
+                                                <div className="space-y-1 border-r pr-4">
+                                                    {Object.keys(navigationData.commercial.categories).map((category) => (
+                                                        <button
+                                                            key={category}
+                                                            className={`w-full rounded-md px-3 py-2 text-left text-sm hover:bg-accent ${activeCommercialCategory === category ? "bg-accent" : ""
+                                                                }`}
+                                                            onMouseEnter={() => setActiveCommercialCategory(category as keyof typeof commercialMenuData)}
+                                                        >
+                                                            {category}
+                                                        </button>
+                                                    ))}
+                                                </div>
+
+                                                {/* Content Grid */}
+                                                <div className="grid grid-cols-3 gap-6">
+                                                    {/* Property Types */}
+                                                    <div>
+                                                        <h3 className="mb-3 text-sm font-medium">Property Types</h3>
+                                                        <div className="space-y-2">
+                                                            {navigationData.commercial.categories[activeCommercialCategory].map((type) => (
+                                                                <NavigationMenuLink asChild key={type}>
+                                                                    <Link href="#" className="block text-sm text-muted-foreground hover:text-primary">
+                                                                        {type}
+                                                                    </Link>
+                                                                </NavigationMenuLink>
+                                                            ))}
+                                                        </div>
+                                                    </div>
+
+                                                    {/* Explore Localities */}
+                                                    <div>
+                                                        <h3 className="mb-3 text-sm font-medium">Explore Localities</h3>
+                                                        <div className="space-y-2">
+                                                            {navigationData.commercial.localities.map((locality) => (
+                                                                <NavigationMenuLink asChild key={locality}>
+                                                                    <Link href="#" className="block text-sm text-muted-foreground hover:text-primary">
+                                                                        {locality}
+                                                                    </Link>
+                                                                </NavigationMenuLink>
+                                                            ))}
+                                                        </div>
+                                                    </div>
+
+                                                    {/* Budget Ranges */}
+                                                    <div>
+                                                        <h3 className="mb-3 text-sm font-medium">Budget Ranges</h3>
+                                                        <div className="space-y-2">
+                                                            {navigationData.commercial.budgetRanges.map((range) => (
+                                                                <NavigationMenuLink asChild key={range}>
+                                                                    <Link href="#" className="block text-sm text-muted-foreground hover:text-primary">
+                                                                        {range}
+                                                                    </Link>
+                                                                </NavigationMenuLink>
+                                                            ))}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </NavigationMenuContent>
+                                </NavigationMenuItem>
+                                <NavigationMenuItem>
+                                    <NavigationMenuTrigger className={triggerClasses}>Services</NavigationMenuTrigger>
+                                    <NavigationMenuContent>
+                                        <div className="grid w-max grid-cols-[200px_1fr] gap-3 p-4">
+                                            <div className="space-y-1 border-r pr-4">
+                                                {Object.keys(servicesMenuData).map((category) => (
+                                                    <button
+                                                        key={category}
+                                                        className={`w-full rounded-md px-3 py-2 text-left text-sm hover:bg-accent ${activeServiceCategory === category ? "bg-accent" : ""
+                                                            }`}
+                                                        onMouseEnter={() => setActiveServiceCategory(category as keyof typeof servicesMenuData)}
+                                                    >
+                                                        {category}
+                                                    </button>
+                                                ))}
+                                            </div>
+
+                                            <div className="grid grid-cols-3 gap-6 p-4">
+                                                <div>
+                                                    <h3 className="mb-3 text-sm font-medium">Available Services</h3>
+                                                    <div className="space-y-2">
+                                                        {servicesMenuData[activeServiceCategory].map((service) => (
+                                                            <NavigationMenuLink asChild key={service}>
+                                                                <Link
+                                                                    href="#"
+                                                                    className="block text-sm text-muted-foreground hover:text-primary"
+                                                                >
+                                                                    {service}
+                                                                </Link>
+                                                            </NavigationMenuLink>
+                                                        ))}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </NavigationMenuContent>
+                                </NavigationMenuItem>
+                                <NavigationMenuItem>
+                                    <NavigationMenuTrigger className={triggerClasses}>Loans & Mortgages</NavigationMenuTrigger>
+                                    <NavigationMenuContent>
+                                        <div className="grid w-max grid-cols-[200px_1fr] gap-3 p-4">
+                                            <div className="space-y-1 border-r pr-4">
+                                                {Object.keys(loansMenuData).map((category) => (
+                                                    <button
+                                                        key={category}
+                                                        className={`w-full rounded-md px-3 py-2 text-left text-sm hover:bg-accent ${activeLoansCategory === category ? "bg-accent" : ""
+                                                            }`}
+                                                        onMouseEnter={() => setActiveLoansCategory(category as keyof typeof loansMenuData)}
+                                                    >
+                                                        {category}
+                                                    </button>
+                                                ))}
+                                            </div>
+
+                                            <div className="grid grid-cols-2 gap-6 p-4">
+                                                <div>
+                                                    <h3 className="mb-3 text-sm font-medium">Available Options</h3>
+                                                    <div className="space-y-2">
+                                                        {loansMenuData[activeLoansCategory].map((option) => (
+                                                            <NavigationMenuLink asChild key={option}>
+                                                                <Link
+                                                                    href="#"
+                                                                    className="block text-sm text-muted-foreground hover:text-primary"
+                                                                >
+                                                                    {option}
+                                                                </Link>
+                                                            </NavigationMenuLink>
+                                                        ))}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </NavigationMenuContent>
+                                </NavigationMenuItem>
+                                <NavigationMenuItem>
+                                    <NavigationMenuTrigger className={triggerClasses}>Realty Insights</NavigationMenuTrigger>
+                                    <NavigationMenuContent>
+                                        <div className="grid w-max grid-cols-[200px_1fr] gap-3 p-4">
+                                            <div className="space-y-1 border-r pr-4">
+                                                {Object.keys(insightsMenuData).map((category) => (
+                                                    <button
+                                                        key={category}
+                                                        className={`w-full rounded-md px-3 py-2 text-left text-sm hover:bg-accent ${activeInsightsCategory === category ? "bg-accent" : ""
+                                                            }`}
+                                                        onMouseEnter={() => setActiveInsightsCategory(category as keyof typeof insightsMenuData)}
+                                                    >
+                                                        {category}
+                                                    </button>
+                                                ))}
+                                            </div>
+
+                                            <div className="grid grid-cols-2 gap-6 p-4">
+                                                <div>
+                                                    <h3 className="mb-3 text-sm font-medium">Available Resources</h3>
+                                                    <div className="space-y-2">
+                                                        {insightsMenuData[activeInsightsCategory].map((item) => (
+                                                            <NavigationMenuLink asChild key={item}>
+                                                                <Link
+                                                                    href="#"
+                                                                    className="block text-sm text-muted-foreground hover:text-primary"
+                                                                >
+                                                                    {item}
+                                                                </Link>
+                                                            </NavigationMenuLink>
+                                                        ))}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </NavigationMenuContent>
+                                </NavigationMenuItem>
+                            </NavigationMenuList>
+                        </NavigationMenu>
                     </div>
                     <div id="header-action" className='flex gap-4 items-center'>
                         <Link href={"/list"} className={cn(buttonVariants({ variant: 'default' }), 'bg-background hover:bg-muted font-bold text-black')}>
@@ -415,10 +878,10 @@ export function SiteHeader() {
                     </div>
                 </div>
             )}
-            <div className="container mx-auto flex h-16 items-center justify-center">
-                <NavigationMenu className={`flex items-center justify-center transition-colors duration-300 ease-in-out`}>
-                    <NavigationMenuList>
-                        <NavigationMenuItem>
+            {!scrolled && (<div className="container mx-auto flex h-16 items-center justify-center">
+                <NavigationMenu className={`flex items-center bg-transparent justify-center transition-colors duration-300  ease-in-out`}>
+                    <NavigationMenuList className="bg-transparent">
+                        <NavigationMenuItem className="">
                             <NavigationMenuTrigger className={triggerClasses}>Buy</NavigationMenuTrigger>
                             <NavigationMenuContent>
                                 <div className="grid w-max grid-cols-[200px_1fr] gap-3 p-4">
@@ -877,7 +1340,7 @@ export function SiteHeader() {
                         </NavigationMenuItem>
                     </NavigationMenuList>
                 </NavigationMenu>
-            </div>
+            </div>)}
         </header>
     )
 }

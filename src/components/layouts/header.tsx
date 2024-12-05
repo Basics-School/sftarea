@@ -4,8 +4,6 @@ import React, { useState, useEffect } from 'react'
 import { Button, buttonVariants } from '../ui/button'
 import Link from 'next/link'
 import { cn } from '@/lib/utils'
-import { MenuIcon } from 'lucide-react';
-import { MainNav } from './nav';
 import { HeaderMenuSheet } from './menu-sheet';
 
 const Header = () => {
@@ -21,7 +19,7 @@ const Header = () => {
     }, [])
 
     return (
-        <header className={`h-20 text-white bg-brand gap-4 justify-between flex items-center px-4 transition-all duration-300 ease-in-out ${scrolled ? 'opacity-0' : 'opacity-100'}`}>
+        <header className={`h-20 text-white bg-brand gap-4 justify-between flex items-center px-4 duration-300  ${scrolled ? 'opacity-0' : 'opacity-100'}`}>
             <Link id="logo" href={"/"} className='text-2xl font-extrabold'>
                 SFTAREA
             </Link>

@@ -22,7 +22,7 @@ const montserrat = Montserrat({ subsets: ['latin'] })
 export default function Home() {
     return (
         <main className={cn("relative", montserrat.className)}>
-            <section className="flex relative w-full flex-col h-[50vh] bg-[url('/hero.png')] bg-cover  " >
+            <section className="flex relative w-full flex-col h-[50vh] bg-[url('/hero.png')] bg-cover -top-16  " >
                 <div className="flex-col justify-center bg-gradient-to-b flex from-black via-transparent  to-transparent h-full">
                     <div className="max-w-screen-xl w-full mx-auto   ">
                         <div className=" space-y-4 text-background max-w-screen-sm   w-full p-4  md:px-10 ">

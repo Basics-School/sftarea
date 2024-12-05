@@ -39,7 +39,7 @@ const FiindIdealHome = () => {
                         ref={carouselRef}
                         className="mx-auto scroll-smooth flex h-full w-full gap-6  justify-evenly py-6 text-base scrollbar-none lg:max-w-screen-xl"
                     >
-                        <Card title="Exclusive Collections" description="Owner Properties" />
+                        {/* <Card title="Exclusive Collections" description="Owner Properties" /> */}
                         <Card title="Owner Listings" description="Owner Properties" />
                         <Card title="New Projects" description="Owner Properties" />
                         <Card title="Ready to Move" description="Owner Properties" />
