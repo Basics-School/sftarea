@@ -385,7 +385,7 @@ export function SiteHeader() {
     const [activeInsightsCategory, setActiveInsightsCategory] = useState<keyof typeof insightsMenuData>('Market Insights')
     const [activeSellCategory, setActiveSellCategory] = useState<keyof typeof sellMenuData>('Property Listings')
 
-    const triggerClasses = cn("text-xl", "bg-transparent data-[state=open]:bg-transparent text-white hover:text-white hover:bg-transparent data-[active]:bg-transparent ",)
+    const triggerClasses = cn("text-lg", "bg-transparent data-[state=open]:bg-transparent text-white hover:text-white hover:bg-transparent data-[active]:bg-transparent ",)
 
     useEffect(() => {
         const handleScroll = () => {
@@ -397,7 +397,7 @@ export function SiteHeader() {
     }, [])
 
     return (
-        <header className={`sticky top-0 z-50 w-full  transition-all duration-300 ease-in-out ${scrolled ? 'bg-brand' : 'bg-transparent'}`}>
+        <header className={`sticky top-0 z-50  w-full  transition-all duration-300 ease-in-out ${scrolled ? 'bg-brand' : 'bg-transparent'}`}>
             {scrolled && (
                 <div className="absolute bg-brand left-0 right-0 px-4 flex justify-between items-center h-20">
                     <div id="logo" className="text-2xl font-extrabold text-white">
