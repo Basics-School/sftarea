@@ -63,7 +63,7 @@ const Card: React.FC<CardProps> = ({ title, description }) => {
         <div className="bg-[url('/interior.jpg')] group  text-white font-bold  bg-cover h-[184px] overflow-clip aspect-[296/184] rounded-md ">
             <div className="h-full flex-col justify-end flex bg-gradient-to-t from-black p-4">
                 <h1>{title}</h1>
-                <p>{description}</p>
+                {/* <p>{description}</p> */}
                 <Link className="inline-flex group-hover:gap-4 transition-all gap-2 mt-4" href="/">
                     Explore <ArrowRight />
                 </Link>

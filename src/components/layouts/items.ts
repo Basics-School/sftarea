@@ -1,3 +1,30 @@
+const servicesMenuData = {
+  'Property Services': [
+    'Property Management',
+    'Real Estate Consultancy',
+    'Tenant & Lease Services',
+    'Valuation Services',
+    'Legal & Documentation',
+    'Property Inspections',
+  ],
+  'Home Makeovers': [
+    'Design & Architecture',
+    'Interior Design',
+    'Home Renovations',
+    'Builders & Contractors',
+    'Smart Home Solutions',
+    'Painting Services',
+  ],
+  'Lifestyle Services': [
+    'Packers & Movers',
+    'Energy Solutions',
+    'Photography & Videography',
+    'Event Management',
+    'Cleaning & Security Services',
+    'Landscaping & Gardening',
+  ],
+};
+
 const items = {
   buy: {
     popularChoices: [
@@ -27,12 +54,6 @@ const items = {
       { text: "Investment Hotspot", href: "#" },
       { text: "Find an Agent", href: "#" },
       { text: "Home Interiors in New-Delhi", href: "#" },
-    ],
-    buyingTools: [
-      { text: "PropWorth", href: "#" },
-      { text: "Rates & Trends", href: "#" },
-      { text: "Buy vs Rent", href: "#" },
-      { text: "Tips and Guides", href: "#" },
     ],
   },
   rent: {
@@ -90,100 +111,6 @@ const items = {
       { text: "PropWorth", href: "#" },
     ],
   },
-//   homeLoans: {
-//     applyNow: [
-//       { text: "Home Loans", href: "#" },
-//       { text: "Balance Transfer", href: "#" },
-//       { text: "Loan Against Property", href: "#" },
-//     ],
-//     partners: [
-//       { text: "SBI Home Loan", href: "#" },
-//       { text: "HDFC Ltd Home Loan", href: "#" },
-//       { text: "Axis Home Loan", href: "#" },
-//       { text: "Kotak Home Loan", href: "#" },
-//       { text: "LIC HF Home Loan", href: "#" },
-//     ],
-//     explore: [
-//       { text: "Home Loan EMI Calculator", href: "#" },
-//       { text: "Home Loan Eligibility", href: "#" },
-//       { text: "Get Home Loan Offers", href: "#", badge: "NEW" },
-//       { text: "Check Credit Score", href: "#" },
-//       { text: "Home Loan Prepayment", href: "#" },
-//       { text: "Home Loan Interest Rate", href: "#" },
-//       { text: "Home Loan Balance Transfer", href: "#" },
-//       { text: "Home Loan Documentation", href: "#" },
-//     ],
-//     emiCalculators: [
-//       { text: "SBI Home Loan EMI Calculator", href: "#" },
-//       { text: "HDFC Home Loan EMI Calculator", href: "#" },
-//       { text: "Axis Bank Home Loan EMI Calculator", href: "#" },
-//       { text: "Bajaj Home Loan EMI Calculator", href: "#" },
-//       { text: "Kotak Home Loan EMI Calculator", href: "#" },
-//       { text: "L&T Home Loan EMI Calculator", href: "#" },
-//     ],
-//     interestRates: [
-//       { text: "SBI Home Loan Interest Rate", href: "#" },
-//       { text: "HDFC Home Loan Interest Rate", href: "#" },
-//       { text: "Axis Bank Home Loan Interest Rate", href: "#" },
-//       { text: "Bajaj Home Loan Interest Rate", href: "#" },
-//       { text: "Kotak Bank Interest Rate", href: "#" },
-//       { text: "L&T Home Loan Interest Rate", href: "#" },
-//     ],
-//   },
-//   homeInteriors: {
-//     designIdeas: [
-//       { text: "Modular Kitchen Design Ideas", href: "#" },
-//       { text: "False ceiling Design Ideas", href: "#" },
-//       { text: "Bathroom Design Ideas", href: "#" },
-//       { text: "Bedroom Design Ideas", href: "#" },
-//       { text: "TV Unit Design Ideas", href: "#" },
-//     ],
-//     fullHomeInteriorDesigns: [
-//       { text: "1BHK Interior Design", href: "#" },
-//       { text: "2BHK Interior Design", href: "#" },
-//       { text: "3BHK Interior Design", href: "#" },
-//       { text: "4BHK Interior Design", href: "#" },
-//     ],
-//     exploreServices: [
-//       { text: "Home Interior Design Services", href: "#" },
-//       { text: "Interior Designers in New-Delhi", href: "#" },
-//       { text: "Design Consultation", href: "#" },
-//       { text: "Full Home Interior Cost Calculator", href: "#" },
-//       { text: "Kitchen/Wardrobe calculator", href: "#" },
-//     ],
-//   },
-//   mbAdvice: {
-//     mbResearch: [
-//       { text: "Insights", href: "#" },
-//       { text: "Research", href: "#" },
-//       { text: "Prop Index", href: "#" },
-//       { text: "Find Pincode", href: "#" },
-//     ],
-//     servicesAndTools: [
-//       { text: "Property Valuation", href: "#", badge: "NEW" },
-//       { text: "Rates & Trends", href: "#" },
-//       { text: "Area Converter", href: "#" },
-//       { text: "PropWorth", href: "#" },
-//       { text: "Buy v/s Rent", href: "#" },
-//     ],
-//     localitiesAndProjects: [
-//       { text: "Localities in New-Delhi", href: "#" },
-//       { text: "Locality Review Videos", href: "#" },
-//       { text: "Compare Localities", href: "#" },
-//       { text: "New Projects in New-Delhi", href: "#" },
-//       { text: "Project Review Videos", href: "#" },
-//       { text: "MBTV Videos", href: "#" },
-//     ],
-//     newsAndBlogs: [
-//       { text: "Latest Blogs", href: "#" },
-//       { text: "Lifestyle", href: "#" },
-//       { text: "Policies", href: "#" },
-//       { text: "Finance & Legal", href: "#" },
-//       { text: "City Blogs", href: "#" },
-//       { text: "Property News", href: "#" },
-//       { text: "Trending Web Stories", href: "#" },
-//     ],
-//   },
   commercial: {
     propertyTypes: [
       { text: "Offices for Sale", href: "#" },
@@ -240,6 +167,39 @@ const items = {
       { text: "Research Reports", href: "#" },
       { text: "Resources & Guides", href: "#" },
     ],
+  },
+
+  newMenus: {
+    buy: {
+      'Apartments & Flats': {
+        types: [
+          'Popular Apartments',
+          'Luxury Apartments',
+          'Affordable Flats',
+          'Ready-to-Move Flats',
+          'Under-Construction Flats',
+          'Studio Apartments',
+        ],
+      },
+    },
+    rent: {
+      'Residential Rentals': {
+        types: [
+          'Flats for Rent',
+          'Independent Houses for Rent',
+          'Villas for Rent',
+          'Studio Apartments',
+          'Co-Living Spaces',
+          'PG/Hostels',
+        ],
+      },
+    },
+    // commercial: commercialMenuData,
+  },
+  navigationData: {
+    services: {
+      categories: servicesMenuData,
+    },
   },
 };
 

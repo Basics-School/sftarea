@@ -1,9 +1,9 @@
 import React from 'react'
 import Header from "@/components/layouts/header";
-import { MainNav } from "@/components/layouts/nav";
-import { siteConfig } from "@/config/site";
-import items from "@/components/layouts/items";
+import { SiteHeader } from "@/components/layouts/site-header";
 import { SiteFooter } from '@/components/layouts/footer';
+import { MainNav } from '@/components/layouts/nav';
+import items from '@/components/layouts/items';
 
 const SiteLayout = ({
     children,
@@ -13,10 +13,10 @@ const SiteLayout = ({
     return (
         <>
             <Header />
-            <MainNav items={items} />
+            <SiteHeader/>
+            {/* <MainNav items={items} /> */}
             {children}
             <SiteFooter />
-
         </>
     )
 }

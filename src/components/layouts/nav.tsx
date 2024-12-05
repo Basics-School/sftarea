@@ -1,6 +1,7 @@
 "use client"
 
 import * as React from "react"
+import { useState } from "react"
 import Link from "next/link"
 import { cn } from "@/lib/utils"
 import {
@@ -12,6 +13,7 @@ import {
     NavigationMenuTrigger,
     navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
+import { Button } from "../ui/button"
 
 // Helper function to transform items
 const transformItems = (items: Record<string, Record<string, any[]>>) => {
@@ -29,38 +31,59 @@ interface MainNavProps {
 }
 
 export function MainNav({ items }: MainNavProps) {
-    const navItems = React.useMemo(() => transformItems(items), [items])
+    const [activeBuyCategory, setActiveBuyCategory] = useState('Apartments & Flats')
+    const [activeRentCategory, setActiveRentCategory] = useState('Residential Rentals')
+    const [activeCommercialCategory, setActiveCommercialCategory] = useState('Buy Spaces')
 
     return (
         <div className="hidden gap-6 lg:flex absolute w-full mx-auto justify-center">
             <NavigationMenu className="flex justify-center">
                 <NavigationMenuList className="flex w-full justify-center">
-                    {navItems.map((item) => (
-                        <NavigationMenuItem key={item.title}>
-                            <NavigationMenuTrigger className="hover:bg-transparent text-xl [active]:bg-transparent data-[state=open]:bg-transparent hover:text-background focus:bg-transparent focus:text-white bg-transparent text-white h-auto">
-                                {item.title}
-                            </NavigationMenuTrigger>
-                            <NavigationMenuContent className="flex w-full   max-w-screen-lg">
-                                <div className="grid grid-cols-5 gap-3 p-4 z-10  w-[900px]  ">
-                                    {item.sections.map((section) => (
-                                        <div key={section.title} className="space-y-2">
-                                            <h3 className="font-medium">{section.title}</h3>
-                                            <ul className="space-y-1">
-                                                {section.items.map((subItem: any) => (
-                                                    <ListItem
-                                                        key={subItem.text}
-                                                        href={subItem.href}
-                                                        title={subItem.text}
-                                                        badge={subItem.badge}
-                                                    />
-                                                ))}
-                                            </ul>
-                                        </div>
-                                    ))}
-                                </div>
-                            </NavigationMenuContent>
-                        </NavigationMenuItem>
-                    ))}
+                    <NavigationMenuItem>
+                        <NavigationMenuTrigger>Buy</NavigationMenuTrigger>
+                        <NavigationMenuContent>
+                            <div className="grid w-[800px] grid-cols-[200px_1fr] gap-3 p-4">
+                                {/* Buy menu content from the provided component */}
+                                {/* Copy the Buy section content here */}
+                            </div>
+                        </NavigationMenuContent>
+                    </NavigationMenuItem>
+
+                    <NavigationMenuItem>
+                        <NavigationMenuTrigger>Rent</NavigationMenuTrigger>
+                        <NavigationMenuContent>
+                            <div className="grid w-[800px] grid-cols-[200px_1fr] gap-3 p-4">
+                                {/* Rent menu content from the provided component */}
+                                {/* Copy the Rent section content here */}
+                            </div>
+                        </NavigationMenuContent>
+                    </NavigationMenuItem>
+
+                    <NavigationMenuItem>
+                        <NavigationMenuTrigger>Commercial</NavigationMenuTrigger>
+                        <NavigationMenuContent>
+                            <div className="grid w-[800px] grid-cols-[200px_1fr] gap-3 p-4">
+                                {/* Commercial menu content from the provided component */}
+                                {/* Copy the Commercial section content here */}
+                            </div>
+                        </NavigationMenuContent>
+                    </NavigationMenuItem>
+
+                    <NavigationMenuItem>
+                        <NavigationMenuTrigger>Sell</NavigationMenuTrigger>
+                        <NavigationMenuContent>
+                            <div className="p-4">
+                                {/* Sell menu content from the provided component */}
+                                {/* Copy the Sell section content here */}
+                            </div>
+                        </NavigationMenuContent>
+                    </NavigationMenuItem>
+
+                    {/* Add the login/signup buttons */}
+                    <div className="ml-auto flex items-center space-x-4">
+                        <Button variant="outline">Login</Button>
+                        <Button>Sign Up</Button>
+                    </div>
                 </NavigationMenuList>
             </NavigationMenu>
         </div>

@@ -37,7 +37,7 @@ export default function Home() {
                 </div>
                 <SearchForm />
             </section>
-            <section className="py-7 mt-10  flex items-center flex-col max-w-screen-xl mx-auto ">
+            <section className="py-7 mt-20  flex items-center flex-col max-w-screen-xl mx-auto ">
                 <PropertyCards />
             </section>
             <VideoBanner />
