@@ -24,7 +24,7 @@ const Header = () => {
                 SFTAREA
             </Link>
             <nav className='lg:flex gap-6 flex-1 items-center justify-end hidden  '>
-                <ul className='contents text-lg font-semibold'>
+                <ul className='contents text-xl font-semibold'>
                     <Link href={"/"} >Premium Access</Link >
                     <Link href={"/"} >Agents-Builders</Link >
                     <Link href={"/"} >Lead Market</Link >

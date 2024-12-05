@@ -385,7 +385,7 @@ export function SiteHeader() {
     const [activeInsightsCategory, setActiveInsightsCategory] = useState<keyof typeof insightsMenuData>('Market Insights')
     const [activeSellCategory, setActiveSellCategory] = useState<keyof typeof sellMenuData>('Property Listings')
 
-    const triggerClasses = cn("text-md", "bg-transparent data-[state=open]:bg-transparent text-white hover:text-white hover:bg-transparent data-[active]:bg-transparent ",)
+    const triggerClasses = cn("text-xl", "bg-transparent data-[state=open]:bg-transparent text-white hover:text-white hover:bg-transparent data-[active]:bg-transparent ",)
 
     useEffect(() => {
         const handleScroll = () => {
@@ -415,7 +415,7 @@ export function SiteHeader() {
                                                 {Object.keys(navigationData.buy.categories).map((category) => (
                                                     <button
                                                         key={category}
-                                                        className={`w-full rounded-md px-3 py-2 text-left text-sm hover:bg-accent ${activeBuyCategory === category ? "bg-accent" : ""
+                                                        className={`w-full rounded-md px-3 py-2 text-left text-lg hover:bg-accent ${activeBuyCategory === category ? "bg-accent" : ""
                                                             }`}
                                                         onMouseEnter={() => setActiveBuyCategory(category as keyof typeof buyMenuData)}
                                                     >
@@ -428,13 +428,13 @@ export function SiteHeader() {
                                             <div className="grid grid-cols-4 gap-6 p-4">
                                                 {/* Property Types */}
                                                 <div>
-                                                    <h3 className="mb-3 text-sm font-medium">Property Types</h3>
+                                                    <h3 className="mb-3 text-lg font-medium">Property Types</h3>
                                                     <div className="space-y-2">
                                                         {navigationData.buy.categories[activeBuyCategory].map((type) => (
                                                             <NavigationMenuLink asChild key={type}>
                                                                 <Link
                                                                     href="#"
-                                                                    className="block text-sm text-muted-foreground hover:text-primary"
+                                                                    className="block text-lg text-muted-foreground hover:text-primary"
                                                                 >
                                                                     {type}
                                                                 </Link>
@@ -445,13 +445,13 @@ export function SiteHeader() {
 
                                                 {/* Explore Localities */}
                                                 <div>
-                                                    <h3 className="mb-3 text-sm font-medium">Explore Localities</h3>
+                                                    <h3 className="mb-3 text-lg font-medium">Explore Localities</h3>
                                                     <div className="space-y-2">
                                                         {navigationData.buy.localities.map((locality) => (
                                                             <NavigationMenuLink asChild key={locality}>
                                                                 <Link
                                                                     href="#"
-                                                                    className="block text-sm text-muted-foreground hover:text-primary"
+                                                                    className="block text-lg text-muted-foreground hover:text-primary"
                                                                 >
                                                                     {locality}
                                                                 </Link>
@@ -462,13 +462,13 @@ export function SiteHeader() {
 
                                                 {/* Budget Properties */}
                                                 <div>
-                                                    <h3 className="mb-3 text-sm font-medium">Budget Properties</h3>
+                                                    <h3 className="mb-3 text-lg font-medium">Budget Properties</h3>
                                                     <div className="space-y-2">
                                                         {navigationData.buy.budgetRanges.map((range) => (
                                                             <NavigationMenuLink asChild key={range}>
                                                                 <Link
                                                                     href="#"
-                                                                    className="block text-sm text-muted-foreground hover:text-primary"
+                                                                    className="block text-lg text-muted-foreground hover:text-primary"
                                                                 >
                                                                     {range}
                                                                 </Link>
@@ -479,13 +479,13 @@ export function SiteHeader() {
 
                                                 {/* Homes by BHK */}
                                                 <div>
-                                                    <h3 className="mb-3 text-sm font-medium">Homes by BHK</h3>
+                                                    <h3 className="mb-3 text-lg font-medium">Homes by BHK</h3>
                                                     <div className="space-y-2">
                                                         {navigationData.buy.bhkTypes.map((type) => (
                                                             <NavigationMenuLink asChild key={type}>
                                                                 <Link
                                                                     href="#"
-                                                                    className="block text-sm text-muted-foreground hover:text-primary"
+                                                                    className="block text-lg text-muted-foreground hover:text-primary"
                                                                 >
                                                                     {type}
                                                                 </Link>
@@ -506,7 +506,7 @@ export function SiteHeader() {
                                                 {Object.keys(navigationData.rent.categories).map((category) => (
                                                     <button
                                                         key={category}
-                                                        className={`w-full rounded-md px-3 py-2 text-left text-sm hover:bg-accent ${activeRentCategory === category ? "bg-accent" : ""
+                                                        className={`w-full rounded-md px-3 py-2 text-left text-lg hover:bg-accent ${activeRentCategory === category ? "bg-accent" : ""
                                                             }`}
                                                         onMouseEnter={() => setActiveRentCategory(category)}
                                                     >
@@ -519,13 +519,13 @@ export function SiteHeader() {
                                             <div className="grid grid-cols-3 gap-6 p-4">
                                                 {/* Rental Categories */}
                                                 <div>
-                                                    <h3 className="mb-3 text-sm font-medium">Rental Categories</h3>
+                                                    <h3 className="mb-3 text-lg font-medium">Rental Categories</h3>
                                                     <div className="space-y-2">
                                                         {navigationData?.rent.categories[activeRentCategory].map((type) => (
                                                             <NavigationMenuLink asChild key={type}>
                                                                 <Link
                                                                     href="#"
-                                                                    className="block text-sm text-muted-foreground hover:text-primary"
+                                                                    className="block text-lg text-muted-foreground hover:text-primary"
                                                                 >
                                                                     {type}
                                                                 </Link>
@@ -536,13 +536,13 @@ export function SiteHeader() {
 
                                                 {/* Rent Ranges */}
                                                 <div>
-                                                    <h3 className="mb-3 text-sm font-medium">Rent Ranges</h3>
+                                                    <h3 className="mb-3 text-lg font-medium">Rent Ranges</h3>
                                                     <div className="space-y-2">
                                                         {navigationData.rent.rentRanges.map((range) => (
                                                             <NavigationMenuLink asChild key={range}>
                                                                 <Link
                                                                     href="#"
-                                                                    className="block text-sm text-muted-foreground hover:text-primary"
+                                                                    className="block text-lg text-muted-foreground hover:text-primary"
                                                                 >
                                                                     {range}
                                                                 </Link>
@@ -553,13 +553,13 @@ export function SiteHeader() {
 
                                                 {/* Property By BHK */}
                                                 <div>
-                                                    <h3 className="mb-3 text-sm font-medium">Property By BHK</h3>
+                                                    <h3 className="mb-3 text-lg font-medium">Property By BHK</h3>
                                                     <div className="space-y-2">
                                                         {navigationData.rent.bhkTypes.map((type) => (
                                                             <NavigationMenuLink asChild key={type}>
                                                                 <Link
                                                                     href="#"
-                                                                    className="block text-sm text-muted-foreground hover:text-primary"
+                                                                    className="block text-lg text-muted-foreground hover:text-primary"
                                                                 >
                                                                     {type}
                                                                 </Link>
@@ -580,7 +580,7 @@ export function SiteHeader() {
                                                 {Object.keys(navigationData.sell.categories).map((category) => (
                                                     <button
                                                         key={category}
-                                                        className={`w-full rounded-md px-3 py-2 text-left text-sm hover:bg-accent ${activeSellCategory === category ? "bg-accent" : ""
+                                                        className={`w-full rounded-md px-3 py-2 text-left text-lg hover:bg-accent ${activeSellCategory === category ? "bg-accent" : ""
                                                             }`}
                                                         onMouseEnter={() => setActiveSellCategory(category as keyof typeof sellMenuData)}
                                                     >
@@ -592,13 +592,13 @@ export function SiteHeader() {
                                             {/* Content Grid */}
                                             <div className="grid grid-cols-2 gap-6 p-4">
                                                 <div>
-                                                    <h3 className="mb-3 text-sm font-medium">{activeSellCategory}</h3>
+                                                    <h3 className="mb-3 text-lg font-medium">{activeSellCategory}</h3>
                                                     <div className="space-y-2">
                                                         {navigationData.sell.categories[activeSellCategory].map((item) => (
                                                             <NavigationMenuLink asChild key={item}>
                                                                 <Link
                                                                     href="#"
-                                                                    className="block text-sm text-muted-foreground hover:text-primary"
+                                                                    className="block text-lg text-muted-foreground hover:text-primary"
                                                                 >
                                                                     {item}
                                                                 </Link>
@@ -619,7 +619,7 @@ export function SiteHeader() {
                                                 {Object.keys(navigationData.commercial.categories).map((category) => (
                                                     <button
                                                         key={category}
-                                                        className={`w-full rounded-md px-3 py-2 text-left text-sm hover:bg-accent ${activeCommercialCategory === category ? "bg-accent" : ""
+                                                        className={`w-full rounded-md px-3 py-2 text-left text-lg hover:bg-accent ${activeCommercialCategory === category ? "bg-accent" : ""
                                                             }`}
                                                         onMouseEnter={() => setActiveCommercialCategory(category as keyof typeof commercialMenuData)}
                                                     >
@@ -632,13 +632,13 @@ export function SiteHeader() {
                                             <div className="grid grid-cols-3 gap-6 p-4">
                                                 {/* Property Types */}
                                                 <div>
-                                                    <h3 className="mb-3 text-sm font-medium">Property Types</h3>
+                                                    <h3 className="mb-3 text-lg font-medium">Property Types</h3>
                                                     <div className="space-y-2">
                                                         {navigationData.commercial.categories[activeCommercialCategory].map((type) => (
                                                             <NavigationMenuLink asChild key={type}>
                                                                 <Link
                                                                     href="#"
-                                                                    className="block text-sm text-muted-foreground hover:text-primary"
+                                                                    className="block text-lg text-muted-foreground hover:text-primary"
                                                                 >
                                                                     {type}
                                                                 </Link>
@@ -649,13 +649,13 @@ export function SiteHeader() {
 
                                                 {/* Explore Localities */}
                                                 <div>
-                                                    <h3 className="mb-3 text-sm font-medium">Explore Localities</h3>
+                                                    <h3 className="mb-3 text-lg font-medium">Explore Localities</h3>
                                                     <div className="space-y-2">
                                                         {navigationData.commercial.localities.map((locality) => (
                                                             <NavigationMenuLink asChild key={locality}>
                                                                 <Link
                                                                     href="#"
-                                                                    className="block text-sm text-muted-foreground hover:text-primary"
+                                                                    className="block text-lg text-muted-foreground hover:text-primary"
                                                                 >
                                                                     {locality}
                                                                 </Link>
@@ -666,13 +666,13 @@ export function SiteHeader() {
 
                                                 {/* Budget Ranges */}
                                                 <div>
-                                                    <h3 className="mb-3 text-sm font-medium">Budget Ranges</h3>
+                                                    <h3 className="mb-3 text-lg font-medium">Budget Ranges</h3>
                                                     <div className="space-y-2">
                                                         {navigationData.commercial.budgetRanges.map((range) => (
                                                             <NavigationMenuLink asChild key={range}>
                                                                 <Link
                                                                     href="#"
-                                                                    className="block text-sm text-muted-foreground hover:text-primary"
+                                                                    className="block text-lg text-muted-foreground hover:text-primary"
                                                                 >
                                                                     {range}
                                                                 </Link>
@@ -695,7 +695,7 @@ export function SiteHeader() {
                                                     {Object.keys(navigationData.commercial.categories).map((category) => (
                                                         <button
                                                             key={category}
-                                                            className={`w-full rounded-md px-3 py-2 text-left text-sm hover:bg-accent ${activeCommercialCategory === category ? "bg-accent" : ""
+                                                            className={`w-full rounded-md px-3 py-2 text-left text-lg hover:bg-accent ${activeCommercialCategory === category ? "bg-accent" : ""
                                                                 }`}
                                                             onMouseEnter={() => setActiveCommercialCategory(category as keyof typeof commercialMenuData)}
                                                         >
@@ -708,11 +708,11 @@ export function SiteHeader() {
                                                 <div className="grid grid-cols-3 gap-6">
                                                     {/* Property Types */}
                                                     <div>
-                                                        <h3 className="mb-3 text-sm font-medium">Property Types</h3>
+                                                        <h3 className="mb-3 text-lg font-medium">Property Types</h3>
                                                         <div className="space-y-2">
                                                             {navigationData.commercial.categories[activeCommercialCategory].map((type) => (
                                                                 <NavigationMenuLink asChild key={type}>
-                                                                    <Link href="#" className="block text-sm text-muted-foreground hover:text-primary">
+                                                                    <Link href="#" className="block text-lg text-muted-foreground hover:text-primary">
                                                                         {type}
                                                                     </Link>
                                                                 </NavigationMenuLink>
@@ -722,11 +722,11 @@ export function SiteHeader() {
 
                                                     {/* Explore Localities */}
                                                     <div>
-                                                        <h3 className="mb-3 text-sm font-medium">Explore Localities</h3>
+                                                        <h3 className="mb-3 text-lg font-medium">Explore Localities</h3>
                                                         <div className="space-y-2">
                                                             {navigationData.commercial.localities.map((locality) => (
                                                                 <NavigationMenuLink asChild key={locality}>
-                                                                    <Link href="#" className="block text-sm text-muted-foreground hover:text-primary">
+                                                                    <Link href="#" className="block text-lg text-muted-foreground hover:text-primary">
                                                                         {locality}
                                                                     </Link>
                                                                 </NavigationMenuLink>
@@ -736,11 +736,11 @@ export function SiteHeader() {
 
                                                     {/* Budget Ranges */}
                                                     <div>
-                                                        <h3 className="mb-3 text-sm font-medium">Budget Ranges</h3>
+                                                        <h3 className="mb-3 text-lg font-medium">Budget Ranges</h3>
                                                         <div className="space-y-2">
                                                             {navigationData.commercial.budgetRanges.map((range) => (
                                                                 <NavigationMenuLink asChild key={range}>
-                                                                    <Link href="#" className="block text-sm text-muted-foreground hover:text-primary">
+                                                                    <Link href="#" className="block text-lg text-muted-foreground hover:text-primary">
                                                                         {range}
                                                                     </Link>
                                                                 </NavigationMenuLink>
@@ -760,7 +760,7 @@ export function SiteHeader() {
                                                 {Object.keys(servicesMenuData).map((category) => (
                                                     <button
                                                         key={category}
-                                                        className={`w-full rounded-md px-3 py-2 text-left text-sm hover:bg-accent ${activeServiceCategory === category ? "bg-accent" : ""
+                                                        className={`w-full rounded-md px-3 py-2 text-left text-lg hover:bg-accent ${activeServiceCategory === category ? "bg-accent" : ""
                                                             }`}
                                                         onMouseEnter={() => setActiveServiceCategory(category as keyof typeof servicesMenuData)}
                                                     >
@@ -771,13 +771,13 @@ export function SiteHeader() {
 
                                             <div className="grid grid-cols-3 gap-6 p-4">
                                                 <div>
-                                                    <h3 className="mb-3 text-sm font-medium">Available Services</h3>
+                                                    <h3 className="mb-3 text-lg font-medium">Available Services</h3>
                                                     <div className="space-y-2">
                                                         {servicesMenuData[activeServiceCategory].map((service) => (
                                                             <NavigationMenuLink asChild key={service}>
                                                                 <Link
                                                                     href="#"
-                                                                    className="block text-sm text-muted-foreground hover:text-primary"
+                                                                    className="block text-lg text-muted-foreground hover:text-primary"
                                                                 >
                                                                     {service}
                                                                 </Link>
@@ -797,7 +797,7 @@ export function SiteHeader() {
                                                 {Object.keys(loansMenuData).map((category) => (
                                                     <button
                                                         key={category}
-                                                        className={`w-full rounded-md px-3 py-2 text-left text-sm hover:bg-accent ${activeLoansCategory === category ? "bg-accent" : ""
+                                                        className={`w-full rounded-md px-3 py-2 text-left text-lg hover:bg-accent ${activeLoansCategory === category ? "bg-accent" : ""
                                                             }`}
                                                         onMouseEnter={() => setActiveLoansCategory(category as keyof typeof loansMenuData)}
                                                     >
@@ -808,13 +808,13 @@ export function SiteHeader() {
 
                                             <div className="grid grid-cols-2 gap-6 p-4">
                                                 <div>
-                                                    <h3 className="mb-3 text-sm font-medium">Available Options</h3>
+                                                    <h3 className="mb-3 text-lg font-medium">Available Options</h3>
                                                     <div className="space-y-2">
                                                         {loansMenuData[activeLoansCategory].map((option) => (
                                                             <NavigationMenuLink asChild key={option}>
                                                                 <Link
                                                                     href="#"
-                                                                    className="block text-sm text-muted-foreground hover:text-primary"
+                                                                    className="block text-lg text-muted-foreground hover:text-primary"
                                                                 >
                                                                     {option}
                                                                 </Link>
@@ -834,7 +834,7 @@ export function SiteHeader() {
                                                 {Object.keys(insightsMenuData).map((category) => (
                                                     <button
                                                         key={category}
-                                                        className={`w-full rounded-md px-3 py-2 text-left text-sm hover:bg-accent ${activeInsightsCategory === category ? "bg-accent" : ""
+                                                        className={`w-full rounded-md px-3 py-2 text-left text-lg hover:bg-accent ${activeInsightsCategory === category ? "bg-accent" : ""
                                                             }`}
                                                         onMouseEnter={() => setActiveInsightsCategory(category as keyof typeof insightsMenuData)}
                                                     >
@@ -845,13 +845,13 @@ export function SiteHeader() {
 
                                             <div className="grid grid-cols-2 gap-6 p-4">
                                                 <div>
-                                                    <h3 className="mb-3 text-sm font-medium">Available Resources</h3>
+                                                    <h3 className="mb-3 text-lg font-medium">Available Resources</h3>
                                                     <div className="space-y-2">
                                                         {insightsMenuData[activeInsightsCategory].map((item) => (
                                                             <NavigationMenuLink asChild key={item}>
                                                                 <Link
                                                                     href="#"
-                                                                    className="block text-sm text-muted-foreground hover:text-primary"
+                                                                    className="block text-lg text-muted-foreground hover:text-primary"
                                                                 >
                                                                     {item}
                                                                 </Link>
@@ -890,7 +890,7 @@ export function SiteHeader() {
                                         {Object.keys(navigationData.buy.categories).map((category) => (
                                             <button
                                                 key={category}
-                                                className={`w-full rounded-md px-3 py-2 text-left text-sm hover:bg-accent ${activeBuyCategory === category ? "bg-accent" : ""
+                                                className={`w-full rounded-md px-3 py-2 text-left text-lg hover:bg-accent ${activeBuyCategory === category ? "bg-accent" : ""
                                                     }`}
                                                 onMouseEnter={() => setActiveBuyCategory(category as keyof typeof buyMenuData)}
                                             >
@@ -903,13 +903,13 @@ export function SiteHeader() {
                                     <div className="grid grid-cols-4 gap-6 p-4">
                                         {/* Property Types */}
                                         <div>
-                                            <h3 className="mb-3 text-sm font-medium">Property Types</h3>
+                                            <h3 className="mb-3 text-lg font-medium">Property Types</h3>
                                             <div className="space-y-2">
                                                 {navigationData.buy.categories[activeBuyCategory].map((type) => (
                                                     <NavigationMenuLink asChild key={type}>
                                                         <Link
                                                             href="#"
-                                                            className="block text-sm text-muted-foreground hover:text-primary"
+                                                            className="block text-lg text-muted-foreground hover:text-primary"
                                                         >
                                                             {type}
                                                         </Link>
@@ -920,13 +920,13 @@ export function SiteHeader() {
 
                                         {/* Explore Localities */}
                                         <div>
-                                            <h3 className="mb-3 text-sm font-medium">Explore Localities</h3>
+                                            <h3 className="mb-3 text-lg font-medium">Explore Localities</h3>
                                             <div className="space-y-2">
                                                 {navigationData.buy.localities.map((locality) => (
                                                     <NavigationMenuLink asChild key={locality}>
                                                         <Link
                                                             href="#"
-                                                            className="block text-sm text-muted-foreground hover:text-primary"
+                                                            className="block text-lg text-muted-foreground hover:text-primary"
                                                         >
                                                             {locality}
                                                         </Link>
@@ -937,13 +937,13 @@ export function SiteHeader() {
 
                                         {/* Budget Properties */}
                                         <div>
-                                            <h3 className="mb-3 text-sm font-medium">Budget Properties</h3>
+                                            <h3 className="mb-3 text-lg font-medium">Budget Properties</h3>
                                             <div className="space-y-2">
                                                 {navigationData.buy.budgetRanges.map((range) => (
                                                     <NavigationMenuLink asChild key={range}>
                                                         <Link
                                                             href="#"
-                                                            className="block text-sm text-muted-foreground hover:text-primary"
+                                                            className="block text-lg text-muted-foreground hover:text-primary"
                                                         >
                                                             {range}
                                                         </Link>
@@ -954,13 +954,13 @@ export function SiteHeader() {
 
                                         {/* Homes by BHK */}
                                         <div>
-                                            <h3 className="mb-3 text-sm font-medium">Homes by BHK</h3>
+                                            <h3 className="mb-3 text-lg font-medium">Homes by BHK</h3>
                                             <div className="space-y-2">
                                                 {navigationData.buy.bhkTypes.map((type) => (
                                                     <NavigationMenuLink asChild key={type}>
                                                         <Link
                                                             href="#"
-                                                            className="block text-sm text-muted-foreground hover:text-primary"
+                                                            className="block text-lg text-muted-foreground hover:text-primary"
                                                         >
                                                             {type}
                                                         </Link>
@@ -981,7 +981,7 @@ export function SiteHeader() {
                                         {Object.keys(navigationData.rent.categories).map((category) => (
                                             <button
                                                 key={category}
-                                                className={`w-full rounded-md px-3 py-2 text-left text-sm hover:bg-accent ${activeRentCategory === category ? "bg-accent" : ""
+                                                className={`w-full rounded-md px-3 py-2 text-left text-lg hover:bg-accent ${activeRentCategory === category ? "bg-accent" : ""
                                                     }`}
                                                 onMouseEnter={() => setActiveRentCategory(category)}
                                             >
@@ -994,13 +994,13 @@ export function SiteHeader() {
                                     <div className="grid grid-cols-3 gap-6 p-4">
                                         {/* Rental Categories */}
                                         <div>
-                                            <h3 className="mb-3 text-sm font-medium">Rental Categories</h3>
+                                            <h3 className="mb-3 text-lg font-medium">Rental Categories</h3>
                                             <div className="space-y-2">
                                                 {navigationData?.rent.categories[activeRentCategory].map((type) => (
                                                     <NavigationMenuLink asChild key={type}>
                                                         <Link
                                                             href="#"
-                                                            className="block text-sm text-muted-foreground hover:text-primary"
+                                                            className="block text-lg text-muted-foreground hover:text-primary"
                                                         >
                                                             {type}
                                                         </Link>
@@ -1011,13 +1011,13 @@ export function SiteHeader() {
 
                                         {/* Rent Ranges */}
                                         <div>
-                                            <h3 className="mb-3 text-sm font-medium">Rent Ranges</h3>
+                                            <h3 className="mb-3 text-lg font-medium">Rent Ranges</h3>
                                             <div className="space-y-2">
                                                 {navigationData.rent.rentRanges.map((range) => (
                                                     <NavigationMenuLink asChild key={range}>
                                                         <Link
                                                             href="#"
-                                                            className="block text-sm text-muted-foreground hover:text-primary"
+                                                            className="block text-lg text-muted-foreground hover:text-primary"
                                                         >
                                                             {range}
                                                         </Link>
@@ -1028,13 +1028,13 @@ export function SiteHeader() {
 
                                         {/* Property By BHK */}
                                         <div>
-                                            <h3 className="mb-3 text-sm font-medium">Property By BHK</h3>
+                                            <h3 className="mb-3 text-lg font-medium">Property By BHK</h3>
                                             <div className="space-y-2">
                                                 {navigationData.rent.bhkTypes.map((type) => (
                                                     <NavigationMenuLink asChild key={type}>
                                                         <Link
                                                             href="#"
-                                                            className="block text-sm text-muted-foreground hover:text-primary"
+                                                            className="block text-lg text-muted-foreground hover:text-primary"
                                                         >
                                                             {type}
                                                         </Link>
@@ -1055,7 +1055,7 @@ export function SiteHeader() {
                                         {Object.keys(navigationData.sell.categories).map((category) => (
                                             <button
                                                 key={category}
-                                                className={`w-full rounded-md px-3 py-2 text-left text-sm hover:bg-accent ${activeSellCategory === category ? "bg-accent" : ""
+                                                className={`w-full rounded-md px-3 py-2 text-left text-lg hover:bg-accent ${activeSellCategory === category ? "bg-accent" : ""
                                                     }`}
                                                 onMouseEnter={() => setActiveSellCategory(category as keyof typeof sellMenuData)}
                                             >
@@ -1067,13 +1067,13 @@ export function SiteHeader() {
                                     {/* Content Grid */}
                                     <div className="grid grid-cols-2 gap-6 p-4">
                                         <div>
-                                            <h3 className="mb-3 text-sm font-medium">{activeSellCategory}</h3>
+                                            <h3 className="mb-3 text-lg font-medium">{activeSellCategory}</h3>
                                             <div className="space-y-2">
                                                 {navigationData.sell.categories[activeSellCategory].map((item) => (
                                                     <NavigationMenuLink asChild key={item}>
                                                         <Link
                                                             href="#"
-                                                            className="block text-sm text-muted-foreground hover:text-primary"
+                                                            className="block text-lg text-muted-foreground hover:text-primary"
                                                         >
                                                             {item}
                                                         </Link>
@@ -1094,7 +1094,7 @@ export function SiteHeader() {
                                         {Object.keys(navigationData.commercial.categories).map((category) => (
                                             <button
                                                 key={category}
-                                                className={`w-full rounded-md px-3 py-2 text-left text-sm hover:bg-accent ${activeCommercialCategory === category ? "bg-accent" : ""
+                                                className={`w-full rounded-md px-3 py-2 text-left text-lg hover:bg-accent ${activeCommercialCategory === category ? "bg-accent" : ""
                                                     }`}
                                                 onMouseEnter={() => setActiveCommercialCategory(category as keyof typeof commercialMenuData)}
                                             >
@@ -1107,13 +1107,13 @@ export function SiteHeader() {
                                     <div className="grid grid-cols-3 gap-6 p-4">
                                         {/* Property Types */}
                                         <div>
-                                            <h3 className="mb-3 text-sm font-medium">Property Types</h3>
+                                            <h3 className="mb-3 text-lg font-medium">Property Types</h3>
                                             <div className="space-y-2">
                                                 {navigationData.commercial.categories[activeCommercialCategory].map((type) => (
                                                     <NavigationMenuLink asChild key={type}>
                                                         <Link
                                                             href="#"
-                                                            className="block text-sm text-muted-foreground hover:text-primary"
+                                                            className="block text-lg text-muted-foreground hover:text-primary"
                                                         >
                                                             {type}
                                                         </Link>
@@ -1124,13 +1124,13 @@ export function SiteHeader() {
 
                                         {/* Explore Localities */}
                                         <div>
-                                            <h3 className="mb-3 text-sm font-medium">Explore Localities</h3>
+                                            <h3 className="mb-3 text-lg font-medium">Explore Localities</h3>
                                             <div className="space-y-2">
                                                 {navigationData.commercial.localities.map((locality) => (
                                                     <NavigationMenuLink asChild key={locality}>
                                                         <Link
                                                             href="#"
-                                                            className="block text-sm text-muted-foreground hover:text-primary"
+                                                            className="block text-lg text-muted-foreground hover:text-primary"
                                                         >
                                                             {locality}
                                                         </Link>
@@ -1141,13 +1141,13 @@ export function SiteHeader() {
 
                                         {/* Budget Ranges */}
                                         <div>
-                                            <h3 className="mb-3 text-sm font-medium">Budget Ranges</h3>
+                                            <h3 className="mb-3 text-lg font-medium">Budget Ranges</h3>
                                             <div className="space-y-2">
                                                 {navigationData.commercial.budgetRanges.map((range) => (
                                                     <NavigationMenuLink asChild key={range}>
                                                         <Link
                                                             href="#"
-                                                            className="block text-sm text-muted-foreground hover:text-primary"
+                                                            className="block text-lg text-muted-foreground hover:text-primary"
                                                         >
                                                             {range}
                                                         </Link>
@@ -1170,7 +1170,7 @@ export function SiteHeader() {
                                             {Object.keys(navigationData.commercial.categories).map((category) => (
                                                 <button
                                                     key={category}
-                                                    className={`w-full rounded-md px-3 py-2 text-left text-sm hover:bg-accent ${activeCommercialCategory === category ? "bg-accent" : ""
+                                                    className={`w-full rounded-md px-3 py-2 text-left text-lg hover:bg-accent ${activeCommercialCategory === category ? "bg-accent" : ""
                                                         }`}
                                                     onMouseEnter={() => setActiveCommercialCategory(category as keyof typeof commercialMenuData)}
                                                 >
@@ -1183,11 +1183,11 @@ export function SiteHeader() {
                                         <div className="grid grid-cols-3 gap-6">
                                             {/* Property Types */}
                                             <div>
-                                                <h3 className="mb-3 text-sm font-medium">Property Types</h3>
+                                                <h3 className="mb-3 text-lg font-medium">Property Types</h3>
                                                 <div className="space-y-2">
                                                     {navigationData.commercial.categories[activeCommercialCategory].map((type) => (
                                                         <NavigationMenuLink asChild key={type}>
-                                                            <Link href="#" className="block text-sm text-muted-foreground hover:text-primary">
+                                                            <Link href="#" className="block text-lg text-muted-foreground hover:text-primary">
                                                                 {type}
                                                             </Link>
                                                         </NavigationMenuLink>
@@ -1197,11 +1197,11 @@ export function SiteHeader() {
 
                                             {/* Explore Localities */}
                                             <div>
-                                                <h3 className="mb-3 text-sm font-medium">Explore Localities</h3>
+                                                <h3 className="mb-3 text-lg font-medium">Explore Localities</h3>
                                                 <div className="space-y-2">
                                                     {navigationData.commercial.localities.map((locality) => (
                                                         <NavigationMenuLink asChild key={locality}>
-                                                            <Link href="#" className="block text-sm text-muted-foreground hover:text-primary">
+                                                            <Link href="#" className="block text-lg text-muted-foreground hover:text-primary">
                                                                 {locality}
                                                             </Link>
                                                         </NavigationMenuLink>
@@ -1211,11 +1211,11 @@ export function SiteHeader() {
 
                                             {/* Budget Ranges */}
                                             <div>
-                                                <h3 className="mb-3 text-sm font-medium">Budget Ranges</h3>
+                                                <h3 className="mb-3 text-lg font-medium">Budget Ranges</h3>
                                                 <div className="space-y-2">
                                                     {navigationData.commercial.budgetRanges.map((range) => (
                                                         <NavigationMenuLink asChild key={range}>
-                                                            <Link href="#" className="block text-sm text-muted-foreground hover:text-primary">
+                                                            <Link href="#" className="block text-lg text-muted-foreground hover:text-primary">
                                                                 {range}
                                                             </Link>
                                                         </NavigationMenuLink>
@@ -1235,7 +1235,7 @@ export function SiteHeader() {
                                         {Object.keys(servicesMenuData).map((category) => (
                                             <button
                                                 key={category}
-                                                className={`w-full rounded-md px-3 py-2 text-left text-sm hover:bg-accent ${activeServiceCategory === category ? "bg-accent" : ""
+                                                className={`w-full rounded-md px-3 py-2 text-left text-lg hover:bg-accent ${activeServiceCategory === category ? "bg-accent" : ""
                                                     }`}
                                                 onMouseEnter={() => setActiveServiceCategory(category as keyof typeof servicesMenuData)}
                                             >
@@ -1246,13 +1246,13 @@ export function SiteHeader() {
 
                                     <div className="grid grid-cols-3 gap-6 p-4">
                                         <div>
-                                            <h3 className="mb-3 text-sm font-medium">Available Services</h3>
+                                            <h3 className="mb-3 text-lg font-medium">Available Services</h3>
                                             <div className="space-y-2">
                                                 {servicesMenuData[activeServiceCategory].map((service) => (
                                                     <NavigationMenuLink asChild key={service}>
                                                         <Link
                                                             href="#"
-                                                            className="block text-sm text-muted-foreground hover:text-primary"
+                                                            className="block text-lg text-muted-foreground hover:text-primary"
                                                         >
                                                             {service}
                                                         </Link>
@@ -1272,7 +1272,7 @@ export function SiteHeader() {
                                         {Object.keys(loansMenuData).map((category) => (
                                             <button
                                                 key={category}
-                                                className={`w-full rounded-md px-3 py-2 text-left text-sm hover:bg-accent ${activeLoansCategory === category ? "bg-accent" : ""
+                                                className={`w-full rounded-md px-3 py-2 text-left text-lg hover:bg-accent ${activeLoansCategory === category ? "bg-accent" : ""
                                                     }`}
                                                 onMouseEnter={() => setActiveLoansCategory(category as keyof typeof loansMenuData)}
                                             >
@@ -1283,13 +1283,13 @@ export function SiteHeader() {
 
                                     <div className="grid grid-cols-2 gap-6 p-4">
                                         <div>
-                                            <h3 className="mb-3 text-sm font-medium">Available Options</h3>
+                                            <h3 className="mb-3 text-lg font-medium">Available Options</h3>
                                             <div className="space-y-2">
                                                 {loansMenuData[activeLoansCategory].map((option) => (
                                                     <NavigationMenuLink asChild key={option}>
                                                         <Link
                                                             href="#"
-                                                            className="block text-sm text-muted-foreground hover:text-primary"
+                                                            className="block text-lg text-muted-foreground hover:text-primary"
                                                         >
                                                             {option}
                                                         </Link>
@@ -1309,7 +1309,7 @@ export function SiteHeader() {
                                         {Object.keys(insightsMenuData).map((category) => (
                                             <button
                                                 key={category}
-                                                className={`w-full rounded-md px-3 py-2 text-left text-sm hover:bg-accent ${activeInsightsCategory === category ? "bg-accent" : ""
+                                                className={`w-full rounded-md px-3 py-2 text-left text-lg hover:bg-accent ${activeInsightsCategory === category ? "bg-accent" : ""
                                                     }`}
                                                 onMouseEnter={() => setActiveInsightsCategory(category as keyof typeof insightsMenuData)}
                                             >
@@ -1320,13 +1320,13 @@ export function SiteHeader() {
 
                                     <div className="grid grid-cols-2 gap-6 p-4">
                                         <div>
-                                            <h3 className="mb-3 text-sm font-medium">Available Resources</h3>
+                                            <h3 className="mb-3 text-lg font-medium">Available Resources</h3>
                                             <div className="space-y-2">
                                                 {insightsMenuData[activeInsightsCategory].map((item) => (
                                                     <NavigationMenuLink asChild key={item}>
                                                         <Link
                                                             href="#"
-                                                            className="block text-sm text-muted-foreground hover:text-primary"
+                                                            className="block text-lg text-muted-foreground hover:text-primary"
                                                         >
                                                             {item}
                                                         </Link>
