@@ -43,7 +43,7 @@ const menuItems = [
     ],
   },
   {
-    title: "Loans & Mortgages",
+    title: "Loans Hub",
     items: [
       "Home Loans",
       "Mortgage Refinancing",

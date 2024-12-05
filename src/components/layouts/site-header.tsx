@@ -397,7 +397,7 @@ export function SiteHeader() {
     }, [])
 
     return (
-        <header className={`sticky top-0 z-50  w-full  transition-all duration-300 ease-in-out ${scrolled ? 'bg-brand' : 'bg-transparent'}`}>
+        <header className={`sticky top-0 z-50  w-full   transition-all duration-300 ease-in-out ${scrolled ? 'bg-brand' : 'bg-gradient-to-b from-black to-transparent'}`}>
             {scrolled && (
                 <div className="absolute bg-brand left-0 right-0 px-4 flex justify-between items-center h-20">
                     <div id="logo" className="text-2xl font-extrabold text-white">
@@ -790,7 +790,7 @@ export function SiteHeader() {
                                     </NavigationMenuContent>
                                 </NavigationMenuItem>
                                 <NavigationMenuItem>
-                                    <NavigationMenuTrigger className={triggerClasses}>Loans & Mortgages</NavigationMenuTrigger>
+                                    <NavigationMenuTrigger className={triggerClasses}>Loans Hub</NavigationMenuTrigger>
                                     <NavigationMenuContent>
                                         <div className="grid w-max grid-cols-[200px_1fr] gap-3 p-4">
                                             <div className="space-y-1 border-r pr-4">
@@ -1265,7 +1265,7 @@ export function SiteHeader() {
                             </NavigationMenuContent>
                         </NavigationMenuItem>
                         <NavigationMenuItem>
-                            <NavigationMenuTrigger className={triggerClasses}>Loans & Mortgages</NavigationMenuTrigger>
+                            <NavigationMenuTrigger className={triggerClasses}>Loans Hub</NavigationMenuTrigger>
                             <NavigationMenuContent>
                                 <div className="grid w-max grid-cols-[200px_1fr] gap-3 p-4">
                                     <div className="space-y-1 border-r pr-4">
