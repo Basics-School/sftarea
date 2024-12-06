@@ -1,6 +1,7 @@
 'use client'
 
-import { createContext, useContext, useState, ReactNode } from 'react'
+import { createContext, useContext, ReactNode } from 'react'
+import { useUpdateSearchParams } from '@/hooks/use-search-params'
 
 interface FilterContextType {
   selectedFilters: Record<string, any>
@@ -12,26 +13,33 @@ interface FilterContextType {
 const FilterContext = createContext<FilterContextType | undefined>(undefined)
 
 export function FilterProvider({ children }: { children: ReactNode }) {
-  const [selectedFilters, setSelectedFilters] = useState<Record<string, any>>({})
+  const { setSearchParam, removeSearchParam, searchParams } = useUpdateSearchParams()
+
+  const selectedFilters = Array.from(searchParams.entries()).reduce((acc, [key, value]) => {
+    if (acc[key]) {
+      if (Array.isArray(acc[key])) {
+        acc[key].push(value)
+      } else {
+        acc[key] = [acc[key], value]
+      }
+    } else {
+      acc[key] = value
+    }
+    return acc
+  }, {} as Record<string, any>)
 
   const setFilter = (category: string, value: any) => {
-    setSelectedFilters(prev => ({
-      ...prev,
-      [category]: value
-    }))
+    setSearchParam(category, value)
   }
 
   const removeFilter = (category: string, value: any) => {
-    setSelectedFilters(prev => ({
-      ...prev,
-      [category]: Array.isArray(prev[category])
-        ? prev[category].filter((item: any) => item !== value)
-        : []
-    }))
+    removeSearchParam(category, value)
   }
 
   const clearFilters = () => {
-    setSelectedFilters({})
+    Array.from(searchParams.keys()).forEach(key => {
+      removeSearchParam(key)
+    })
   }
 
   return (
