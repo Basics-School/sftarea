@@ -17,16 +17,16 @@ export function FilterProvider({ children }: { children: ReactNode }) {
   const setFilter = (category: string, value: any) => {
     setSelectedFilters(prev => ({
       ...prev,
-      [category]: Array.isArray(prev[category]) 
-        ? [...prev[category], value]
-        : [value]
+      [category]: value
     }))
   }
 
   const removeFilter = (category: string, value: any) => {
     setSelectedFilters(prev => ({
       ...prev,
-      [category]: prev[category]?.filter((v: any) => v !== value) || []
+      [category]: Array.isArray(prev[category])
+        ? prev[category].filter((item: any) => item !== value)
+        : []
     }))
   }
 
@@ -48,4 +48,3 @@ export const useFilters = () => {
   }
   return context
 }
-

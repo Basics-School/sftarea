@@ -1,63 +1,50 @@
-import { Plus } from 'lucide-react'
-import { Button } from "@/components/ui/button"
+import { Check } from 'lucide-react'
+import { useFilters } from "@/components/contexts/filter-context"
+import { Label } from "@/components/ui/label"
 import { Checkbox } from "@/components/ui/checkbox"
 
+const topLocalities = [
+  "Gole Ka Mandir",
+  "City Centre",
+  "DD Nagar",
+  "Lashkar",
+  "Morar",
+  "Thatipur",
+  "Vijay Nagar",
+  "Madhav Ganj",
+  "Hospital Road",
+  "Phool Bagh"
+]
+
 export function TopLocalitiesDropdown() {
+  const { selectedFilters, setFilter, removeFilter } = useFilters()
+  const selectedLocalities = selectedFilters["locality"] || []
+
+  const handleLocalityChange = (locality: string, checked: boolean) => {
+    if (checked) {
+      setFilter("locality", [...selectedLocalities, locality])
+    } else {
+      removeFilter("locality", locality)
+    }
+  }
+
   return (
     <div className="space-y-4">
-      <h3 className="font-medium">Top Localities</h3>
+      <Label className="text-base">Top Localities</Label>
       <div className="grid grid-cols-2 gap-2">
-        <Button variant="outline" className="justify-start gap-2">
-          <Plus className="h-4 w-4" />
-          City Centre
-        </Button>
-        <Button variant="outline" className="justify-start gap-2">
-          <Plus className="h-4 w-4" />
-          Lashkar
-        </Button>
-        <Button variant="outline" className="justify-start gap-2">
-          <Plus className="h-4 w-4" />
-          Morar
-        </Button>
-        <Button variant="outline" className="justify-start gap-2">
-          <Plus className="h-4 w-4" />
-          Vinay Nagar
-        </Button>
-        <Button variant="outline" className="justify-start gap-2">
-          <Plus className="h-4 w-4" />
-          Alkapuri
-        </Button>
-        <Button variant="outline" className="justify-start gap-2">
-          <Plus className="h-4 w-4" />
-          New City Center
-        </Button>
-        <Button variant="outline" className="justify-start gap-2">
-          <Plus className="h-4 w-4" />
-          Badagaon
-        </Button>
-        <Button variant="outline" className="justify-start gap-2">
-          <Plus className="h-4 w-4" />
-          Tansen Nagar
-        </Button>
-        <Button variant="outline" className="justify-start gap-2">
-          <Plus className="h-4 w-4" />
-          Gole Ka Mandir
-        </Button>
-        <Button variant="outline" className="justify-start gap-2">
-          <Plus className="h-4 w-4" />
-          Sirol
-        </Button>
-      </div>
-      <div className="flex items-center space-x-2">
-        <Checkbox id="select-all" />
-        <label
-          htmlFor="select-all"
-          className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-        >
-          Select All
-        </label>
+        {topLocalities.map((locality) => (
+          <div key={locality} className="flex items-center space-x-2">
+            <Checkbox
+              id={locality}
+              checked={selectedLocalities.includes(locality)}
+              onCheckedChange={(checked) => handleLocalityChange(locality, checked as boolean)}
+            />
+            <Label htmlFor={locality} className="text-sm font-normal">
+              {locality}
+            </Label>
+          </div>
+        ))}
       </div>
     </div>
   )
 }
-

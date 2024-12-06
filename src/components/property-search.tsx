@@ -24,12 +24,12 @@ export default function PropertySearch() {
     return (
 
         <div className="min-h-screen bg-gray-50">
-            <header className="sticky top-20 z-50 w-full">
+            <header className="sticky z-10 top-20  w-full">
                 <FilterBar />
 
             </header>
 
-            <main className="container py-6">
+            <main className="container py-6 max-w-screen-xl mx-auto">
                 <div className="mb-6">
                     <Tabs defaultValue="properties">
                         <TabsList>
@@ -40,7 +40,7 @@ export default function PropertySearch() {
                     </Tabs>
                 </div>
 
-                <div className="grid gap-6">
+                <div className="grid gap-6 ">
                     {properties.map((property) => (
                         <Card key={property.id}>
                             <CardContent className="p-0">

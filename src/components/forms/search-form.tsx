@@ -16,6 +16,7 @@ import { Label } from "@/components/ui/label";
 import { ChevronDown, ChevronUp, Search, Settings2, Mic } from "lucide-react";
 import { SelectNeighbours } from "../layouts/selec-neigbour";
 import { DualRangeSlider } from "../ui/dual-range-slider";
+import Link from "next/link";
 
 export default function SearchForm() {
   const [priceRange, setPriceRange] = React.useState([500000, 5000000]);
@@ -156,10 +157,10 @@ export default function SearchForm() {
           >
             <Settings2 />
           </button>
-          <button className="bg-brand text-nowrap p-2 rounded-md font-bold flex gap-4 flex-1 justify-around text-white hover:bg-brand">
+          <Link href="/search" className="bg-brand text-nowrap p-2 rounded-md font-bold flex gap-4 flex-1 justify-around text-white hover:bg-brand">
             <span>Search Now</span>
             <Search />
-          </button>
+          </Link>
         </div>
       </form>
       <div
@@ -170,11 +171,11 @@ export default function SearchForm() {
         aria-hidden={!showAdvanced}
       >
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          <Input placeholder="Title" />
+          {/* <Input placeholder="Title" />
           <Input placeholder="Address" />
-          <Input placeholder="Property ID" />
+          <Input placeholder="Property ID" /> */}
 
-          <Select>
+          {/* <Select>
             <SelectTrigger>
               <SelectValue placeholder="All Countries" />
             </SelectTrigger>
@@ -183,9 +184,9 @@ export default function SearchForm() {
               <SelectItem value="uk">United Kingdom</SelectItem>
               <SelectItem value="ca">Canada</SelectItem>
             </SelectContent>
-          </Select>
+          </Select> */}
 
-          <Select>
+          {/* <Select>
             <SelectTrigger>
               <SelectValue placeholder="All States" />
             </SelectTrigger>
@@ -199,8 +200,8 @@ export default function SearchForm() {
               <SelectItem value="up">Uttar Pradesh</SelectItem>
               <SelectItem value="ts">Telangana</SelectItem>
             </SelectContent>
-          </Select>
-
+          </Select> */}
+{/*
           <Select>
             <SelectTrigger>
               <SelectValue placeholder="All Cities" />
@@ -215,9 +216,9 @@ export default function SearchForm() {
               <SelectItem value="pune">Pune</SelectItem>
               <SelectItem value="ahmedabad">Ahmedabad</SelectItem>
             </SelectContent>
-          </Select>
+          </Select> */}
 
-          <Select>
+          {/* <Select>
             <SelectTrigger>
               <SelectValue placeholder="All Neighborhoods" />
             </SelectTrigger>
@@ -231,9 +232,9 @@ export default function SearchForm() {
               <SelectItem value="chembur">Chembur</SelectItem>
               <SelectItem value="goregaon">Goregaon</SelectItem>
             </SelectContent>
-          </Select>
+          </Select> */}
 
-          <div className="grid grid-cols-2 gap-2">
+          {/* <div className="grid grid-cols-2 gap-2">
             <Select>
               <SelectTrigger>
                 <SelectValue placeholder="Min Land Area" />
@@ -255,9 +256,9 @@ export default function SearchForm() {
                 <SelectItem value="6000">6000 sq ft</SelectItem>
               </SelectContent>
             </Select>
-          </div>
+          </div> */}
 
-          <Select>
+          {/* <Select>
             <SelectTrigger>
               <SelectValue placeholder="All Labels" />
             </SelectTrigger>
@@ -266,9 +267,9 @@ export default function SearchForm() {
               <SelectItem value="featured">Featured</SelectItem>
               <SelectItem value="new">New</SelectItem>
             </SelectContent>
-          </Select>
+          </Select> */}
 
-          <Select>
+          {/* <Select>
             <SelectTrigger>
               <SelectValue placeholder="Any Garages" />
             </SelectTrigger>
@@ -277,7 +278,7 @@ export default function SearchForm() {
               <SelectItem value="2">2 Garages</SelectItem>
               <SelectItem value="3">3+ Garages</SelectItem>
             </SelectContent>
-          </Select>
+          </Select> */}
         </div>
         <div className="grid md:grid-cols-2 gap-6">
           <div>
