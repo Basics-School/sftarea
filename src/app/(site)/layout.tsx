@@ -13,6 +13,7 @@ const SiteLayout = ({
     return (
         <>
             <Header />
+            <div className="h-20 w-screen bg-brand absolute -z-50 " />
             <SiteHeader/>
             {/* <MainNav items={items} /> */}
             {children}

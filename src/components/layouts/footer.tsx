@@ -126,7 +126,7 @@ export function SiteFooter() {
                 </div>
 
                 <Separator className="my-4" />
-
+<div className="flex flex-col items-center gap-4">
 
                 <div className="flex flex-col gap-4 md:flex-row md:items-center font-semibold md:justify-between">
                     <div className="flex flex-wrap gap-4 text-sm text-muted">
@@ -144,19 +144,19 @@ export function SiteFooter() {
                     </div>
 
                 </div>
-                <div className="w-full bg-zinc-900 text-white py-3">
-                    <div className="container mx-auto px-4">
+                <div className="w-full text-white py-3">
+                    <div className="container mx-auto ">
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                             <div className="flex items-center gap-2">
-                                <MapPin className="h-5 w-5 text-yellow-400" />
+                                <MapPin className="h-5 w-5 text-brand" />
                                 <span className="text-sm">75 Blue Street, PK 54000</span>
                             </div>
 
                             <div className="flex items-center gap-2">
-                                <Phone className="h-5 w-5 text-yellow-400" />
+                                <Phone className="h-5 w-5 text-brand" />
                                 <a
                                     href="tel:+921234568789"
-                                    className="text-sm hover:text-yellow-400 transition-colors"
+                                    className="text-sm hover:text-brand transition-colors"
                                     aria-label="Call us at (+92) 12 345 6879"
                                 >
                                     (+92) 12 345 6879
@@ -164,10 +164,10 @@ export function SiteFooter() {
                             </div>
 
                             <div className="flex items-center gap-2">
-                                <Mail className="h-5 w-5 text-yellow-400" />
+                                <Mail className="h-5 w-5 text-brand" />
                                 <a
                                     href="mailto:contact@scriptsbundle.com"
-                                    className="text-sm hover:text-yellow-400 transition-colors"
+                                    className="text-sm hover:text-brand transition-colors"
                                     aria-label="Email us at contact@scriptsbundle.com"
                                 >
                                     contact@scriptsbundle.com
@@ -175,7 +175,7 @@ export function SiteFooter() {
                             </div>
 
                             <div className="flex items-center gap-2">
-                                <Calendar className="h-5 w-5 text-yellow-400" />
+                                <Calendar className="h-5 w-5 text-brand" />
                                 <span className="text-sm">Mon-Fri 12:00pm - 12:00am</span>
                             </div>
                         </div>
@@ -184,6 +184,7 @@ export function SiteFooter() {
                 <p className="text-sm text-muted">
                     © 2024 SFTAREA. All rights reserved.
                 </p>
+                </div>
             </div>
         </footer>
     )

@@ -11,7 +11,7 @@ import { QuickPriceDropdown } from "./dropdowns/quick-price-dropdown"
 import { QuickPropertyTypeDropdown } from "./dropdowns/quick-property-type-dropdown"
 
 export function FilterBar() {
-  const [searchValue, setSearchValue] = useState("Gwalior")
+  const [searchValue, setSearchValue] = useState("Hydrabad")
 
   return (
     <div className="w-full bg-brand p-4">

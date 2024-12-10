@@ -5,6 +5,8 @@ import { Button, buttonVariants } from '../ui/button'
 import Link from 'next/link'
 import { cn } from '@/lib/utils'
 import { HeaderMenuSheet } from './menu-sheet';
+import { AuthModal } from '../auth/auth-modal'
+import TopcitiesDropdownList from './topcities-dropdown'
 
 const Header = () => {
     const [scrolled, setScrolled] = useState(false)
@@ -20,9 +22,12 @@ const Header = () => {
 
     return (
         <header className={`h-20 text-white bg-brand gap-4 justify-between flex items-center px-4 duration-300  ${scrolled ? 'opacity-0' : 'opacity-100'}`}>
-            <Link id="logo" href={"/"} className='text-2xl font-extrabold'>
-                SFTAREA
-            </Link>
+            <div className=' flex gap-4 items-center'>
+                <Link id="logo" href={"/"} className='text-2xl font-extrabold'>
+                    SFTAREA
+                </Link>
+                <TopcitiesDropdownList />
+            </div>
             <nav className='lg:flex gap-6 flex-1 items-center justify-end hidden  '>
                 <ul className='contents text-lg font-semibold'>
                     <Link href={"/"} >Premium Access</Link >
@@ -37,9 +42,11 @@ const Header = () => {
                     <span>List your property</span>
                     <span className='text-xs bg-yellow-400 rounded py-px px-2'>Free</span>
                 </Link>
-                <Link className={cn(buttonVariants({ variant: 'default' }), "bg-background hover:bg-muted text-black")} href="/login">
-                    Login / Signup
-                </Link>
+                <AuthModal>
+                    <Button variant="default" className="bg-background hover:bg-muted text-black">
+                        Login / Signup
+                    </Button>
+                </AuthModal>
                 <HeaderMenuSheet />
             </div>
         </header>

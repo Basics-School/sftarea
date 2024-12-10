@@ -18,7 +18,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion"
 
-const menuItems = [
+const staticSections = [
   {
     title: "Quick Access",
     items: ["Sign In / Join Us", "List Your Property for Free"],
@@ -26,7 +26,10 @@ const menuItems = [
   {
     title: "My Actions",
     items: ["Recently Viewed", "Recently Searched", "Shortlisted", "Contacted"],
-  },
+  }
+]
+
+const dropdownMenuItems = [
   {
     title: "Property Types",
     items: ["Buying", "Selling", "Commercial", "Renting", "PG/Co-living"],
@@ -84,24 +87,25 @@ const menuItems = [
     items: ["Help Center", "Report Fraud"],
   },
   {
-    title: "Contact Us",
-    items: [
-      "Phone:",
-      "Inquiries: 9121002737",
-      "Support: 9030574775",
-      "Toll-Free: 1800 41 99099",
-      "Emails:",
-      "support@sftarea.com",
-      "sales@sftarea.com",
-      "marketing@sftarea.com",
-      "contact@sftarea.com",
-    ],
-  },
-  {
     title: "Tools & Preferences",
     items: ["Download Our App", "Language Preference"],
   },
 ]
+
+const contactSection = {
+  title: "Contact Us",
+  items: [
+    "Phone:",
+    "Inquiries: 9121002737",
+    "Support: 9030574775",
+    "Toll-Free: 1800 41 99099",
+    "Emails:",
+    "support@sftarea.com",
+    "sales@sftarea.com",
+    "marketing@sftarea.com",
+    "contact@sftarea.com",
+  ],
+}
 
 export function HeaderMenuSheet() {
   return (
@@ -120,8 +124,25 @@ export function HeaderMenuSheet() {
           </SheetDescription>
         </SheetHeader>
         <div className="mt-4 h-[calc(100vh-120px)] overflow-y-auto">
+          {/* Static Sections */}
+          {staticSections.map((section, index) => (
+            <div key={index} className="mb-6">
+              <h3 className="mb-2 font-semibold">{section.title}</h3>
+              <ul className="ml-4 space-y-2">
+                {section.items.map((item, itemIndex) => (
+                  <li key={itemIndex}>
+                    <Button variant="link" className="h-auto p-0 text-sm">
+                      {item}
+                    </Button>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+
+          {/* Dropdown Sections */}
           <Accordion type="multiple" className="w-full">
-            {menuItems.map((section, index) => (
+            {dropdownMenuItems.map((section, index) => (
               <AccordionItem value={`item-${index}`} key={index}>
                 <AccordionTrigger>{section.title}</AccordionTrigger>
                 <AccordionContent>
@@ -138,6 +159,18 @@ export function HeaderMenuSheet() {
               </AccordionItem>
             ))}
           </Accordion>
+
+          {/* Contact Section */}
+          <div className="mt-6">
+            <h3 className="mb-2 font-semibold">{contactSection.title}</h3>
+            <ul className="ml-4 space-y-2">
+              {contactSection.items.map((item, itemIndex) => (
+                <li key={itemIndex} className="text-sm">
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </SheetContent>
     </Sheet>

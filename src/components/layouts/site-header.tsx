@@ -397,7 +397,10 @@ export function SiteHeader() {
     }, [])
 
     return (
-        <header className={`sticky top-0 z-50  w-full   transition-all duration-300 ease-in-out ${scrolled ? 'bg-brand' : 'bg-gradient-to-b from-black to-transparent'}`}>
+        <header className={`sticky top-0 z-50  w-full   transition-all duration-300 ease-in-out ${scrolled ? 'bg-brand' : ' from-black to-transparent'}`}>
+
+
+
             {scrolled && (
                 <div className="absolute bg-brand left-0 right-0 px-4 flex justify-between items-center h-20">
                     <div id="logo" className="text-2xl font-extrabold text-white">

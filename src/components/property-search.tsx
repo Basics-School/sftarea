@@ -23,7 +23,7 @@ export default function PropertySearch() {
 
     return (
 
-        <div className="min-h-screen bg-gray-50">
+        <div className="min-h-screen relative ">
             <header className="sticky z-10 top-20  w-full">
                 <FilterBar />
 
