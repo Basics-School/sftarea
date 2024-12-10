@@ -67,27 +67,12 @@ export default function TopcitiesDropdownList() {
           <ChevronDown className="h-4 w-4 opacity-50" />
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="w-[440px]" align="start">
-        <ScrollArea className="h-[500px]">
+      <DropdownMenuContent className="w-[800px]" align="start">
+        <ScrollArea className="h-[400px]">
           <DropdownMenuGroup>
-            <DropdownMenuLabel>Nearby Cities</DropdownMenuLabel>
-            {nearbyCities.map((city) => (
-              <DropdownMenuItem
-                key={city.name}
-                onClick={() => setSelectedCity(city.name)}
-              >
-                {city.name}
-                {selectedCity === city.name && <Check className="ml-auto h-4 w-4" />}
-              </DropdownMenuItem>
-            ))}
-          </DropdownMenuGroup>
-
-          <DropdownMenuSeparator />
-
-          <DropdownMenuGroup>
-            <DropdownMenuLabel>Popular Cities</DropdownMenuLabel>
-            <div className="grid grid-cols-2 gap-1">
-              {popularCities.map((city) => (
+            <DropdownMenuLabel>Nearby Properties</DropdownMenuLabel>
+            <div className="grid grid-cols-5 gap-1">
+              {nearbyCities.map((city) => (
                 <DropdownMenuItem
                   key={city.name}
                   onClick={() => setSelectedCity(city.name)}
@@ -102,9 +87,9 @@ export default function TopcitiesDropdownList() {
           <DropdownMenuSeparator />
 
           <DropdownMenuGroup>
-            <DropdownMenuLabel>Other Cities</DropdownMenuLabel>
-            <div className="grid grid-cols-2 gap-1">
-              {otherCities.map((city) => (
+            <DropdownMenuLabel>Top Rated Properties</DropdownMenuLabel>
+            <div className="grid grid-cols-5 gap-1">
+              {[...popularCities, ...otherCities].map((city) => (
                 <DropdownMenuItem
                   key={city.name}
                   onClick={() => setSelectedCity(city.name)}

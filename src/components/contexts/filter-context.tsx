@@ -1,6 +1,6 @@
 'use client'
 
-import { createContext, useContext, ReactNode } from 'react'
+import { createContext, useContext, ReactNode, useState } from 'react'
 import { useUpdateSearchParams } from '@/hooks/use-search-params'
 
 interface FilterContextType {
@@ -8,12 +8,15 @@ interface FilterContextType {
   setFilter: (category: string, value: any) => void
   removeFilter: (category: string, value: any) => void
   clearFilters: () => void
+  placeSearch: string
+  setPlaceSearch: (value: string) => void
 }
 
 const FilterContext = createContext<FilterContextType | undefined>(undefined)
 
 export function FilterProvider({ children }: { children: ReactNode }) {
   const { setSearchParam, removeSearchParam, searchParams } = useUpdateSearchParams()
+  const [placeSearch, setPlaceSearch] = useState('')
 
   const selectedFilters = Array.from(searchParams.entries()).reduce((acc, [key, value]) => {
     if (acc[key]) {
@@ -43,7 +46,14 @@ export function FilterProvider({ children }: { children: ReactNode }) {
   }
 
   return (
-    <FilterContext.Provider value={{ selectedFilters, setFilter, removeFilter, clearFilters }}>
+    <FilterContext.Provider value={{
+      selectedFilters,
+      setFilter,
+      removeFilter,
+      clearFilters,
+      placeSearch,
+      setPlaceSearch
+    }}>
       {children}
     </FilterContext.Provider>
   )
