@@ -15,7 +15,7 @@ import {
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { FilterBar } from "@/components/filter-bar"
+import {  PropertyFilterBar } from "@/components/filter-bar"
 import { FilterProvider, useFilters } from "@/components/contexts/filter-context"
 import { MapProvider, useMap } from './contexts/map-context';
 import GoogleAddressSearch from './google-address-search';
@@ -44,7 +44,7 @@ function PropertySearchContent() {
     return (
         <div className="min-h-screen relative">
             <header className="sticky z-10 top-20 w-full">
-                <FilterBar />
+                <PropertyFilterBar />
             </header>
 
             <main className="container py-6 max-w-screen-xl mx-auto">
