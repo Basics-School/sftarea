@@ -49,7 +49,7 @@ export default function PropertyTypeFilter() {
                         type="checkbox"
                         className="w-5 h-5 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 accent-brand"
                     />
-                    <span className=" text-gray-600">{option}</span>
+                    <span className=" text-nowrap text-gray-600">{option}</span>
                 </label>
             ))}
         </div>
