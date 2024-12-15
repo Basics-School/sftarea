@@ -11,6 +11,12 @@ const SearchPage = () => {
                     <MapProvider>
                         <PropertySearch />
                     </MapProvider>
+                    <div className="flex justify-center gap-4 my-4">
+                        <button className="px-4 py-2 border rounded-md hover:bg-gray-100">&lt; Previous</button>
+                        <span className="flex items-center">Page 1 of 10</span>
+                        <button className="px-4 py-2 border rounded-md hover:bg-gray-100">Next &gt;</button>
+                    </div>
+
                 </FilterProvider>
             </Suspense>
         </main>
