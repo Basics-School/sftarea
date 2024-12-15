@@ -15,11 +15,12 @@ import {
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import {  PropertyFilterBar } from "@/components/filter-bar"
+import { PropertyFilterBar } from "@/components/filter-bar"
 import { FilterProvider, useFilters } from "@/components/contexts/filter-context"
 import { MapProvider, useMap } from './contexts/map-context';
 import GoogleAddressSearch from './google-address-search';
 import GoogleMapSection from './google-map-section';
+import SearchHeader from './layouts/search-sort-options';
 
 export default function PropertySearch() {
     return (
@@ -46,7 +47,6 @@ function PropertySearchContent() {
             <header className="sticky z-10 top-20 w-full">
                 <PropertyFilterBar />
             </header>
-
             <main className="container py-6 max-w-screen-xl mx-auto">
                 <div className="mb-6 flex justify-between items-center">
                     <Tabs defaultValue="properties">
@@ -63,6 +63,7 @@ function PropertySearchContent() {
                         </TabsList>
                     </Tabs>
                 </div>
+                <SearchHeader />
 
                 {viewMode === 'list' ? (
                     <div className="grid gap-6">
