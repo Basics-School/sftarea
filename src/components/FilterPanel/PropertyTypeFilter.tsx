@@ -39,17 +39,17 @@ export default function PropertyTypeFilter() {
         <div key={index} className="mb-6 last:mb-0">
           <div className="flex items-center gap-2 mb-3">
             {section.icon}
-            <h3 className="font-medium text-gray-900">{section.title}</h3>
+            <h3 className="font-medium text-xl text-gray-900">{section.title}</h3>
           </div>
 
-        <div className="ml-7 grid grid-cols-2 gap-x-4 gap-y-2">
+        <div className="ml-7 grid grid-cols-3 gap-x-4 gap-y-2">
             {section.options.map((option, optionIndex) => (
-                <label key={optionIndex} className="flex items-center gap-2">
+                <label key={optionIndex} className="flex items-center gap-4">
                     <input
                         type="checkbox"
-                        className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
+                        className="w-5 h-5 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 accent-brand"
                     />
-                    <span className="text-sm text-gray-600">{option}</span>
+                    <span className=" text-gray-600">{option}</span>
                 </label>
             ))}
         </div>

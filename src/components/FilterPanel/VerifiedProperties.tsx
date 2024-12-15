@@ -29,51 +29,53 @@ const FilterToggle: React.FC<FilterToggleProps> = ({ icon, title, items, onChang
 );
 
 export default function VerifiedProperties() {
-  return (
-    <div className="bg-white rounded-lg shadow p-6">
-      <h2 className="text-xl font-semibold mb-4">Verified & Special Properties</h2>
-      
-      <FilterToggle
-        icon={<Star className="w-5 h-5 text-amber-500" />}
-        title="Hot Properties"
-        items={['Newly Added', 'Trending & Popular Listings']}
-        onChange={(checked) => console.log('Hot Properties:', checked)}
-      />
-      
-      <FilterToggle
-        icon={<Building2 className="w-5 h-5 text-blue-500" />}
-        title="RERA Verified"
-        items={['RERA Certified Properties', 'Registered Agents']}
-        onChange={(checked) => console.log('RERA Verified:', checked)}
-      />
-      
-      <FilterToggle
-        icon={<Crown className="w-5 h-5 text-yellow-500" />}
-        title="Premium Listings"
-        items={['Verified Owner Listings', 'Featured Properties']}
-        onChange={(checked) => console.log('Premium Listings:', checked)}
-      />
-      
-      <FilterToggle
-        icon={<Percent className="w-5 h-5 text-green-500" />}
-        title="Exclusive Offers"
-        items={['Price Drops', 'Properties with Discounts']}
-        onChange={(checked) => console.log('Exclusive Offers:', checked)}
-      />
-      
-      <FilterToggle
-        icon={<UserCheck className="w-5 h-5 text-purple-500" />}
-        title="Certified Agents"
-        items={['Top-Rated Agents', 'Listings by Certified Brokers']}
-        onChange={(checked) => console.log('Certified Agents:', checked)}
-      />
-      
-      <FilterToggle
-        icon={<Clock className="w-5 h-5 text-red-500" />}
-        title="Special Deals"
-        items={['Limited-Time Offers', 'Ready-to-Move-In Properties']}
-        onChange={(checked) => console.log('Special Deals:', checked)}
-      />
-    </div>
-  );
+    return (
+        <div className="bg-white rounded-lg shadow p-6">
+            <h2 className="text-xl font-semibold mb-4">Verified & Special Properties</h2>
+
+            <div className="grid grid-cols-2 gap-8">
+                <FilterToggle
+                    icon={<Star className="w-5 h-5 text-amber-500" />}
+                    title="Hot Properties"
+                    items={['Newly Added', 'Trending & Popular Listings']}
+                    onChange={(checked) => console.log('Hot Properties:', checked)}
+                />
+
+                <FilterToggle
+                    icon={<Building2 className="w-5 h-5 text-blue-500" />}
+                    title="RERA Verified"
+                    items={['RERA Certified Properties', 'Registered Agents']}
+                    onChange={(checked) => console.log('RERA Verified:', checked)}
+                />
+
+                <FilterToggle
+                    icon={<Crown className="w-5 h-5 text-yellow-500" />}
+                    title="Premium Listings"
+                    items={['Verified Owner Listings', 'Featured Properties']}
+                    onChange={(checked) => console.log('Premium Listings:', checked)}
+                />
+
+                <FilterToggle
+                    icon={<Percent className="w-5 h-5 text-green-500" />}
+                    title="Exclusive Offers"
+                    items={['Price Drops', 'Properties with Discounts']}
+                    onChange={(checked) => console.log('Exclusive Offers:', checked)}
+                />
+
+                <FilterToggle
+                    icon={<UserCheck className="w-5 h-5 text-purple-500" />}
+                    title="Certified Agents"
+                    items={['Top-Rated Agents', 'Listings by Certified Brokers']}
+                    onChange={(checked) => console.log('Certified Agents:', checked)}
+                />
+
+                <FilterToggle
+                    icon={<Clock className="w-5 h-5 text-red-500" />}
+                    title="Special Deals"
+                    items={['Limited-Time Offers', 'Ready-to-Move-In Properties']}
+                    onChange={(checked) => console.log('Special Deals:', checked)}
+                />
+            </div>
+        </div>
+    );
 }

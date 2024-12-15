@@ -2,10 +2,10 @@ import React from 'react';
 import { Bed, Bath, Layout } from 'lucide-react';
 import { FilterSection } from './common/FilterSection';
 
-const ConfigOption: React.FC<{ icon: React.ReactNode; label: string; options: string[] }> = ({ 
-  icon, 
-  label, 
-  options 
+const ConfigOption: React.FC<{ icon: React.ReactNode; label: string; options: string[] }> = ({
+  icon,
+  label,
+  options
 }) => (
   <div className="space-y-2">
     <div className="flex items-center gap-2">
@@ -43,6 +43,16 @@ export default function RoomConfigFilter() {
           icon={<Layout className="w-4 h-4 text-gray-500" />}
           label="Balconies"
           options={['1', '2', '3', '4+']}
+        />
+        <ConfigOption
+            icon={<Layout className="w-4 h-4 text-gray-500" />}
+            label="Facing"
+            options={['East', 'South', 'North', 'North-East', 'South-East', 'North-West', 'South-West', 'West']}
+        />
+        <ConfigOption
+            icon={<Layout className="w-4 h-4 text-gray-500" />}
+            label="Floor"
+            options={['Basement', 'Ground', '5-8', '9-12', '13-16', '16+']}
         />
       </div>
     </FilterSection>

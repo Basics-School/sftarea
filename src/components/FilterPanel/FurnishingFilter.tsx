@@ -13,12 +13,12 @@ const furnishingOptions = [
 export default function FurnishingFilter() {
   return (
     <FilterSection title="Furnishing">
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-2 gap-8">
         {furnishingOptions.map((option, index) => (
           <label key={index} className="flex items-center gap-2 cursor-pointer">
             <input
               type="checkbox"
-              className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+              className="w-5 h-5 text-blue-600 border-gray-300 rounded focus:ring-blue-500 accent-brand"
             />
             <span className="flex items-center gap-2 text-sm text-gray-600">
               {option.icon}
