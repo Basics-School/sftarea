@@ -170,6 +170,8 @@ export function PropertyFilterBar() {
                                 <SelectItem value="5000000">₹50L</SelectItem>
                                 <SelectItem value="10000000">₹1Cr</SelectItem>
                                 <SelectItem value="20000000">₹2Cr</SelectItem>
+                                <SelectItem value="50000000">₹5Cr</SelectItem>
+
                             </SelectContent>
                         </Select>
                         <span className="flex items-center">to</span>
@@ -200,24 +202,96 @@ export function PropertyFilterBar() {
                         <ChevronDown className="ml-2 h-4 w-4" />
                     </Button>
                 </PopoverTrigger>
-                <PopoverContent className="w-[200px]">
-                    <div className="grid gap-2">
-                        <Label className="flex items-center space-x-2">
-                            <Checkbox id="bungalow" />
-                            <span>Bungalows</span>
-                        </Label>
-                        <Label className="flex items-center space-x-2">
-                            <Checkbox id="detached" />
-                            <span>Detached</span>
-                        </Label>
-                        <Label className="flex items-center space-x-2">
-                            <Checkbox id="semi" />
-                            <span>Semi-detached</span>
-                        </Label>
-                        <Label className="flex items-center space-x-2">
-                            <Checkbox id="flats" />
-                            <span>Flats</span>
-                        </Label>
+                <PopoverContent className="w-[400px] p-4">
+                    <div className="space-y-4">
+                        {/* Residential Section */}
+                        <div>
+                            <h3 className="font-semibold mb-2">Residential</h3>
+                            <div className="grid grid-cols-2 gap-2">
+                                <Label className="flex items-center space-x-2">
+                                    <Checkbox id="flat" />
+                                    <span>Flat</span>
+                                </Label>
+                                <Label className="flex items-center space-x-2">
+                                    <Checkbox id="1bhk" />
+                                    <span>1 BHK</span>
+                                </Label>
+                                <Label className="flex items-center space-x-2">
+                                    <Checkbox id="house-villa" />
+                                    <span>House/Villa</span>
+                                </Label>
+                                <Label className="flex items-center space-x-2">
+                                    <Checkbox id="2bhk" />
+                                    <span>2 BHK</span>
+                                </Label>
+                                <Label className="flex items-center space-x-2">
+                                    <Checkbox id="plot" />
+                                    <span>Plot</span>
+                                </Label>
+                                <Label className="flex items-center space-x-2">
+                                    <Checkbox id="3bhk" />
+                                    <span>3 BHK</span>
+                                </Label>
+                                <Label className="flex items-center space-x-2">
+                                    <Checkbox id="4bhk" />
+                                    <span>4 BHK</span>
+                                </Label>
+                                <Label className="flex items-center space-x-2">
+                                    <Checkbox id="5bhk" />
+                                    <span>5 BHK</span>
+                                </Label>
+                                <Label className="flex items-center space-x-2">
+                                    <Checkbox id="5plus-bhk" />
+                                    <span>5+ BHK</span>
+                                </Label>
+                            </div>
+                        </div>
+
+                        {/* Commercial Section */}
+                        <div>
+                            <h3 className="font-semibold mb-2">Commercial</h3>
+                            <div className="grid grid-cols-2 gap-2">
+                                <Label className="flex items-center space-x-2">
+                                    <Checkbox id="shop-showroom" />
+                                    <span>Shop/Showroom</span>
+                                </Label>
+                                <Label className="flex items-center space-x-2">
+                                    <Checkbox id="commercial-land" />
+                                    <span>Commercial Land</span>
+                                </Label>
+                                <Label className="flex items-center space-x-2">
+                                    <Checkbox id="office-space" />
+                                    <span>Office Space</span>
+                                </Label>
+                                <Label className="flex items-center space-x-2">
+                                    <Checkbox id="warehouse" />
+                                    <span>Warehouse/Godown</span>
+                                </Label>
+                                <Label className="flex items-center space-x-2">
+                                    <Checkbox id="industrial-building" />
+                                    <span>Industrial Building</span>
+                                </Label>
+                                <Label className="flex items-center space-x-2">
+                                    <Checkbox id="industrial-shed" />
+                                    <span>Industrial Shed</span>
+                                </Label>
+                            </div>
+                        </div>
+
+                        {/* Other Section */}
+                        <div>
+                            <h3 className="font-semibold mb-2">Other Property Types</h3>
+                            <div className="grid grid-cols-2 gap-2">
+                                <Label className="flex items-center space-x-2">
+                                    <Checkbox id="agricultural-land" />
+                                    <span>Agricultural Land</span>
+                                </Label>
+                                <Label className="flex items-center space-x-2">
+                                    <Checkbox id="farm-house" />
+                                    <span>Farm House</span>
+                                </Label>
+                            </div>
+                        </div>
                     </div>
                 </PopoverContent>
             </Popover>
@@ -233,7 +307,7 @@ export function PropertyFilterBar() {
                         )}
                     </Button>
                 </SheetTrigger>
-                <SheetContent className="w-full sm:max-w-[800px] overflow-y-auto">
+                <SheetContent className="w-full sm:max-w-[700px] overflow-y-auto">
                     <SheetHeader>
                         <SheetTitle>Filter your results</SheetTitle>
                     </SheetHeader>

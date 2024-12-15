@@ -12,11 +12,11 @@ const ConfigOption: React.FC<{ icon: React.ReactNode; label: string; options: st
       {icon}
       <span className="text-sm font-medium text-gray-700">{label}</span>
     </div>
-    <div className="flex gap-2">
+    <div className="flex gap-2 flex-wrap">
       {options.map((option, index) => (
         <button
           key={index}
-          className="px-3 py-1 text-sm border border-gray-300 rounded-md hover:border-blue-500 hover:text-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="px-3 py-1 text-sm  border border-gray-300 rounded-md hover:border-blue-500 hover:text-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
         >
           {option}
         </button>
