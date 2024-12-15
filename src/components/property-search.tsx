@@ -141,10 +141,37 @@ function PropertySearchContent() {
                         ))}
                     </div>
                 ) : (
-                    <GoogleMapSection
-                        coordinates={coordinates}
-                        listing={properties}
-                    />
+                    <div className="grid grid-cols-[400px_1fr] gap-6">
+                        <div className="overflow-auto max-h-[calc(100vh-200px)]">
+                            {properties.map((property) => (
+                                <Card key={property.id} className="mb-4">
+                                    <CardContent className="p-4">
+                                        <div className="flex gap-4">
+                                            <Image
+                                                src="/placeholder.svg?height=100&width=100"
+                                                alt={property.title}
+                                                width={100}
+                                                height={100}
+                                                className="object-cover rounded"
+                                            />
+                                            <div className="flex-1">
+                                                <h3 className="font-semibold">{property.title}</h3>
+                                                <div className="text-sm text-muted-foreground">
+                                                    <MapPin className="mr-1 inline-block h-4 w-4" />
+                                                    {property.location}
+                                                </div>
+                                                <div className="mt-2 font-bold">₹{property.price} Lac</div>
+                                            </div>
+                                        </div>
+                                    </CardContent>
+                                </Card>
+                            ))}
+                        </div>
+                        <GoogleMapSection
+                            coordinates={coordinates}
+                            listing={properties}
+                        />
+                    </div>
                 )}
             </main>
         </div>
