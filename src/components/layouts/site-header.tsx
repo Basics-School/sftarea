@@ -406,7 +406,7 @@ export function SiteHeader() {
                     <div id="logo" className="text-2xl font-extrabold text-white">
                         SFTAREA
                     </div>
-                    <div className="container mx-auto flex h-16 items-center justify-center">
+                    <div className="container mx-auto hidden lg:flex h-16 items-center justify-center">
                         <NavigationMenu className={`flex items-center bg-transparent justify-center transition-colors duration-300  ease-in-out`}>
                             <NavigationMenuList className="bg-transparent">
                                 <NavigationMenuItem className="">
@@ -869,20 +869,22 @@ export function SiteHeader() {
                             </NavigationMenuList>
                         </NavigationMenu>
                     </div>
-                    <div id="header-action" className='flex gap-4 items-center'>
-                        <Link href={"/list"} className={cn(buttonVariants({ variant: 'default' }), 'bg-background hover:bg-muted font-bold text-black')}>
+                    <div id="header-action" className=' gap-4 items-center flex '>
+                        <div className="hidden lg:flex gap-4" >
+                        <Link href={"/list"} className={cn(buttonVariants({ variant: 'default' }), ' bg-background hover:bg-muted font-bold text-black')}>
                             <span>List your property</span>
                             <span className='text-xs bg-yellow-400 rounded py-px px-2'>Free</span>
                         </Link>
                         <Link className={cn(buttonVariants({ variant: 'default' }), "bg-background hover:bg-muted text-black")} href="/login">
                             Login / Signup
                         </Link>
+                        </div>
                         <HeaderMenuSheet />
                     </div>
                 </div>
             )}
             {!scrolled && (<div className="container mx-auto flex h-16 items-center justify-center">
-                <NavigationMenu className={`flex items-center bg-transparent justify-center transition-colors duration-300  ease-in-out`}>
+                <NavigationMenu className={`hidden lg:flex items-center bg-transparent justify-center transition-colors duration-300  ease-in-out`}>
                     <NavigationMenuList className="bg-transparent">
                         <NavigationMenuItem className="">
                             <NavigationMenuTrigger className={triggerClasses}>Buy</NavigationMenuTrigger>

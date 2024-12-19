@@ -194,7 +194,7 @@ export function SiteFooter() {
 
 function DownloadButtons() {
     return (
-        <div className="flex items-center md:gap-x-5  gap-y-5 justify-center md:justify-start ">
+        <div className="flex items-center md:gap-x-5  gap-x-2 gap-y-5 justify-center md:justify-start ">
             <Link
 
                 href='/'
