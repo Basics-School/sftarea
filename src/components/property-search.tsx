@@ -73,7 +73,7 @@ function PropertySearchContent() {
                                     <div className="grid gap-4 md:grid-cols-[300px_1fr_200px] lg:grid-cols-[400px_1fr_200px]">
                                         <div className="relative">
                                             <Image
-                                                src="/placeholder.svg?height=300&width=400"
+                                                src="/placeholder.svg"
                                                 alt={property.title}
                                                 width={400}
                                                 height={300}
@@ -148,7 +148,7 @@ function PropertySearchContent() {
                                     <CardContent className="p-4">
                                         <div className="flex gap-4">
                                             <Image
-                                                src="/placeholder.svg?height=100&width=100"
+                                                src="/placeholder.svg"
                                                 alt={property.title}
                                                 width={100}
                                                 height={100}

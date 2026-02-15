@@ -10,37 +10,37 @@ const cities = [
   {
     name: "Delhi / NCR",
     properties: "15,500+ Properties",
-    image: "/placeholder.svg?height=200&width=300"
+    image: "/placeholder.svg"
   },
   {
     name: "Mumbai",
     properties: "15,500+ Properties",
-    image: "/placeholder.svg?height=200&width=300"
+    image: "/placeholder.svg"
   },
   {
     name: "Bangalore",
     properties: "15,500+ Properties",
-    image: "/placeholder.svg?height=200&width=300"
+    image: "/placeholder.svg"
   },
   {
     name: "Hyderabad",
     properties: "15,500+ Properties",
-    image: "/placeholder.svg?height=200&width=300"
+    image: "/placeholder.svg"
   },
   {
     name: "Pune",
     properties: "15,500+ Properties",
-    image: "/placeholder.svg?height=200&width=300"
+    image: "/placeholder.svg"
   },
   {
     name: "Chennai",
     properties: "12,000+ Properties",
-    image: "/placeholder.svg?height=200&width=300"
+    image: "/placeholder.svg"
   },
   {
     name: "Kolkata",
     properties: "10,000+ Properties",
-    image: "/placeholder.svg?height=200&width=300"
+    image: "/placeholder.svg"
   }
 ]
 

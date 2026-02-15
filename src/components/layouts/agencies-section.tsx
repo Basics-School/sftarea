@@ -8,7 +8,7 @@ const agencies = [
     name: "SmartHome",
     propertyName: "Shushma Silver Enclave",
     listingCount: "2 Listing",
-    logo: "/placeholder.svg?height=80&width=160",
+    logo: "/placeholder.svg",
     featured: false,
     verified: true
   },
@@ -16,7 +16,7 @@ const agencies = [
     name: "Star Realty",
     propertyName: "Rose National Houses",
     listingCount: "5 Listing",
-    logo: "/placeholder.svg?height=80&width=160",
+    logo: "/placeholder.svg",
     featured: true,
     verified: true
   },
@@ -24,7 +24,7 @@ const agencies = [
     name: "Maker Good Resort",
     propertyName: "Maker Good Resort",
     listingCount: "12 Listing",
-    logo: "/placeholder.svg?height=80&width=160",
+    logo: "/placeholder.svg",
     featured: false,
     verified: true
   },
@@ -32,7 +32,7 @@ const agencies = [
     name: "Greens",
     propertyName: "Seetal Modern Enclave",
     listingCount: "6 Listing",
-    logo: "/placeholder.svg?height=80&width=160",
+    logo: "/placeholder.svg",
     featured: true,
     verified: true
   }

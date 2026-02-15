@@ -11,7 +11,7 @@ export function AppDownloadSection() {
           <div className="flex gap-4">
             <Button className="bg-black text-white hover:bg-black/90">
               <Image
-                src="/placeholder.svg?height=24&width=24"
+                src="/placeholder.svg"
                 alt="App Store"
                 width={24}
                 height={24}
@@ -21,7 +21,7 @@ export function AppDownloadSection() {
             </Button>
             <Button className="bg-black text-white hover:bg-black/90">
               <Image
-                src="/placeholder.svg?height=24&width=24"
+                src="/placeholder.svg"
                 alt="Play Store"
                 width={24}
                 height={24}
@@ -32,7 +32,7 @@ export function AppDownloadSection() {
           </div>
         </div>
         <Image
-          src="/placeholder.svg?height=400&width=200"
+          src="/placeholder.svg"
           alt="SFTAREA App"
           width={200}
           height={400}

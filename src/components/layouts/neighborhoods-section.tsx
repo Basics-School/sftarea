@@ -3,16 +3,16 @@ import { ChevronRight } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 
 const neighborhoods = [
-  { name: "Gachibowli", properties: "15 Properties", image: "/placeholder.svg?height=100&width=100" },
-  { name: "Madhapur", properties: "25 Properties", image: "/placeholder.svg?height=100&width=100" },
-  { name: "Banjara Hills", properties: "52 Properties", image: "/placeholder.svg?height=100&width=100" },
-  { name: "Manikonda", properties: "98 Properties", image: "/placeholder.svg?height=100&width=100" },
-  { name: "Miyapur", properties: "56 Properties", image: "/placeholder.svg?height=100&width=100" },
-  { name: "Hitech City", properties: "18 Properties", image: "/placeholder.svg?height=100&width=100" },
-  { name: "Jubilee Hills", properties: "65 Properties", image: "/placeholder.svg?height=100&width=100" },
-  { name: "Kondapur", properties: "89 Properties", image: "/placeholder.svg?height=100&width=100" },
-  { name: "Kukatpally", properties: "52 Properties", image: "/placeholder.svg?height=100&width=100" },
-  { name: "Nallagandla", properties: "12 Properties", image: "/placeholder.svg?height=100&width=100" }
+  { name: "Gachibowli", properties: "15 Properties", image: "/placeholder.svg" },
+  { name: "Madhapur", properties: "25 Properties", image: "/placeholder.svg" },
+  { name: "Banjara Hills", properties: "52 Properties", image: "/placeholder.svg" },
+  { name: "Manikonda", properties: "98 Properties", image: "/placeholder.svg" },
+  { name: "Miyapur", properties: "56 Properties", image: "/placeholder.svg" },
+  { name: "Hitech City", properties: "18 Properties", image: "/placeholder.svg" },
+  { name: "Jubilee Hills", properties: "65 Properties", image: "/placeholder.svg" },
+  { name: "Kondapur", properties: "89 Properties", image: "/placeholder.svg" },
+  { name: "Kukatpally", properties: "52 Properties", image: "/placeholder.svg" },
+  { name: "Nallagandla", properties: "12 Properties", image: "/placeholder.svg" }
 ]
 
 export function NeighborhoodsSection() {

@@ -11,7 +11,7 @@ import { useCallback } from 'react'
 const agents = [
   {
     name: "Jerry E. Middleton",
-    image: "/placeholder.svg?height=100&width=100",
+    image: "/placeholder.svg",
     propertyCount: "19 Property",
     rating: 5,
     reviews: "312 Reviews",
@@ -19,7 +19,7 @@ const agents = [
   },
   {
     name: "Lamont B. Morrissey",
-    image: "/placeholder.svg?height=100&width=100",
+    image: "/placeholder.svg",
     propertyCount: "65 Property",
     rating: 5,
     reviews: "285 Reviews",
@@ -27,7 +27,7 @@ const agents = [
   },
   {
     name: "Amber M. Felton",
-    image: "/placeholder.svg?height=100&width=100",
+    image: "/placeholder.svg",
     propertyCount: "52 Property",
     rating: 5,
     reviews: "265 Reviews",
@@ -35,7 +35,7 @@ const agents = [
   },
   {
     name: "Sarah Johnson",
-    image: "/placeholder.svg?height=100&width=100",
+    image: "/placeholder.svg",
     propertyCount: "38 Property",
     rating: 5,
     reviews: "198 Reviews",
@@ -43,7 +43,7 @@ const agents = [
   },
   {
     name: "Michael Brown",
-    image: "/placeholder.svg?height=100&width=100",
+    image: "/placeholder.svg",
     propertyCount: "42 Property",
     rating: 5,
     reviews: "220 Reviews",
