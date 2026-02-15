@@ -8,7 +8,6 @@ import PropertyListings from "@/components/layouts/properties";
 import RealEstatePlatform from "@/components/layouts/real-estate-platform";
 import TestimonialCarousel from "@/components/layouts/testimonial";
 import VideoBanner from "@/components/layouts/video-banner";
-import { Montserrat } from 'next/font/google'
 
 import { ArrowRight, MicIcon, Search, SearchIcon, Settings, Settings2 } from "lucide-react";
 import Link from "next/link";
@@ -16,12 +15,9 @@ import { cn } from "@/lib/utils";
 import RealEstateKnowledge from "@/components/layouts/real-estate-knowledge";
 
 
-const montserrat = Montserrat({ subsets: ['latin'] })
-
-
 export default function Home() {
     return (
-        <main className={cn("relative z-0", montserrat.className)}>
+        <main className={cn("relative z-0")}>
             <section className="flex relative w-full flex-col z-0 h-[50vh] bg-[url('/hero.png')] bg-cover -top-16  " >
                 <div className="flex-col justify-center bg-gradient-to-b flex from-black via-transparent  to-transparent h-full">
                     <div className="max-w-screen-xl w-full mx-auto   ">

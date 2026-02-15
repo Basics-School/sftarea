@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { PHASE_PRODUCTION_BUILD } from "next/constants";
 
 import "./globals.css";
 import { ClerkProvider } from '@clerk/nextjs'
@@ -14,13 +15,24 @@ export default function RootLayout({
 }: Readonly<{
     children: React.ReactNode;
 }>) {
+    const fallbackPublishableKey = `pk_test_${Buffer.from("example.clerk.accounts.dev$").toString("base64")}`;
+    const publishableKey =
+        process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY ??
+        (process.env.NODE_ENV === "development" || process.env.NEXT_PHASE === PHASE_PRODUCTION_BUILD
+            ? fallbackPublishableKey
+            : undefined);
+
+    if (!publishableKey) {
+        throw new Error("Missing NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY");
+    }
+
     return (
-        <ClerkProvider>
-        <html lang="en">
-            <body className="antialiased overflow-x-hidden" >
-                {children}
-            </body>
-        </html>
+        <ClerkProvider publishableKey={publishableKey}>
+            <html lang="en">
+                <body className="antialiased overflow-x-hidden" >
+                    {children}
+                </body>
+            </html>
         </ClerkProvider>
     );
 }

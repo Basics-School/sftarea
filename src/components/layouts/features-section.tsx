@@ -7,7 +7,7 @@ const features = [
     title: "Buy & Sell",
     subtitle: "Fast & Free Listings",
     description: "List your property for free and quickly connect with buyers and sellers.",
-    image: "/placeholder.svg?height=300&width=400",
+    image: "/placeholder.svg",
     exploreText: "Explore Buying and Selling:",
     exploreDescription: "Post your property with ease and attract buyers faster.",
     icon: (
@@ -22,7 +22,7 @@ const features = [
     title: "Commercial Properties",
     subtitle: "Prime Business Spaces",
     description: "Easily find and lease the perfect commercial space and grow your business.",
-    image: "/placeholder.svg?height=300&width=400",
+    image: "/placeholder.svg",
     exploreText: "Always updated,",
     exploreDescription: "so you never miss top opportunities.",
     icon: (
@@ -36,7 +36,7 @@ const features = [
     title: "Rentals & Co-Living",
     subtitle: "Effortless Rentals",
     description: "Discover rental and co-living spaces that fit your lifestyle with no fees.",
-    image: "/placeholder.svg?height=300&width=400",
+    image: "/placeholder.svg",
     exploreText: "Explore Comfortable Rentals:",
     exploreDescription: "Updated options to find your ideal home.",
     icon: (

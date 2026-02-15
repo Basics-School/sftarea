@@ -5,6 +5,8 @@ import { SiteFooter } from '@/components/layouts/footer';
 import { MainNav } from '@/components/layouts/nav';
 import items from '@/components/layouts/items';
 
+export const dynamic = "force-dynamic";
+
 const SiteLayout = ({
     children,
 }: Readonly<{
